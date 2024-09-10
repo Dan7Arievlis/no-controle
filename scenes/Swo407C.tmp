@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://or15uj1uxljv"]
+
+[ext_resource type="Script" path="res://scripts/player/MeleeAttack.gd" id="1_na0he"]
+[ext_resource type="PackedScene" uid="uid://jxxchqmb3p35" path="res://scenes/single_hitbox.tscn" id="2_un5fq"]
+[ext_resource type="Resource" uid="uid://dwx6rb41b2vnr" path="res://resources/hitboxes/player_melee_stats.tres" id="3_o6jly"]
+[ext_resource type="Shape2D" uid="uid://c75ym5pjg80ta" path="res://resources/hitboxes/shapes/player_side_melee_hitbox_shape.tres" id="4_nrgc3"]
+[ext_resource type="Shape2D" uid="uid://dx8m0qgf3jh7u" path="res://resources/hitboxes/shapes/player_down_melee_hitbox_shape.tres" id="5_wqekh"]
+[ext_resource type="Shape2D" uid="uid://dr8g2nm84wb3w" path="res://resources/hitboxes/shapes/player_up_melee_hitbox_shape.tres" id="6_0cufo"]
+
+[node name="Sword" type="Node2D"]
+script = ExtResource("1_na0he")
+
+[node name="SideHitbox" parent="." instance=ExtResource("2_un5fq")]
+hitbox_stats = ExtResource("3_o6jly")
+collision_shape = ExtResource("4_nrgc3")
+disabled = true
+
+[node name="DownHitbox" parent="." instance=ExtResource("2_un5fq")]
+hitbox_stats = ExtResource("3_o6jly")
+collision_shape = ExtResource("5_wqekh")
+disabled = true
+
+[node name="UpHitbox" parent="." instance=ExtResource("2_un5fq")]
+hitbox_stats = ExtResource("3_o6jly")
+collision_shape = ExtResource("6_0cufo")
+disabled = true
+
+[node name="AtkCooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Templates" type="Node" parent="."]
+
+[node name="UpPolygonTemplate" type="CollisionPolygon2D" parent="Templates"]
+visible = false
+position = Vector2(3, -19)
+polygon = PackedVector2Array(7, 10, 8, -7, 7, -33, 1, -45, -7, -46, -11, -42, -13, -14, -12, 10, -8, 5, -4, 4, 1, 5, 1, 5)
+disabled = true
+
+[node name="DownPolygonTemplate" type="CollisionPolygon2D" parent="Templates"]
+visible = false
+position = Vector2(0, 31)
+polygon = PackedVector2Array(-10, -8, -10, 10, -7, 19, -2, 23, 6, 23, 10, 18, 11, 9, 10, -15, 6, -10, -1, -10, -5, -11, -9, -14)
+disabled = true
+
+[node name="SidePolygonTamplate" type="CollisionPolygon2D" parent="Templates"]
+visible = false
+position = Vector2(30, -1)
+polygon = PackedVector2Array(34, 1, 32, 10, 23, 14, -23, 16, -19.5282, 7.11412, -18.9539, 2.37137, -20, -4, -26, -8, 10, -8, 26, -6)
+disabled = true
+
+[connection signal="timeout" from="AtkCooldown" to="." method="_on_atk_cooldown_timeout"]

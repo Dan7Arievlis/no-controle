@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CannonStats" load_steps=3 format=3 uid="uid://cf2onn3q8vj1x"]
+
+[ext_resource type="Script" path="res://scripts/resources/CannonStats.gd" id="1_thw6w"]
+[ext_resource type="Resource" uid="uid://c2gpbmr7sgalo" path="res://resources/effects/player_projectile_shot.tres" id="2_014n6"]
+
+[resource]
+script = ExtResource("1_thw6w")
+reload_time = 0.5
+recoil = 70.0
+max_ammo = -1
+shot_effect = ExtResource("2_014n6")

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca16g268ldjp6"]
+
+[ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="1_s8vtg"]
+[ext_resource type="Script" path="res://scripts/components/OneWayPlatform.gd" id="2_q31s1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddko7"]
+size = Vector2(32, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ok6lh"]
+size = Vector2(32, 18)
+
+[node name="OneWayPlatform" type="CharacterBody2D" groups=["Terrain"]]
+material = ExtResource("1_s8vtg")
+collision_layer = 16
+collision_mask = 0
+platform_floor_layers = 4294901776
+script = ExtResource("2_q31s1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0, -8.5)
+shape = SubResource("RectangleShape2D_ddko7")
+one_way_collision = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_ok6lh")
+debug_color = Color(0.950187, 0.224716, 0, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,227 @@
+[gd_scene load_steps=13 format=4 uid="uid://v61712gtq7h3"]
+
+[ext_resource type="Script" path="res://scripts/levels/TestLevel.gd" id="1_c6sx4"]
+[ext_resource type="Texture2D" uid="uid://dwohy45235p13" path="res://art/tilesets/base_tileset.png" id="3_wkglf"]
+[ext_resource type="PackedScene" uid="uid://dldwdaspvcq0w" path="res://scenes/entities/player.tscn" id="4_7hjwl"]
+[ext_resource type="Script" path="res://scenes/levels/clamp_camera.gd" id="5_h2r6t"]
+[ext_resource type="Script" path="res://scripts/player/movements/CameraFollow.gd" id="5_tocbl"]
+[ext_resource type="PackedScene" uid="uid://b65lkrhnqfxxd" path="res://scenes/menus/pause_menu.tscn" id="6_rukbu"]
+[ext_resource type="PackedScene" uid="uid://dr1om0eg75s8l" path="res://scenes/entities/walking_enemy.tscn" id="6_uk50j"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wyca7"]
+texture = ExtResource("3_wkglf")
+texture_region_size = Vector2i(32, 32)
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/bottom_right_corner = 0
+1:2/0/terrains_peering_bit/top_right_corner = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0/terrains_peering_bit/right_side = 0
+2:2/0/terrains_peering_bit/bottom_right_corner = 0
+2:2/0/terrains_peering_bit/bottom_side = 0
+2:2/0/terrains_peering_bit/bottom_left_corner = 0
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_left_corner = 0
+2:2/0/terrains_peering_bit/top_side = 0
+2:2/0/terrains_peering_bit/top_right_corner = 0
+2:3/0 = 0
+2:3/0/terrain_set = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:3/0/terrains_peering_bit/top_left_corner = 0
+2:3/0/terrains_peering_bit/top_side = 0
+2:3/0/terrains_peering_bit/top_right_corner = 0
+1:3/0 = 0
+1:3/0/terrain_set = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:3/0/terrains_peering_bit/top_right_corner = 0
+3:3/0 = 0
+3:3/0/terrain_set = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:3/0/terrains_peering_bit/top_left_corner = 0
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:2/0/terrains_peering_bit/bottom_left_corner = 0
+3:2/0/terrains_peering_bit/left_side = 0
+3:2/0/terrains_peering_bit/top_left_corner = 0
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+2:0/size_in_atlas = Vector2i(1, 2)
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0/terrains_peering_bit/bottom_right_corner = 0
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/bottom_left_corner = 0
+3:0/size_in_atlas = Vector2i(2, 2)
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0/terrains_peering_bit/bottom_left_corner = 0
+
+[sub_resource type="TileSet" id="TileSet_m5k26"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 16
+physics_layer_0/collision_mask = 8207
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "ground"
+terrain_set_0/terrain_0/color = Color(0.501961, 0.0470588, 0.25098, 1)
+sources/0 = SubResource("TileSetAtlasSource_wyca7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3a6f"]
+size = Vector2(180, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qr80p"]
+size = Vector2(480, 270)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1d7xh"]
+size = Vector2(3459, 21)
+
+[node name="EnemyTestLevel" type="Node2D"]
+script = ExtResource("1_c6sx4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, -5)
+zoom = Vector2(4, 4)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 325.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TileMap" type="Node2D" parent="."]
+
+[node name="base" type="TileMapLayer" parent="TileMap" groups=["Terrain"]]
+use_parent_material = true
+tile_map_data = PackedByteArray("AADu/wYAAAACAAIAAADv/wYAAAACAAIAAADv/wcAAAACAAMAAADu/wcAAAACAAMAAADt/wcAAAABAAMAAADt/wYAAAABAAIAAADt/wUAAAABAAIAAADu/wUAAAACAAIAAADv/wUAAAADAAIAAADw/wYAAAACAAIAAADw/wcAAAACAAMAAADw/wUAAAACAAAAAADx/wYAAAACAAIAAADx/wcAAAACAAMAAADx/wUAAAACAAAAAADy/wYAAAACAAIAAADy/wcAAAACAAMAAADy/wUAAAACAAAAAADz/wYAAAACAAIAAADz/wcAAAACAAMAAADz/wUAAAACAAAAAAD0/wYAAAACAAIAAAD0/wcAAAACAAMAAAD0/wUAAAACAAAAAAD1/wYAAAACAAIAAAD1/wcAAAACAAMAAAD1/wUAAAACAAAAAAD2/wYAAAACAAIAAAD2/wcAAAACAAMAAAD2/wUAAAACAAAAAAD3/wYAAAACAAIAAAD3/wcAAAACAAMAAAD3/wUAAAACAAAAAAD4/wYAAAACAAIAAAD4/wcAAAACAAMAAAD4/wUAAAACAAAAAAACAAYAAAACAAIAAAACAAcAAAACAAMAAAACAAUAAAACAAAAAAADAAYAAAACAAIAAAADAAcAAAACAAMAAAADAAUAAAACAAIAAAAEAAYAAAACAAIAAAAEAAcAAAACAAMAAAAEAAUAAAADAAIAAAAFAAYAAAACAAIAAAAFAAcAAAACAAMAAAAFAAUAAAACAAAAAAAGAAYAAAACAAIAAAAGAAcAAAACAAMAAAAGAAUAAAACAAAAAAAHAAYAAAACAAIAAAAHAAcAAAACAAMAAAAHAAUAAAACAAAAAAAIAAYAAAACAAIAAAAIAAcAAAACAAMAAAAIAAUAAAACAAAAAAAJAAYAAAACAAIAAAAJAAcAAAACAAMAAAAJAAUAAAACAAAAAAAKAAYAAAACAAIAAAAKAAcAAAACAAMAAAAKAAUAAAACAAAAAAALAAYAAAACAAIAAAALAAcAAAACAAMAAAALAAUAAAACAAAAAAAMAAYAAAACAAIAAAAMAAcAAAACAAMAAAAMAAUAAAACAAIAAAANAAYAAAACAAIAAAANAAcAAAACAAMAAAANAAUAAAADAAIAAAAOAAYAAAACAAIAAAAOAAcAAAACAAMAAAAOAAUAAAACAAAAAAAPAAYAAAACAAIAAAAPAAcAAAACAAMAAAAPAAUAAAACAAAAAAAQAAYAAAACAAIAAAAQAAcAAAACAAMAAAAQAAUAAAACAAAAAAARAAYAAAACAAIAAAARAAcAAAACAAMAAAARAAUAAAACAAAAAAASAAYAAAACAAIAAAASAAcAAAACAAMAAAASAAUAAAACAAIAAADu/wQAAAACAAIAAADv/wQAAAADAAIAAADt/wQAAAABAAIAAADt/wMAAAABAAIAAADu/wMAAAACAAIAAADv/wMAAAADAAIAAADt/wIAAAABAAIAAADu/wIAAAACAAIAAADv/wIAAAADAAIAAADt/wEAAAABAAIAAADu/wEAAAACAAIAAADv/wEAAAADAAIAAADt/wAAAAABAAIAAADu/wAAAAACAAIAAADv/wAAAAACAAIAAADt////AAABAAIAAADu////AAACAAIAAADt//7/AAABAAIAAADu//7/AAACAAIAAADt//3/AAABAAIAAADu//3/AAACAAIAAADv//3/AAADAAIAAADt//z/AAABAAIAAADu//z/AAACAAIAAADv//z/AAADAAIAAADt//v/AAABAAIAAADu//v/AAACAAIAAADv//v/AAACAAIAAADt//r/AAABAAIAAADu//r/AAACAAIAAADv//r/AAADAAIAAADw//v/AAACAAIAAADw//z/AAACAAMAAADw//r/AAACAAAAAADx//v/AAACAAIAAADx//z/AAACAAMAAADx//r/AAACAAAAAADy//v/AAACAAIAAADy//z/AAACAAMAAADy//r/AAACAAAAAADz//v/AAACAAIAAADz//z/AAACAAMAAADz//r/AAACAAAAAAD0//v/AAACAAIAAAD0//z/AAACAAMAAAD0//r/AAACAAAAAAD1//v/AAACAAIAAAD1//z/AAACAAIAAAD1//r/AAACAAAAAAD2//v/AAADAAIAAAD2//z/AAADAAIAAAD2//r/AAADAAAAAAAGAPn/AAACAAIAAAAHAPn/AAADAAIAAAAHAPr/AAADAAIAAAAGAPr/AAACAAIAAAAFAPr/AAACAAAAAAAFAPn/AAABAAIAAAAFAPj/AAAAAAAAAAAGAPj/AAACAAAAAAAHAPj/AAADAAAAAAAHAPv/AAADAAIAAAAGAPv/AAACAAIAAAAFAPv/AAACAAIAAAAHAPz/AAADAAMAAAAGAPz/AAACAAMAAAAFAPz/AAACAAMAAAD9//v/AAACAAIAAAD+//v/AAACAAIAAAD+//z/AAACAAMAAAD9//z/AAACAAMAAAD8//z/AAABAAMAAAD8//v/AAABAAIAAAD8//r/AAAAAAAAAAD9//r/AAACAAAAAAD+//r/AAACAAAAAAD///v/AAACAAIAAAD///z/AAACAAMAAAD///r/AAACAAAAAAAAAPv/AAACAAIAAAAAAPz/AAACAAMAAAAAAPr/AAACAAAAAAABAPv/AAACAAIAAAABAPz/AAACAAMAAAABAPr/AAACAAAAAAACAPv/AAACAAIAAAACAPz/AAACAAMAAAACAPr/AAACAAAAAAADAPv/AAACAAIAAAADAPz/AAACAAMAAAADAPr/AAACAAAAAAAEAPv/AAACAAIAAAAEAPz/AAACAAMAAAAEAPr/AAACAAAAAAADAAQAAAACAAIAAAAEAAQAAAADAAIAAAACAAQAAAABAAMAAAACAAMAAAAAAAAAAAADAAMAAAACAAAAAAAEAAMAAAADAAAAAAAMAAQAAAACAAIAAAANAAQAAAADAAIAAAALAAQAAAABAAMAAAALAAMAAAAAAAAAAAAMAAMAAAACAAAAAAANAAMAAAADAAAAAAD+/wcAAAACAAMAAAD+/wYAAAACAAIAAAD9/wcAAAACAAMAAAD9/wYAAAACAAIAAAD8/wcAAAACAAMAAAD8/wYAAAACAAIAAAD7/wcAAAACAAMAAAD7/wYAAAACAAIAAAD6/wcAAAACAAMAAAD6/wYAAAACAAIAAAD5/wcAAAACAAMAAAD5/wYAAAACAAIAAAD5/wUAAAACAAAAAAD6/wUAAAACAAAAAAD7/wUAAAACAAAAAAD8/wUAAAACAAAAAAD9/wUAAAACAAAAAAD+/wUAAAACAAAAAAABAAYAAAACAAIAAAABAAcAAAACAAMAAAAAAAcAAAACAAMAAAAAAAYAAAACAAIAAAAAAAUAAAACAAAAAAABAAUAAAACAAAAAAD//wcAAAACAAMAAAD//wYAAAACAAIAAAD//wUAAAACAAAAAAD2//3/AAADAAIAAAD1//3/AAACAAIAAAD0//3/AAABAAIAAAD2//7/AAADAAIAAAD1//7/AAACAAIAAAD0//7/AAABAAIAAAD2////AAADAAIAAAD1////AAACAAIAAAD0////AAABAAIAAAD2/wAAAAADAAIAAAD1/wAAAAACAAIAAAD0/wAAAAABAAIAAAD2/wEAAAADAAIAAAD1/wEAAAACAAIAAAD0/wEAAAABAAIAAAD2/wIAAAADAAMAAAD1/wIAAAACAAMAAAD0/wIAAAABAAMAAADv//7/AAADAAIAAADv////AAADAAIAAADw/wAAAAADAAIAAADw/wEAAAADAAMAAADw////AAADAAAAAAD7/wEAAAACAAIAAAAFAP//AAACAAIAAAAGAP//AAACAAIAAAAGAAAAAAACAAMAAAAFAAAAAAACAAMAAAAEAAAAAAABAAMAAAAEAP//AAABAAIAAAAEAP7/AAAAAAAAAAAFAP7/AAACAAAAAAAGAP7/AAACAAAAAAAHAP//AAACAAIAAAAHAAAAAAACAAMAAAAHAP7/AAACAAAAAAAIAP//AAACAAIAAAAIAAAAAAACAAMAAAAIAP7/AAACAAAAAAAJAP//AAADAAIAAAAJAAAAAAADAAMAAAAJAP7/AAADAAAAAAATAAYAAAADAAIAAAATAAcAAAADAAMAAAATAAUAAAADAAIAAAASAAQAAAACAAIAAAATAAQAAAADAAIAAAARAAQAAAABAAIAAAARAAMAAAABAAIAAAASAAMAAAACAAIAAAATAAMAAAADAAIAAAARAAIAAAABAAIAAAASAAIAAAACAAIAAAATAAIAAAADAAIAAAARAAEAAAABAAIAAAASAAEAAAACAAIAAAATAAEAAAADAAIAAAARAAAAAAABAAIAAAASAAAAAAACAAIAAAATAAAAAAADAAIAAAARAP//AAABAAIAAAASAP//AAACAAIAAAATAP//AAADAAIAAAARAP7/AAABAAIAAAASAP7/AAACAAIAAAATAP7/AAADAAIAAAARAP3/AAABAAIAAAASAP3/AAACAAIAAAATAP3/AAADAAIAAAARAPz/AAABAAIAAAASAPz/AAACAAIAAAATAPz/AAADAAIAAAARAPv/AAABAAIAAAASAPv/AAACAAIAAAATAPv/AAADAAIAAAARAPr/AAABAAIAAAASAPr/AAACAAIAAAATAPr/AAADAAIAAAARAPn/AAABAAIAAAASAPn/AAACAAIAAAATAPn/AAADAAIAAAARAPj/AAABAAIAAAASAPj/AAACAAIAAAATAPj/AAADAAIAAAARAPf/AAABAAIAAAASAPf/AAACAAIAAAATAPf/AAADAAIAAAARAPb/AAABAAIAAAASAPb/AAACAAIAAAATAPb/AAADAAIAAAASAPX/AAACAAIAAAATAPX/AAADAAIAAAARAPX/AAABAAIAAAARAPT/AAABAAIAAAASAPT/AAACAAIAAAATAPT/AAADAAIAAAASAPP/AAACAAIAAAATAPP/AAADAAIAAADt//n/AAABAAIAAADu//n/AAACAAIAAADv//n/AAADAAIAAADt//j/AAABAAIAAADu//j/AAACAAIAAADv//j/AAADAAIAAADt//f/AAABAAIAAADu//f/AAACAAIAAADv//f/AAADAAIAAADt//b/AAABAAIAAADu//b/AAACAAIAAADt//X/AAABAAIAAADu//X/AAACAAIAAADu//T/AAACAAIAAADu//P/AAACAAIAAADv//P/AAADAAIAAADt//T/AAABAAIAAADt//P/AAABAAIAAADt//L/AAABAAIAAADu//L/AAACAAIAAADv//L/AAADAAIAAADt//H/AAABAAIAAADu//H/AAACAAIAAADv//H/AAACAAIAAADt//D/AAAAAAAAAADu//D/AAACAAAAAADv//D/AAACAAAAAADw//H/AAACAAIAAADw//D/AAACAAAAAADw//L/AAACAAMAAADx//H/AAACAAIAAADx//L/AAACAAMAAADx//D/AAACAAAAAADy//H/AAACAAIAAADy//L/AAACAAMAAADy//D/AAACAAAAAADz//H/AAACAAIAAADz//L/AAACAAMAAADz//D/AAACAAAAAADv//T/AAADAAIAAADv//X/AAADAAIAAADv//b/AAADAAIAAAASAPL/AAACAAIAAAATAPL/AAADAAIAAAARAPH/AAACAAIAAAASAPH/AAACAAIAAAATAPH/AAADAAIAAAAQAPH/AAACAAIAAAAPAPH/AAACAAIAAAAOAPH/AAACAAIAAAANAPH/AAACAAIAAAAMAPH/AAACAAIAAAALAPH/AAACAAIAAAAKAPH/AAACAAIAAAAJAPH/AAACAAIAAAD0//H/AAACAAIAAAD1//H/AAACAAIAAAD1//L/AAACAAMAAAD0//L/AAACAAMAAAD0//D/AAACAAAAAAD1//D/AAACAAAAAAD2//H/AAACAAIAAAD2//L/AAACAAMAAAD2//D/AAACAAAAAAD3//H/AAACAAIAAAD3//L/AAACAAMAAAD3//D/AAACAAAAAAD4//H/AAACAAIAAAD4//L/AAACAAMAAAD4//D/AAACAAAAAAD5//H/AAACAAIAAAD5//L/AAACAAMAAAD5//D/AAACAAAAAAD6//H/AAACAAIAAAD6//L/AAACAAMAAAD6//D/AAACAAAAAAD7//H/AAACAAIAAAD7//L/AAACAAMAAAD7//D/AAACAAAAAAD8//H/AAACAAIAAAD8//L/AAACAAMAAAD8//D/AAACAAAAAAD9//H/AAACAAIAAAD9//L/AAACAAMAAAD9//D/AAACAAAAAAD+//H/AAACAAIAAAD+//L/AAACAAMAAAD+//D/AAACAAAAAAD///H/AAACAAIAAAD///L/AAACAAMAAAD///D/AAACAAAAAAAAAPH/AAACAAIAAAAAAPL/AAACAAMAAAAAAPD/AAACAAAAAAABAPH/AAACAAIAAAABAPD/AAACAAAAAAACAPH/AAACAAIAAAACAPD/AAACAAAAAAADAPH/AAACAAIAAAADAPD/AAACAAAAAAAEAPH/AAACAAIAAAAEAPD/AAACAAAAAAAFAPH/AAACAAIAAAAFAPD/AAACAAAAAAAGAPH/AAACAAIAAAAGAPD/AAACAAAAAAAHAPH/AAACAAIAAAAHAPD/AAACAAAAAAAIAPH/AAACAAIAAAAIAPD/AAACAAAAAAAJAPD/AAACAAAAAAAKAPD/AAACAAAAAAALAPD/AAACAAAAAAAMAPD/AAACAAAAAAANAPD/AAACAAAAAAAOAPD/AAACAAAAAAAPAPD/AAACAAAAAAAQAPD/AAACAAAAAAARAPD/AAACAAAAAAASAPD/AAACAAAAAAATAPD/AAADAAAAAAARAPL/AAACAAMAAAAQAPL/AAACAAMAAAAPAPL/AAACAAMAAAAOAPL/AAACAAMAAAANAPL/AAACAAMAAAAMAPL/AAACAAMAAAALAPL/AAACAAMAAAAKAPL/AAACAAMAAAAJAPL/AAACAAMAAAAIAPL/AAACAAMAAAAHAPL/AAACAAMAAAAGAPL/AAACAAMAAAAFAPL/AAACAAMAAAAEAPL/AAACAAMAAAADAPL/AAACAAMAAAACAPL/AAACAAMAAAABAPL/AAACAAMAAAARAPP/AAABAAIAAAA=")
+tile_set = SubResource("TileSet_m5k26")
+
+[node name="ClampCamera" type="Area2D" parent="TileMap"]
+collision_layer = 16384
+collision_mask = 0
+input_pickable = false
+monitoring = false
+
+[node name="ViewBox" type="CollisionPolygon2D" parent="TileMap/ClampCamera"]
+build_mode = 1
+polygon = PackedVector2Array(-606, 255, -606, -515, 638, -515, 638, 255)
+
+[node name="Player" parent="." instance=ExtResource("4_7hjwl")]
+walk_speed = 200.0
+run_speed = 320.0
+double_jump_velocity = 400.0
+wall_jump_vector = Vector2(150, 400)
+clamp_size = Vector2(180, 190)
+floor_level_offset = 52.0
+metadata/_edit_group_ = true
+
+[node name="CameraFollow" type="RemoteTransform2D" parent="Player"]
+position = Vector2(1, -5)
+remote_path = NodePath("../../Camera2D")
+script = ExtResource("5_tocbl")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="ClampArea" type="Area2D" parent="Player/CameraFollow"]
+collision_layer = 0
+collision_mask = 0
+input_pickable = false
+monitoring = false
+monitorable = false
+
+[node name="ViewBox" type="CollisionShape2D" parent="Player/CameraFollow/ClampArea"]
+shape = SubResource("RectangleShape2D_a3a6f")
+debug_color = Color(0.627451, 0.364706, 0.968627, 0)
+
+[node name="ClampCamera" type="Node2D" parent="Player/CameraFollow"]
+script = ExtResource("5_h2r6t")
+
+[node name="RayCastNW" type="RayCast2D" parent="Player/CameraFollow/ClampCamera"]
+target_position = Vector2(-240, -135)
+collision_mask = 16384
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCastNE" type="RayCast2D" parent="Player/CameraFollow/ClampCamera"]
+target_position = Vector2(240, -135)
+collision_mask = 16384
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCastSE" type="RayCast2D" parent="Player/CameraFollow/ClampCamera"]
+target_position = Vector2(240, 135)
+collision_mask = 16384
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCastSW" type="RayCast2D" parent="Player/CameraFollow/ClampCamera"]
+target_position = Vector2(-240, 135)
+collision_mask = 16384
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Clamp" type="Area2D" parent="Player/CameraFollow/ClampCamera"]
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CameraFollow/ClampCamera/Clamp"]
+shape = SubResource("RectangleShape2D_qr80p")
+debug_color = Color(0.97, 0, 0.420333, 0)
+
+[node name="CameraPoint" type="ColorRect" parent="Player/CameraFollow"]
+offset_top = -4.0
+offset_right = 5.0
+offset_bottom = 1.0
+rotation = 0.785398
+size_flags_horizontal = 4
+color = Color(1, 0, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(564, 36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-463.5, 368.5)
+shape = SubResource("RectangleShape2D_1d7xh")
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_rukbu")]
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+position = Vector2(-475, -224)
+
+[node name="WalkingEnemy" parent="." instance=ExtResource("6_uk50j")]
+position = Vector2(-354, 143)
+
+[node name="WalkingEnemy2" parent="." instance=ExtResource("6_uk50j")]
+position = Vector2(-497, -53)
+
+[node name="WalkingEnemy3" parent="." instance=ExtResource("6_uk50j")]
+position = Vector2(188, 138)
+
+[node name="WalkingEnemy4" parent="." instance=ExtResource("6_uk50j")]
+position = Vector2(277, -83)
+
+[node name="WalkingEnemy5" parent="." instance=ExtResource("6_uk50j")]
+position = Vector2(0, -216)
+
+[connection signal="camera_ready" from="Player/CameraFollow" to="Player" method="_on_camera_follow_camera_ready"]
+[connection signal="camera_clamped" from="Player/CameraFollow/ClampCamera" to="Player/CameraFollow" method="_on_clamp_camera_camera_clamped"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=14 format=3 uid="uid://d1hhht6ngl5t5"]
+
+[ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="1_5cr8w"]
+[ext_resource type="Script" path="res://scripts/menus/MenuComponentCreator.gd" id="1_8hsv8"]
+[ext_resource type="Resource" uid="uid://b0urp36hmwm7w" path="res://resources/player settings/player_wall_slide_test.tres" id="2_eu33m"]
+[ext_resource type="Resource" uid="uid://cuykxa5cdio2u" path="res://resources/player settings/player_movement_test.tres" id="2_mlyaf"]
+[ext_resource type="Resource" uid="uid://vrm272rj3wi0" path="res://resources/player settings/player_jump_test.tres" id="3_08sn1"]
+[ext_resource type="Resource" uid="uid://bo8yyjv8cbldl" path="res://resources/player settings/player_wall_climb_test.tres" id="4_jgi6w"]
+[ext_resource type="Resource" uid="uid://fuafdacqywrj" path="res://resources/player settings/player_dash_test.tres" id="5_pu03a"]
+[ext_resource type="Resource" uid="uid://dkg15qiqt8ey7" path="res://resources/player settings/player_wall_jump_test.tres" id="5_t6142"]
+[ext_resource type="Resource" uid="uid://c2yxp5jjm133h" path="res://resources/player settings/player_melee_attack_test.tres" id="7_34i3r"]
+[ext_resource type="Resource" uid="uid://dto5d0iioyh1w" path="res://resources/player settings/player_ranged_attack_test.tres" id="8_ujhji"]
+[ext_resource type="Resource" uid="uid://cf2onn3q8vj1x" path="res://resources/player settings/player_cannon_test.tres" id="9_5idx2"]
+[ext_resource type="Resource" uid="uid://btnfjksimbji" path="res://resources/stats/projectiles/player_projectile_stats.tres" id="10_oac2b"]
+[ext_resource type="Resource" uid="uid://bbem3i2ax6wso" path="res://resources/player settings/player_camera_test.tres" id="11_dvq8l"]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_5cr8w")
+script = ExtResource("1_8hsv8")
+CAMERA_STATS = ExtResource("11_dvq8l")
+CANNON_STATS = ExtResource("9_5idx2")
+DASH_STATS = ExtResource("5_pu03a")
+JUMP_STATS = ExtResource("3_08sn1")
+MELEE_ATTACK_STATS = ExtResource("7_34i3r")
+MOVEMENT_STATS = ExtResource("2_mlyaf")
+PROJECTILE_STATS = ExtResource("10_oac2b")
+RANGED_ATTACK_STATS = ExtResource("8_ujhji")
+WALL_CLIMB_STATS = ExtResource("4_jgi6w")
+WALL_JUMP_STATS = ExtResource("5_t6142")
+WALL_SLIDE_STATS = ExtResource("2_eu33m")

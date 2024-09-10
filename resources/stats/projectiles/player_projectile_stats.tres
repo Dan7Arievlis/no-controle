@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ProjectileStats" load_steps=6 format=3 uid="uid://btnfjksimbji"]
+
+[ext_resource type="Resource" uid="uid://b55rgodx6vcsa" path="res://resources/effects/player_projectile_destroy_effect_animation.tres" id="1_3a2nl"]
+[ext_resource type="Resource" uid="uid://dv2cegm1tok13" path="res://resources/effects/player_projectile_hit_effect_animation.tres" id="2_j7gt2"]
+[ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="2_wynwp"]
+[ext_resource type="Script" path="res://scripts/resources/ProjectileStats.gd" id="3_1ox2r"]
+[ext_resource type="Resource" uid="uid://qwelf7rtqy8n" path="res://resources/effects/player_projectile_travel.tres" id="5_oww1a"]
+
+[resource]
+script = ExtResource("3_1ox2r")
+life_time = 0.6
+life = 1
+damage = 1.0
+speed = 450.0
+gravity = 0.0
+knockback_force = 250.0
+travel_animation = ExtResource("5_oww1a")
+hit_effect = ExtResource("2_j7gt2")
+destroy_effect = ExtResource("1_3a2nl")
+projectile_material = ExtResource("2_wynwp")
+effects_material = ExtResource("2_wynwp")
+body_collision_layer = Array[int]([3])
+body_collision_mask = Array[int]([5, 6])
+hitbox_collision_layer = Array[int]([3])
+hitbox_collision_mask = Array[int]([5, 6, 14])

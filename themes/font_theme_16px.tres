@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ckhww1aw5ghp1"]
+
+[ext_resource type="FontFile" uid="uid://b25rgsyornp2w" path="res://art/fonts/Pixellari.ttf" id="1_2qifx"]
+
+[resource]
+default_base_scale = 4.0
+default_font = ExtResource("1_2qifx")
+default_font_size = 16

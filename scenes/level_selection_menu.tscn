@@ -1,0 +1,178 @@
+[gd_scene load_steps=18 format=3 uid="uid://ddil1bpyjjq1s"]
+
+[ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="1_l35j0"]
+[ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="2_6i65n"]
+[ext_resource type="Script" path="res://scenes/LevelSelectionMenu.gd" id="2_gxkpd"]
+[ext_resource type="Texture2D" uid="uid://qka4x7o0wddg" path="res://art/check_mark.png" id="2_msdrk"]
+[ext_resource type="Script" path="res://scripts/resources/SectionResource.gd" id="4_lgrt0"]
+[ext_resource type="PackedScene" uid="uid://v61712gtq7h3" path="res://scenes/levels/enemy_test_level.tscn" id="5_3hvnx"]
+[ext_resource type="PackedScene" uid="uid://blmnd2rtmhjxs" path="res://scenes/levels/test_level.tscn" id="5_qifof"]
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="6_5gno8"]
+[ext_resource type="PackedScene" uid="uid://cp3m3davov82s" path="res://scenes/levels/test_respawn_level.tscn" id="6_61j06"]
+
+[sub_resource type="Resource" id="Resource_yvfws"]
+script = ExtResource("6_5gno8")
+title = "teste 1"
+description = "The Brimstone Locus is an item placed in a player's inventory when they open the enchanting interface after talking to the Brimstone Witch for the first time. While it is in the inventory, this item causes items that can be exhumed to be marked with a special effect, appearing as a white aura gathering purple energy. This effect is accompanied by a pulse of the item's sprite once per second.
+
+The following items will be marked by the Locus.
+
+"
+level_scene = ExtResource("5_qifof")
+done = true
+
+[sub_resource type="Resource" id="Resource_kwxai"]
+script = ExtResource("6_5gno8")
+title = "teste 2"
+description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+level_scene = ExtResource("5_3hvnx")
+done = false
+
+[sub_resource type="Resource" id="Resource_tk6d8"]
+script = ExtResource("6_5gno8")
+title = "teste 3"
+description = "Providence, the Profaned Goddess is a post-Moon Lord boss that is fought in either The Hallow or The Underworld.
+
+Defeating Providence will provide the player with Divine Geodes, as well as the Rune of Kos used to summon the Rune of Kos bosses. Additionally, Uelibloom Ore will generate in the world, and the Ravager and Brimstone Crag enemies will be buffed and start to drop Bloodstone.
+
+"
+level_scene = ExtResource("6_61j06")
+done = false
+
+[sub_resource type="Resource" id="Resource_sgotv"]
+script = ExtResource("4_lgrt0")
+section_title = "Seção de Teste"
+levels = Array[ExtResource("6_5gno8")]([SubResource("Resource_yvfws"), SubResource("Resource_kwxai"), SubResource("Resource_tk6d8")])
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5lo1"]
+content_margin_left = 8.0
+content_margin_top = 24.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ya45"]
+bg_color = Color(0, 0.0466666, 0.28, 0.423529)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.0119, 0.03825, 0.17, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_62ogh"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q803"]
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[node name="LevelSelectionMenu" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l35j0")
+script = ExtResource("2_gxkpd")
+section_resource = SubResource("Resource_sgotv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 112
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h5lo1")
+text = "Label Test"
+
+[node name="Check" type="CanvasLayer" parent="MarginContainer/VBoxContainer"]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Check"]
+offset_left = 1587.0
+offset_top = 761.0
+offset_right = 1717.0
+offset_bottom = 881.0
+rotation = 0.0756584
+scale = Vector2(2.083, 2.083)
+texture = ExtResource("2_msdrk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(754, 758)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(754, 758)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ya45")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/ScrollContainer/PanelContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0.0866666, 0.52, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/line_separation = 4
+theme_override_font_sizes/normal_font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_62ogh")
+visible_characters_behavior = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 52
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Voltar"
+
+[node name="Panel" type="Panel" parent="."]
+material = ExtResource("2_6i65n")
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3q803")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/Back" to="." method="_on_back_pressed"]

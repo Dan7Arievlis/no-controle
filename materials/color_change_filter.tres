@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ihjnwe4fo1dg"]
+
+[ext_resource type="Shader" path="res://materials/shaders/pause_menu.gdshader" id="1_bf270"]
+
+[resource]
+shader = ExtResource("1_bf270")
+shader_parameter/overlay = Color(0, 0.115, 0.69, 1)

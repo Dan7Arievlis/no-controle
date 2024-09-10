@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8kcmwwko2dpd"]
+
+[ext_resource type="Script" path="res://scripts/components/MovingPlatform.gd" id="1_ibphc"]
+[ext_resource type="Script" path="res://scripts/components/OneWayPlatform.gd" id="2_2nggx"]
+[ext_resource type="Texture2D" uid="uid://dj4bstaogd1xr" path="res://art/tilesets/moving_platfort_tile.png" id="2_wc6jm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddko7"]
+size = Vector2(96, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ok6lh"]
+size = Vector2(96, 16)
+
+[node name="MovingPlatform" type="Path2D"]
+script = ExtResource("1_ibphc")
+loop = null
+speed = null
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+loop = false
+
+[node name="Platform" type="AnimatableBody2D" parent="PathFollow2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("2_2nggx")
+
+[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/Platform"]
+texture = ExtResource("2_wc6jm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Platform"]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_ddko7")
+one_way_collision = true
+
+[node name="Area2D" type="Area2D" parent="PathFollow2D/Platform"]
+collision_layer = 0
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Platform/Area2D"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_ok6lh")
+
+[connection signal="body_entered" from="PathFollow2D/Platform/Area2D" to="PathFollow2D/Platform" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="PathFollow2D/Platform/Area2D" to="PathFollow2D/Platform" method="_on_area_2d_body_exited"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://jxxchqmb3p35"]
+
+[ext_resource type="Script" path="res://scripts/scenes/SingleHitbox.gd" id="1_e1f0o"]
+
+[node name="SingleHitbox" type="Area2D" groups=["Damaging"]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_e1f0o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+debug_color = Color(0.603371, 0.366851, 1, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

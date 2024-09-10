@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="HitboxStats" load_steps=2 format=3 uid="uid://bqxnaehd8062t"]
+
+[ext_resource type="Script" path="res://scripts/resources/HitboxStats.gd" id="1_tqnbn"]
+
+[resource]
+script = ExtResource("1_tqnbn")
+damage = 1.0
+knockback_force = 100.0

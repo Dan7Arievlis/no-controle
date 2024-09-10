@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EffectResource" load_steps=3 format=3 uid="uid://bats1xt8ht50p"]
+
+[ext_resource type="Animation" uid="uid://bqai6ffacmw7w" path="res://resources/animations/enemy_projectile_destroy_animation.res" id="1_d0c4n"]
+[ext_resource type="Script" path="res://scripts/resources/EffectResource.gd" id="1_xoct3"]
+
+[resource]
+script = ExtResource("1_xoct3")
+animation = ExtResource("1_d0c4n")

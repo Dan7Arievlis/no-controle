@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce3ptd4qub5t2"]
+
+[ext_resource type="Script" path="res://scripts/menus/LabelComponent.gd" id="1_5qp01"]
+
+[node name="LabelComponent" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_constants/margin_bottom = 12
+script = ExtResource("1_5qp01")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+mouse_filter = 0
+text = "teste label"

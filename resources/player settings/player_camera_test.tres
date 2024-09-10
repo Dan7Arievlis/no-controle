@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CameraResource" load_steps=2 format=3 uid="uid://bbem3i2ax6wso"]
+
+[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="1_r3pth"]
+
+[resource]
+script = ExtResource("1_r3pth")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0

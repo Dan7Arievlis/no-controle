@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfwogr4m135kn"]
+
+[ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="1_kek63"]
+[ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="1_qkq6h"]
+[ext_resource type="Script" path="res://scenes/SelectionMenu.gd" id="3_3w8rk"]
+[ext_resource type="Resource" uid="uid://gj0dox2o7y3s" path="res://resources/sections_enabled.tres" id="3_erc8b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjo0j"]
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[node name="PanelContainer" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_kek63")
+script = ExtResource("3_3w8rk")
+section_enabler = ExtResource("3_erc8b")
+colors = [Color(0, 0.115, 0.69, 1), Color(0.336, 0, 0.63, 1), Color(0.0535872, 0.289066, 0.196954, 1), Color(0.63, 0.5145, 0, 1), Color(0.477462, 0, 0.0376517, 1)]
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+material = ExtResource("1_qkq6h")
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hjo0j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+show_behind_parent = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Voltar"

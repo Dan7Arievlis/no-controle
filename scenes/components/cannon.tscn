@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://crson4lj6vv0i"]
+
+[ext_resource type="Script" path="res://scripts/components/Cannon.gd" id="1_ddtd7"]
+[ext_resource type="PackedScene" uid="uid://dhcgigwp7re3n" path="res://scenes/projectiles/projectile_spawner.tscn" id="2_5kdwq"]
+
+[node name="Cannon" type="Node2D"]
+script = ExtResource("1_ddtd7")
+
+[node name="ProjectileSpawner" parent="." instance=ExtResource("2_5kdwq")]
+position = Vector2(9, 6)
+
+[node name="ReloadTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

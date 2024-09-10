@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="HurtboxStats" load_steps=2 format=3 uid="uid://dnrgjrpnxrho6"]
+
+[ext_resource type="Script" path="res://scripts/resources/HurtboxStats.gd" id="1_66o8m"]
+
+[resource]
+script = ExtResource("1_66o8m")
+max_hp = 3.0
+inmunity_frames = 45

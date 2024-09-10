@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd1jkgc6dl7v8"]
+
+[ext_resource type="Script" path="res://scripts/player/movements/CameraFollow.gd" id="1_rsmby"]
+[ext_resource type="Script" path="res://scripts/levels/components/ClampCamera.gd" id="2_ssrae"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3a6f"]
+size = Vector2(180, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qr80p"]
+size = Vector2(480, 270)
+
+[node name="CameraFollow" type="RemoteTransform2D"]
+position = Vector2(1, -5)
+remote_path = NodePath("../../Camera2D")
+script = ExtResource("1_rsmby")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="ClampArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+input_pickable = false
+monitoring = false
+monitorable = false
+
+[node name="ViewBox" type="CollisionShape2D" parent="ClampArea"]
+shape = SubResource("RectangleShape2D_a3a6f")
+debug_color = Color(0.627451, 0.364706, 0.968627, 0)
+
+[node name="ClampCamera" type="Node2D" parent="."]
+script = ExtResource("2_ssrae")
+
+[node name="RayCastNW" type="RayCast2D" parent="ClampCamera"]
+target_position = Vector2(-240, -135)
+collision_mask = 16384
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCastNE" type="RayCast2D" parent="ClampCamera"]
+target_position = Vector2(240, -135)
+collision_mask = 16384
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCastSE" type="RayCast2D" parent="ClampCamera"]
+target_position = Vector2(240, 135)
+collision_mask = 16384
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCastSW" type="RayCast2D" parent="ClampCamera"]
+target_position = Vector2(-240, 135)
+collision_mask = 16384
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Clamp" type="Area2D" parent="ClampCamera"]
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClampCamera/Clamp"]
+shape = SubResource("RectangleShape2D_qr80p")
+debug_color = Color(0.97, 0, 0.420333, 0)
+
+[node name="CameraPoint" type="ColorRect" parent="."]
+visible = false
+offset_top = -4.0
+offset_right = 5.0
+offset_bottom = 1.0
+rotation = 0.785398
+size_flags_horizontal = 4
+color = Color(0.919335, 5.92971e-05, 0.69338, 1)
+
+[connection signal="camera_clamped" from="ClampCamera" to="." method="_on_clamp_camera_camera_clamped"]

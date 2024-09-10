@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://xyxenso477g1"]
+
+[ext_resource type="Script" path="res://scripts/menus/CompoundSliderComponent.gd" id="1_vflnp"]
+
+[node name="CompoundSlider" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_constants/margin_bottom = 12
+script = ExtResource("1_vflnp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+mouse_filter = 0
+text = "Label test:"
+
+[node name="x" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "x: "
+
+[node name="XSlider" type="HSlider" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(159, 0)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ValueLabelX" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "10"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="BlancLabel" type="Label" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+
+[node name="y" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "y: "
+
+[node name="YSlider" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(159, 0)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ValueLabelY" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "10"
+
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/XSlider" to="." method="_on_x_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer2/YSlider" to="." method="_on_y_slider_value_changed"]

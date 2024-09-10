@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EffectResource" load_steps=3 format=3 uid="uid://6veafbrq436b"]
+
+[ext_resource type="Animation" uid="uid://bpkioujmmetde" path="res://resources/animations/enemy_projectile_travel.res" id="1_npj5y"]
+[ext_resource type="Script" path="res://scripts/resources/EffectResource.gd" id="1_nr5gn"]
+
+[resource]
+script = ExtResource("1_nr5gn")
+animation = ExtResource("1_npj5y")

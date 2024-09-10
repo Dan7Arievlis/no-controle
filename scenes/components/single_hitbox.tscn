@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://jxxchqmb3p35"]
+
+[ext_resource type="Script" path="res://scripts/components/SingleHitbox.gd" id="1_e1f0o"]
+[ext_resource type="Script" path="res://scripts/resources/HitboxStats.gd" id="2_dqiv8"]
+
+[sub_resource type="Resource" id="Resource_vfkys"]
+script = ExtResource("2_dqiv8")
+damage = 2.0
+knockback_force = 2.0
+
+[node name="SingleHitbox" type="Area2D" groups=["Damaging"]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_e1f0o")
+hitbox_stats = SubResource("Resource_vfkys")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+debug_color = Color(0.715961, 0.482413, 3.85046e-07, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

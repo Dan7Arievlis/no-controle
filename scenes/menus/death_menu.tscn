@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://nxiywfl7pggr"]
+
+[ext_resource type="Script" path="res://scripts/menus/DeathMenu.gd" id="1_p5hfe"]
+[ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="2_b0hto"]
+
+[node name="DeathMenu" type="CanvasLayer"]
+script = ExtResource("1_p5hfe")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_b0hto")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -203.0
+offset_right = 220.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Não foi dessa vez..."
+
+[node name="TryAgain" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -26.5
+offset_right = 147.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Tentar novamente"
+
+[node name="MainMenu" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = 99.0
+offset_right = 147.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Menu Principal"
+
+[node name="MainMenu2" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = 219.0
+offset_right = 147.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Sair do jogo"
+
+[connection signal="pressed" from="Panel/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="Panel/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Panel/MainMenu2" to="." method="_on_desktop_pressed"]

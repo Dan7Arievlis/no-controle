@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SectionResource" load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="1_4sg2d"]
+[ext_resource type="Script" path="res://scripts/resources/SectionResource.gd" id="2_jkkfv"]
+[ext_resource type="PackedScene" path="res://scenes/levels/test_level.tscn" id="2_n3ymn"]
+[ext_resource type="PackedScene" path="res://scenes/levels/enemy_test_level.tscn" id="3_bcubw"]
+[ext_resource type="PackedScene" path="res://scenes/levels/test_respawn_level.tscn" id="4_gh37i"]
+
+[sub_resource type="Resource" id="Resource_h1tie"]
+script = ExtResource("1_4sg2d")
+title = "teste base"
+description = "teste"
+level_scene = ExtResource("2_n3ymn")
+done = true
+
+[sub_resource type="Resource" id="Resource_6w4mr"]
+script = ExtResource("1_4sg2d")
+title = "teste inimigo"
+description = "teste inimigo"
+level_scene = ExtResource("3_bcubw")
+done = true
+
+[sub_resource type="Resource" id="Resource_7ojmh"]
+script = ExtResource("1_4sg2d")
+title = "teste respawn"
+description = "testa o sistema de respawn"
+level_scene = ExtResource("4_gh37i")
+done = true
+
+[resource]
+script = ExtResource("2_jkkfv")
+section_title = "Caminhada e Corrida"
+levels = Array[ExtResource("1_4sg2d")]([SubResource("Resource_h1tie"), SubResource("Resource_6w4mr"), SubResource("Resource_7ojmh")])

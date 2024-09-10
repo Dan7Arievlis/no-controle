@@ -1,0 +1,83 @@
+[gd_scene load_steps=14 format=3 uid="uid://dnu5tny4kcs4y"]
+
+[ext_resource type="Script" path="res://scripts/enemies/ShootingEnemy.gd" id="1_cma0l"]
+[ext_resource type="PackedScene" uid="uid://g8ut0s3nuijv" path="res://scenes/components/hitbox.tscn" id="2_qtd7r"]
+[ext_resource type="PackedScene" uid="uid://ddfce5yjcoj4n" path="res://scenes/components/hurtbox.tscn" id="3_trvec"]
+[ext_resource type="Script" path="res://scripts/components/ShootEnemyControl.gd" id="4_w48k4"]
+[ext_resource type="PackedScene" uid="uid://crson4lj6vv0i" path="res://scenes/components/cannon.tscn" id="5_gpn47"]
+[ext_resource type="AnimationLibrary" uid="uid://c4k61gdgd8163" path="res://art/animations/libraries/enemies/shooting_enemy_animation_library.res" id="5_r6cbp"]
+[ext_resource type="Resource" uid="uid://hlap1f0ayffq" path="res://resources/stats/projectiles/shooter_enemy_projectile_stats.tres" id="7_qkfc7"]
+[ext_resource type="Texture2D" uid="uid://bwjm5ea66ixlk" path="res://art/animations/enemies/shooting enemy/shooting_enemy_base.png" id="8_d5mm2"]
+[ext_resource type="Texture2D" uid="uid://cew0ihnqeqxeg" path="res://art/animations/enemies/shooting enemy/shooting_enemy_animation.png" id="9_ad4ym"]
+[ext_resource type="Resource" uid="uid://bkiigd47feeo" path="res://resources/stats/enemies/base_enemy_cannon.tres" id="10_8lllk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enkls"]
+size = Vector2(20, 22)
+
+[sub_resource type="Animation" id="Animation_ulmk4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ktu0o"]
+_data = {
+"RESET": SubResource("Animation_ulmk4")
+}
+
+[node name="ShootingEnemy" type="RigidBody2D" groups=["Enemy", "Hittable"]]
+z_index = 3
+collision_layer = 8192
+collision_mask = 48
+lock_rotation = true
+script = ExtResource("1_cma0l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_enkls")
+
+[node name="Hitbox" parent="." instance=ExtResource("2_qtd7r")]
+collision_layer = 8192
+collision_mask = 1
+
+[node name="Hurtbox" parent="." instance=ExtResource("3_trvec")]
+collision_layer = 8192
+collision_mask = 14
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ktu0o"),
+"enemies.shooting_enemy": ExtResource("5_r6cbp")
+}
+
+[node name="Base" type="Sprite2D" parent="."]
+texture = ExtResource("8_d5mm2")
+hframes = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("9_ad4ym")
+offset = Vector2(4, 0)
+hframes = 7
+
+[node name="ShootControl" type="Node2D" parent="Sprite2D"]
+position = Vector2(0, 1)
+script = ExtResource("4_w48k4")
+
+[node name="Cannon" parent="Sprite2D/ShootControl" groups=["Enemy", "Hittable"] instance=ExtResource("5_gpn47")]
+position = Vector2(18, -5)
+projectile_stats = ExtResource("7_qkfc7")
+cannon_stats = ExtResource("10_8lllk")
+
+[connection signal="on_can_shoot" from="Sprite2D/ShootControl/Cannon" to="Sprite2D/ShootControl" method="_on_cannon_can_shoot"]
+[connection signal="on_cannon_shot" from="Sprite2D/ShootControl/Cannon" to="Sprite2D/ShootControl" method="_on_cannon_shot"]

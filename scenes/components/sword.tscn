@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://or15uj1uxljv"]
+
+[ext_resource type="Script" path="res://scripts/player/actions/MeleeAttack.gd" id="1_na0he"]
+[ext_resource type="PackedScene" uid="uid://jxxchqmb3p35" path="res://scenes/components/single_hitbox.tscn" id="2_un5fq"]
+[ext_resource type="Shape2D" uid="uid://c75ym5pjg80ta" path="res://resources/stats/hitboxes/shapes/player_side_melee_hitbox_shape.tres" id="4_nrgc3"]
+[ext_resource type="Shape2D" uid="uid://dx8m0qgf3jh7u" path="res://resources/stats/hitboxes/shapes/player_down_melee_hitbox_shape.tres" id="5_wqekh"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ypts3"]
+points = PackedVector2Array(12, 15, 10, -14, 6, -35, 1, -42, -5, -44, -10, -41, -12.0512, -33.9041, -15, -14, -16, 14, -8, 5, -4, 4, 1, 5, 1, 5, 6, 8)
+
+[node name="Sword" type="Node2D"]
+script = ExtResource("1_na0he")
+
+[node name="SideHitbox" parent="." groups=["Blocker"] instance=ExtResource("2_un5fq")]
+z_index = 5
+position = Vector2(30, -1)
+collision_layer = 2
+collision_mask = 8304
+collision_shape = ExtResource("4_nrgc3")
+disabled = true
+
+[node name="DownHitbox" parent="." groups=["Blocker"] instance=ExtResource("2_un5fq")]
+z_index = 5
+position = Vector2(0, 31)
+collision_layer = 2
+collision_mask = 8304
+collision_shape = ExtResource("5_wqekh")
+disabled = true
+
+[node name="UpHitbox" parent="." groups=["Blocker"] instance=ExtResource("2_un5fq")]
+z_index = 5
+position = Vector2(3, -19)
+collision_layer = 2
+collision_mask = 8304
+collision_shape = SubResource("ConvexPolygonShape2D_ypts3")
+disabled = true
+
+[node name="AtkCooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Templates" type="Node" parent="."]
+
+[node name="UpPolygonTemplate" type="CollisionPolygon2D" parent="Templates"]
+visible = false
+position = Vector2(3, -19)
+polygon = PackedVector2Array(12, 15, 10, -14, 6, -35, 1, -42, -5, -44, -10, -41, -12.0512, -33.9041, -15, -14, -16, 14, -8, 5, -4, 4, 1, 5, 1, 5, 6, 8)
+disabled = true
+
+[node name="DownPolygonTemplate" type="CollisionPolygon2D" parent="Templates"]
+visible = false
+position = Vector2(0, 31)
+polygon = PackedVector2Array(-12, -8, -10, 10, -7, 19, -2, 23, 6, 23, 10, 18, 12, 5, 13, -22, 6, -11, -1, -10, -5, -11, -13, -21)
+disabled = true
+
+[node name="SidePolygonTamplate" type="CollisionPolygon2D" parent="Templates"]
+visible = false
+position = Vector2(30, -1)
+polygon = PackedVector2Array(34, 1, 32, 10, 23, 14, -23, 16, -19.5282, 7.11412, -18.9539, 2.37137, -20, -4, -28, -12, 5, -10, 26, -6)
+disabled = true
+
+[connection signal="body_entered" from="SideHitbox" to="." method="_on_side_swing_body_entered"]
+[connection signal="body_entered" from="DownHitbox" to="." method="_on_down_swing_body_entered"]
+[connection signal="body_entered" from="UpHitbox" to="." method="_on_up_swing_body_entered"]
+[connection signal="timeout" from="AtkCooldown" to="." method="_on_atk_cooldown_timeout"]

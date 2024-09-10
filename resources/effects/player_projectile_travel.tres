@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AnimationResource" load_steps=3 format=3 uid="uid://qwelf7rtqy8n"]
+
+[ext_resource type="Animation" uid="uid://je4sem7nxb8t" path="res://resources/animations/player_projectile_travel_animation.res" id="1_12jqu"]
+[ext_resource type="Script" path="res://scripts/resources/EffectResource.gd" id="2_kcktv"]
+
+[resource]
+script = ExtResource("2_kcktv")
+animation = ExtResource("1_12jqu")

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SectionEnabler" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/SectionEnabler.gd" id="1_6rw7g"]
+
+[resource]
+script = ExtResource("1_6rw7g")
+sections_enabled = 3

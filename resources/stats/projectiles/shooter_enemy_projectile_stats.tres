@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="ProjectileStats" load_steps=5 format=3 uid="uid://hlap1f0ayffq"]
+
+[ext_resource type="Resource" uid="uid://bats1xt8ht50p" path="res://resources/effects/enemy_projectile_destroy_effect.tres" id="1_qto71"]
+[ext_resource type="Resource" uid="uid://mh06irviantv" path="res://resources/effects/enemy_projectile_hit_effect.tres" id="2_yvm2e"]
+[ext_resource type="Script" path="res://scripts/resources/ProjectileStats.gd" id="3_bnos5"]
+[ext_resource type="Resource" uid="uid://6veafbrq436b" path="res://resources/effects/enemy_projectile_travel_effect.tres" id="5_tm4g5"]
+
+[resource]
+script = ExtResource("3_bnos5")
+life_time = 2.0
+life = 2
+damage = 1.0
+speed = 200.0
+gravity = 0.0
+knockback_force = 100.0
+travel_animation = ExtResource("5_tm4g5")
+hit_effect = ExtResource("2_yvm2e")
+destroy_effect = ExtResource("1_qto71")
+body_collision_layer = Array[int]([14])
+body_collision_mask = Array[int]([5, 6])
+hitbox_collision_layer = Array[int]([14])
+hitbox_collision_mask = Array[int]([1, 2, 5, 6])

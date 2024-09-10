@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4e4qjctdojyb"]
+
+[ext_resource type="Script" path="res://scripts/menus/SimpleSliderComponent.gd" id="2_s5imx"]
+
+[node name="SimpleSlider" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_constants/margin_bottom = 12
+script = ExtResource("2_s5imx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+mouse_filter = 0
+text = "Label test:"
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ValueLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "10"
+
+[connection signal="value_changed" from="HBoxContainer/HSlider" to="." method="_on_slider_value_changed"]
