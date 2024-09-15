@@ -2,7 +2,7 @@ class_name JumpResource
 extends Resource
 
 @export_group("Jump")
-@export var enable_jump: bool = true 
+@export var enable_jump: bool = false
 @export_subgroup("Impulses")
 @export var jump_velocity := 400.0 # pixels
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -26,4 +26,4 @@ extends Resource
 @export_subgroup("Double Jump")
 @export var double_jump: bool = false
 @export var double_jump_velocity := 300.0 # pixels
-@export var jump_wait: float = 0.1
+@export var jump_wait: float = 0.0

@@ -1,6 +1,6 @@
 class_name Movement
 
-var player: Player
+var player : Player
 var movement_stats : MovementResource
 
 var max_speed: float
@@ -8,17 +8,20 @@ var max_speed: float
 
 func _init(_player: Player):
 	player = _player
-	movement_stats = _player.movement_stats
+	movement_stats = _player.stats.MOVEMENT_STATS
 
 
 func handle_movement(delta: float):
 	if not player.is_hurt:
-		player.input_direction = Input.get_axis("move_left", "move_right")
+		if movement_stats and movement_stats.enable_movement: 
+			player.input_direction = Input.get_axis("move_left", "move_right")
+		else:
+			player.input_direction = 0
 	else:
 		player.input_direction = 0
 	max_speed = movement_stats.run_speed if Input.is_action_pressed("run") and movement_stats.can_run else movement_stats.walk_speed
 	if player.is_in_apex:
-		max_speed *= player.jump_stats.apex_speed_multiplier
+		max_speed *= player.stats.JUMP_STATS.apex_speed_multiplier
 	
 	#if not player.is_dashing:
 	if player.velocity.x > movement_stats.run_speed:

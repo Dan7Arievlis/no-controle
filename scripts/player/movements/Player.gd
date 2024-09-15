@@ -1,18 +1,14 @@
 class_name Player
 extends CharacterBody2D
 
-
 signal on_death
 
-@export_group("Player Stats")
 #region Movement
-@export var movement_stats : MovementResource
 var input_direction: float
 var time_moving: float
 #endregion
 
 #region Jump
-@export var jump_stats : JumpResource
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var local_gravity = gravity
 
@@ -22,43 +18,29 @@ var is_on_air = false
 #endregion
 
 #region Wall Slide
-@export var wall_slide_stats : WallSlideResource
 var can_slide = true
 #endregion
 
 #region Wall Jump
-@export var wall_jump_stats : WallJumpResource
 var wall_jumping_timer: float = 0.0
 var is_wall_sliding: bool = false
 #endregion
 
-#region Wall Climb
-@export var wall_climb_stats : WallClimbResource
-#endregion
-
 #region Dash
-@export var dash_stats : DashResource
 var is_dashing: bool = false
 #endregion
 
-#region Camera
-@export var camera_stats : CameraResource
-#endregion
-
 #region Melee Attack
-@export var melee_attack_stats : MeleeAttackResource
 var is_attacking: bool
 #endregion
 
 #region Ranged Attack
-@export var ranged_attack_stats : RangedAttackResource
 #endregion
 
 @export_group("Camera Clamp Area")
 @export var clamp_size := Vector2(190, 190) : set = set_camera_clamp_size
 @export_group("Damage Tolerance")
 @export_range(0, 1) var damage_movement_tolerance : float = 0.5
-#endregion
 
 #region onready
 @onready var sprite = $Sprite2D
@@ -83,21 +65,22 @@ var wall_climb : WallClimb
 
 var is_hurt : bool = false
 var is_dead : bool = false
+var stats : PlayerStats :
+	set(_stats):
+		stats = _stats
+		if stats.MOVEMENT_STATS: movement = Movement.new(self)
+		if stats.JUMP_STATS: jump = Jump.new(self)
+		if stats.DASH_STATS: dash = Dash.new(self)
+		if stats.WALL_SLIDE_STATS: wall_slide = WallSlide.new(self)
+		if stats.WALL_JUMP_STATS: wall_jump = WallJump.new(self)
+		if stats.WALL_SLIDE_STATS: wall_climb = WallClimb.new(self)
+		if stats.MELEE_ATTACK_STATS: attack_pivot.new(self)
+		if stats.RANGED_ATTACK_STATS: ranged_attack_input.new(self, attack_pivot)
+
 
 func _ready():
 	animation_tree.active = true
 	animation_player.play("player/RESET")
-	
-#region Initialize Moveset
-	movement = Movement.new(self)
-	jump = Jump.new(self)
-	dash = Dash.new(self)
-	wall_slide = WallSlide.new(self)
-	wall_jump = WallJump.new(self)
-	wall_climb = WallClimb.new(self)
-	attack_pivot.new(self)
-	ranged_attack_input.new(self, attack_pivot)
-#endregion
 
 
 func _process(delta):
@@ -118,20 +101,21 @@ func _process(delta):
 
 func _physics_process(delta):
 	if is_dead: return
-	if movement_stats.enable_movement: movement.handle_movement(delta)
+	if not stats: return
+	movement.handle_movement(delta)
 	
 	var special_moveset = (is_dashing or is_wall_sliding or wall_jumping_timer > 0.0)
-	if is_wall_sliding and wall_slide_stats.refresh_double_jump:
-		jump._can_double_jump = true
-	if jump_stats.enable_jump and not special_moveset:
+	#if is_wall_sliding and stats.WALL_SLIDE_STATS and stats.WALL_SLIDE_STATS.refresh_double_jump:
+		#jump._can_double_jump = true
+	if jump and not special_moveset:
 		jump.handle_jump(delta)
 	elif not special_moveset:
 		velocity.y += gravity * delta
 	
-	if dash_stats.enable_dash and not is_hurt: dash.handle_dash(delta)
-	if wall_slide_stats.enable_wall_slide and not is_hurt: wall_slide.handle_wall_slide(delta)
-	if wall_jump_stats.enable_wall_jump and not is_hurt: wall_jump.handle_wall_jump(delta)
-	if wall_climb_stats.enable_wall_climb and not is_hurt: wall_climb.handle_wall_climb(delta)
+	if dash and not is_hurt: dash.handle_dash(delta)
+	if wall_slide and not is_hurt: wall_slide.handle_wall_slide(delta)
+	if wall_jump and not is_hurt: wall_jump.handle_wall_jump(delta)
+	if wall_climb and not is_hurt: wall_climb.handle_wall_climb(delta)
 	
 	move_and_slide()
 
@@ -171,7 +155,7 @@ func _handle_animation():
 		else: # se move
 			animation_tree.set("parameters/Movement/transition_request", "move")
 			if velocity.x * input_direction > 0: # se move na mesma direção do movimento
-				if Input.is_action_pressed("run") and movement_stats.can_run: # corre
+				if Input.is_action_pressed("run") and stats.MOVEMENT_STATS.can_run: # corre
 					animation_tree.set("parameters/Movement_Transition/transition_request", "run")
 					#print("RUN")
 				else: # anda
@@ -199,7 +183,7 @@ func _handle_animation():
 
 
 func _is_in_apex():
-	return Input.is_action_pressed("jump") and not is_on_floor() and abs(velocity.y) <= jump_stats.apex_margin
+	return Input.is_action_pressed("jump") and not is_on_floor() and abs(velocity.y) <= stats.JUMP_STATS.apex_margin
 
 
 func die():
@@ -216,6 +200,7 @@ func _on_ray_casts_nudge_player(amount):
 
 
 func _on_camera_follow_camera_ready(camera_follow):
+	await get_tree().create_timer(0.02).timeout
 	camera_follow.player = self
 	clamp_area = $CameraFollow/ClampArea/ViewBox
 

@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6ufn4s81gqkw"]
+[gd_scene load_steps=10 format=3 uid="uid://c6ufn4s81gqkw"]
 
 [ext_resource type="Script" path="res://scripts/menus/MainMenu.gd" id="1_54iij"]
 [ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="1_jilkv"]
 [ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="2_sgkru"]
-[ext_resource type="Texture2D" uid="uid://djon6sil4fjdi" path="res://icon.svg" id="3_x3ga3"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2qab"]
-bg_color = Color(0.8134, 0.841167, 0.98, 1)
+[ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="4_xmtt3"]
+[ext_resource type="Texture2D" uid="uid://nrwr04v2e4x" path="res://art/images/logo_title.png" id="5_n6avs"]
+[ext_resource type="Texture2D" uid="uid://udco1c45x13f" path="res://art/images/logo_title_buttons.png" id="6_ysulq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yi3vw"]
 bg_color = Color(0.98, 0.98, 0.98, 1)
@@ -17,11 +16,15 @@ content_margin_top = 8.0
 content_margin_right = 8.0
 content_margin_bottom = 8.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2qab"]
+bg_color = Color(0.8134, 0.841167, 0.98, 1)
+
 [node name="MainMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_54iij")
 
-[node name="Panel" type="Panel" parent="."]
-material = ExtResource("2_sgkru")
+[node name="Container" type="Panel" parent="."]
+self_modulate = Color(0.77, 0.808333, 1, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -29,58 +32,55 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_jilkv")
-theme_override_styles/panel = SubResource("StyleBoxFlat_r2qab")
-metadata/_edit_use_anchors_ = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_yi3vw")
 
-[node name="Container" type="Panel" parent="Panel"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="ChooseLevel" type="Button" parent="Container"]
+layout_mode = 2
+offset_left = 1571.0
+offset_top = 441.0
+offset_right = 1692.0
+offset_bottom = 505.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_yi3vw")
-metadata/_edit_use_anchors_ = true
-
-[node name="ChooseLevel" type="Button" parent="Panel/Container"]
-layout_mode = 2
-offset_left = 1402.0
-offset_top = 427.0
-offset_right = 1523.0
-offset_bottom = 491.0
+mouse_default_cursor_shape = 2
 text = "Escolher fase"
 
-[node name="Credits" type="Button" parent="Panel/Container"]
+[node name="Credits" type="Button" parent="Container"]
 layout_mode = 2
-offset_left = 1407.0
-offset_top = 502.0
-offset_right = 1517.0
-offset_bottom = 566.0
+offset_left = 1576.0
+offset_top = 516.0
+offset_right = 1686.0
+offset_bottom = 580.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
 text = "Créditos"
 
-[node name="Quit" type="Button" parent="Panel/Container"]
+[node name="Quit" type="Button" parent="Container"]
 layout_mode = 2
-offset_left = 1407.0
-offset_top = 578.0
-offset_right = 1517.0
-offset_bottom = 642.0
+offset_left = 1576.0
+offset_top = 592.0
+offset_right = 1686.0
+offset_bottom = 656.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
 text = "Sair do jogo"
 
-[node name="PanelContainer" type="PanelContainer" parent="Panel/Container"]
+[node name="PanelContainer" type="PanelContainer" parent="Container"]
 visible = false
 layout_mode = 2
-offset_left = 1244.0
+offset_left = 1380.0
 offset_top = 229.0
-offset_right = 1714.0
+offset_right = 1850.0
 offset_bottom = 839.0
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Container/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/PanelContainer"]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel/Container/PanelContainer/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Container/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 502)
 layout_mode = 2
 mouse_filter = 2
@@ -93,17 +93,32 @@ theme_override_font_sizes/bold_font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rdiov")
 text = "Trabalho"
 
-[node name="Back" type="Button" parent="Panel/Container/PanelContainer/VBoxContainer"]
+[node name="Back" type="Button" parent="Container/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
 text = "Voltar"
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(668, 510)
-scale = Vector2(4.05469, 4.05469)
-texture = ExtResource("3_x3ga3")
+[node name="Panel" type="Panel" parent="."]
+material = ExtResource("2_sgkru")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2qab")
 
-[connection signal="pressed" from="Panel/Container/ChooseLevel" to="." method="_on_choose_level_pressed"]
-[connection signal="pressed" from="Panel/Container/Credits" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Panel/Container/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Panel/Container/PanelContainer/VBoxContainer/Back" to="." method="_on_button_pressed"]
+[node name="LogoTitle" type="Sprite2D" parent="."]
+material = ExtResource("4_xmtt3")
+position = Vector2(778, 508)
+texture = ExtResource("5_n6avs")
+
+[node name="LogoTitleButtons" type="Sprite2D" parent="."]
+position = Vector2(781, 516)
+texture = ExtResource("6_ysulq")
+
+[connection signal="pressed" from="Container/ChooseLevel" to="." method="_on_choose_level_pressed"]
+[connection signal="pressed" from="Container/Credits" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Container/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Container/PanelContainer/VBoxContainer/Back" to="." method="_on_button_pressed"]

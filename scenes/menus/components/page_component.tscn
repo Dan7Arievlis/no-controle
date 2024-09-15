@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://2xo1kok4j2cy"]
 
-[ext_resource type="Script" path="res://scripts/menus/PageComponent.gd" id="1_2o5kd"]
+[ext_resource type="Script" path="res://scripts/menus/components/PageComponent.gd" id="1_2o5kd"]
 
 [node name="ScrollContainer" type="ScrollContainer"]
 mouse_filter = 2

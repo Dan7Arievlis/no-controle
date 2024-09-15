@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://xyxenso477g1"]
 
-[ext_resource type="Script" path="res://scripts/menus/CompoundSliderComponent.gd" id="1_vflnp"]
+[ext_resource type="Script" path="res://scripts/menus/components/CompoundSliderComponent.gd" id="1_vflnp"]
 
 [node name="CompoundSlider" type="MarginContainer"]
 offset_right = 40.0
@@ -31,6 +31,7 @@ text = "x: "
 custom_minimum_size = Vector2(159, 0)
 layout_mode = 2
 size_flags_vertical = 4
+mouse_default_cursor_shape = 2
 
 [node name="ValueLabelX" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -52,6 +53,7 @@ text = "y: "
 custom_minimum_size = Vector2(159, 0)
 layout_mode = 2
 size_flags_vertical = 4
+mouse_default_cursor_shape = 2
 
 [node name="ValueLabelY" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2

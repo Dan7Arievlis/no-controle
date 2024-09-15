@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=11 format=3 uid="uid://bwor0hepo0noc"]
+
+[ext_resource type="PackedScene" uid="uid://bc3jynt5ubgxv" path="res://scenes/levels/jump/jump_2/level_jump_2.tscn" id="1_dyln4"]
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_ltyoa"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_cvuiv"]
+[ext_resource type="Resource" uid="uid://d17us54ikqyxm" path="res://scenes/levels/jump/jump_2/menu settings/jump_2_jump.tres" id="4_2bugf"]
+[ext_resource type="Resource" uid="uid://bdk2mlsgf55tx" path="res://scenes/levels/jump/jump_2/menu settings/jump_2_movement.tres" id="5_tu3m7"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_2u5nl"]
+[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="6_t8j0q"]
+
+[sub_resource type="Resource" id="Resource_uxldm"]
+script = ExtResource("3_cvuiv")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0
+
+[sub_resource type="Resource" id="Resource_ym0cg"]
+script = ExtResource("6_2u5nl")
+enable_wall_jump = false
+wall_jump_vector = Vector2(100, 400)
+wall_jumping_grace_time = 0.1
+jump_off_wall_multiplier = 1.0
+
+[sub_resource type="Resource" id="Resource_q4ysp"]
+script = ExtResource("6_t8j0q")
+CAMERA_STATS = SubResource("Resource_uxldm")
+JUMP_STATS = ExtResource("4_2bugf")
+MOVEMENT_STATS = ExtResource("5_tu3m7")
+WALL_JUMP_STATS = SubResource("Resource_ym0cg")
+
+[resource]
+script = ExtResource("2_ltyoa")
+title = "Alterando gravidade"
+description = "Nosso personagem tem um grande pulo, mas algo não parece certo... É impressão minha ou ele flutua quando está [color=b2b2b2]caindo[/color]? Para tomarmos controle de onde pousar, vamos ajustar o seu [color=b2b2b2][wave freq=4 amp=32]arco de pulo[/wave][/color], fazendo-o cair mais rapidamente."
+level_scene = ExtResource("1_dyln4")
+stats = SubResource("Resource_q4ysp")
+done = true

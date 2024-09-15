@@ -9,10 +9,11 @@ var just_sliding = false
 
 func _init(_player: Player):
 	player = _player
-	wall_jump_stats = _player.wall_jump_stats
+	wall_jump_stats = _player.stats.WALL_JUMP_STATS
 
 
 func handle_wall_jump(delta: float):
+	if not (wall_jump_stats and wall_jump_stats.enable_wall_jump): return
 	wall_jump(delta)
 
 

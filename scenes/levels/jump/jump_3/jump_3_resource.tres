@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=11 format=3 uid="uid://c1vg0gscwbe0f"]
+
+[ext_resource type="PackedScene" uid="uid://cfft1awu63um6" path="res://scenes/levels/jump/jump_3/level_jump_3.tscn" id="1_nw316"]
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_7hefy"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_k4ure"]
+[ext_resource type="Resource" uid="uid://hjkecox70yt3" path="res://scenes/levels/jump/jump_3/menu settings/jump_3_jump.tres" id="4_aontg"]
+[ext_resource type="Resource" uid="uid://b62a8dl84tc36" path="res://scenes/levels/jump/jump_3/menu settings/jump_3_movement.tres" id="5_wc4h6"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_sssgk"]
+[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="7_3dawd"]
+
+[sub_resource type="Resource" id="Resource_q1oc5"]
+script = ExtResource("3_k4ure")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0
+
+[sub_resource type="Resource" id="Resource_msdra"]
+script = ExtResource("6_sssgk")
+enable_wall_jump = false
+wall_jump_vector = Vector2(100, 400)
+wall_jumping_grace_time = 0.1
+jump_off_wall_multiplier = 1.0
+
+[sub_resource type="Resource" id="Resource_q4ysp"]
+script = ExtResource("7_3dawd")
+CAMERA_STATS = SubResource("Resource_q1oc5")
+JUMP_STATS = ExtResource("4_aontg")
+MOVEMENT_STATS = ExtResource("5_wc4h6")
+WALL_JUMP_STATS = SubResource("Resource_msdra")
+
+[resource]
+script = ExtResource("2_7hefy")
+title = "Pulos e espinhos"
+description = "A parte mais importante do controle aéreo é manipular a [color=b2b2b2]altura[/color] de cada um de nossos pulos. Para isso, é comum [color=b2b2b2]reduzir a velocidade vertical[/color] quando se solta o botão de pulo!"
+level_scene = ExtResource("1_nw316")
+stats = SubResource("Resource_q4ysp")
+done = true

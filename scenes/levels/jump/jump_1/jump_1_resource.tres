@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=13 format=3 uid="uid://ch8lamlnt7hv6"]
+
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="1_4x1ib"]
+[ext_resource type="PackedScene" uid="uid://dnenixri6ry0b" path="res://scenes/levels/jump/jump_1/level_jump_1.tscn" id="1_ux1ch"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_vsgys"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/JumpResource.gd" id="4_tqfew"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/MovementResource.gd" id="5_cs5mh"]
+[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="9_wdxmw"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="12_wrltl"]
+
+[sub_resource type="Resource" id="Resource_f76m7"]
+script = ExtResource("3_vsgys")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0
+
+[sub_resource type="Resource" id="Resource_r4m8g"]
+script = ExtResource("4_tqfew")
+enable_jump = true
+jump_velocity = 400.0
+max_fall_speed = 700.0
+gravity_fall_multiplier = 1.2
+jump_cut_multiplier = 1.0
+gravity_apex_multiplier = 1.0
+apex_speed_multiplier = 1.0
+apex_margin = 10.0
+coyote_time = 0.016
+jump_buffer = 0.016
+double_jump = false
+double_jump_velocity = 300.0
+jump_wait = 0.1
+
+[sub_resource type="Resource" id="Resource_o7tts"]
+script = ExtResource("5_cs5mh")
+enable_movement = true
+accel_rate = 9.0
+decel_rate = 9.0
+air_accel_rate = 2.0
+air_decel_rate = 3.0
+high_speed_decel = 2.4
+air_high_speed_decel = 2.4
+walk_speed = 120.0
+can_run = false
+run_speed = 300.0
+turn_speed = 20.0
+air_turn_speed = 0.1
+
+[sub_resource type="Resource" id="Resource_70k16"]
+script = ExtResource("12_wrltl")
+enable_wall_jump = false
+wall_jump_vector = Vector2(100, 400)
+wall_jumping_grace_time = 0.1
+jump_off_wall_multiplier = 1.0
+
+[sub_resource type="Resource" id="Resource_qbvip"]
+script = ExtResource("9_wdxmw")
+CAMERA_STATS = SubResource("Resource_f76m7")
+JUMP_STATS = SubResource("Resource_r4m8g")
+MOVEMENT_STATS = SubResource("Resource_o7tts")
+WALL_JUMP_STATS = SubResource("Resource_70k16")
+
+[resource]
+script = ExtResource("1_4x1ib")
+title = "... um grande salto para humanidade"
+description = "Às vezes, não temos os atributos necessários para superar obstáculos. Quando isso acontecer, podemos pressionar [code][b][color=b2b2b2][ESC][/color][/b][/code] para modificar nossos atributos e [color=b2b2b2][wave amp=20 freq=10]alcançar novos patamares[/wave][/color]."
+level_scene = ExtResource("1_ux1ch")
+stats = SubResource("Resource_qbvip")
+done = true

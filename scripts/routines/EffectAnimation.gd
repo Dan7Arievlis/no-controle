@@ -12,14 +12,14 @@ var flip_v : bool
 var _effect_name : String
 
 
-func spawn_effect(_effect : EffectResource, pos : Vector2, root : Node, effect_material : Material, effect_rotation : float, _flip_h : bool = false, _flip_v : bool = false):
+func spawn_effect(_effect : EffectResource, pos : Vector2, _root : Node, effect_material : Material, effect_rotation : float, _flip_h : bool = false, _flip_v : bool = false):
 	effect = _effect
 	global_position = pos
 	flip_h = _flip_h
 	flip_v = _flip_v
 	material = effect_material
 	global_rotation = effect_rotation
-	root.add_child(self)
+	_root.add_child(self)
 	play()
 
 

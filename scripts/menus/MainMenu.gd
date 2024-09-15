@@ -1,18 +1,16 @@
 extends CanvasLayer
 
-@onready var credits: PanelContainer = $Panel/Container/PanelContainer
+@onready var credits: PanelContainer = $Container/PanelContainer
 
 const COLOR_CHANGE_FILTER = preload("res://materials/color_change_filter.tres")
 const COLOR_CHANGE_MATERIAL = preload("res://materials/color_change_material.tres")
 
 func _ready() -> void:
-	var base_color = Color("001db0")
-	COLOR_CHANGE_FILTER.set_shader_parameter("overlay", base_color)
-	COLOR_CHANGE_MATERIAL.set_shader_parameter("color", base_color)
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 
 func _on_choose_level_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/section_selection_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/section_selection_menu.tscn")
 
 
 func _on_quit_pressed() -> void:

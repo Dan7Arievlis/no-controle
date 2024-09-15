@@ -1,18 +1,6 @@
 class_name MenuComponentCreator
 extends VBoxContainer
 
-@export var CAMERA_STATS : CameraResource
-@export var CANNON_STATS : CannonStats
-@export var DASH_STATS : DashResource
-@export var JUMP_STATS : JumpResource
-@export var MELEE_ATTACK_STATS : MeleeAttackResource
-@export var MOVEMENT_STATS : MovementResource
-@export var PROJECTILE_STATS : ProjectileStats
-@export var RANGED_ATTACK_STATS : RangedAttackResource
-@export var WALL_CLIMB_STATS : WallClimbResource
-@export var WALL_JUMP_STATS : WallJumpResource
-@export var WALL_SLIDE_STATS : WallSlideResource
-
 const CHECK_BUTTON_CONTROL = preload("res://scenes/menus/components/check_button_control.tscn")
 const COMPOUND_SLIDER_CONTROL = preload("res://scenes/menus/components/compound_slider_control.tscn")
 const PAGE_COMPONENT = preload("res://scenes/menus/components/page_component.tscn")
@@ -27,6 +15,10 @@ const MEDIUM_PAGE : Vector2 = Vector2(670, 470)
 const SMALL_PAGE : Vector2 = Vector2(630, 350)
 
 var triggers = {}
+
+
+func draw_menu(stats : PlayerStats):
+	pass
 
 
 func create_trigger(trigger_key : String, button : Control):

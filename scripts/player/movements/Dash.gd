@@ -13,10 +13,11 @@ var last_x_direction: float = 1.0
 
 func _init(_player: Player):
 	player = _player
-	dash_stats = _player.dash_stats
+	dash_stats = _player.stats.DASH_STATS
 
 
 func handle_dash(_delta: float):
+	if not (dash_stats and dash_stats.enable_dash): return
 	if (has_dashed and not player.is_on_floor()) or on_cooldown:
 		can_dash = false
 	if player.is_on_floor() and not on_cooldown:

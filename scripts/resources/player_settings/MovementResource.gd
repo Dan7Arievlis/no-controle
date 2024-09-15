@@ -2,7 +2,7 @@ class_name MovementResource
 extends Resource
 
 @export_group("Movement")
-@export var enable_movement: bool = true 
+@export var enable_movement: bool = false
 
 @export_subgroup("Acceleration")
 @export_range(0.1, 20, 0.1) var accel_rate: float = 4.4 # pxl/s²

@@ -1,25 +1,16 @@
-[gd_scene load_steps=73 format=3 uid="uid://dldwdaspvcq0w"]
+[gd_scene load_steps=64 format=3 uid="uid://dldwdaspvcq0w"]
 
 [ext_resource type="Texture2D" uid="uid://bejbnoq2k4ult" path="res://art/animations/player/idle_animation.png" id="1_3lpyo"]
 [ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="1_6tbbc"]
 [ext_resource type="Script" path="res://scripts/player/movements/Player.gd" id="1_kqgw8"]
 [ext_resource type="Script" path="res://scripts/player/movements/NudgePlayer.gd" id="2_cv856"]
 [ext_resource type="Script" path="res://scripts/player/movements/Corner.gd" id="3_dm50x"]
-[ext_resource type="Resource" uid="uid://cuykxa5cdio2u" path="res://resources/player settings/player_movement_test.tres" id="3_tv0nq"]
-[ext_resource type="Resource" uid="uid://vrm272rj3wi0" path="res://resources/player settings/player_jump_test.tres" id="4_d7x4m"]
-[ext_resource type="Resource" uid="uid://b0urp36hmwm7w" path="res://resources/player settings/player_wall_slide_test.tres" id="5_tsxgg"]
 [ext_resource type="AnimationLibrary" uid="uid://bxsyjarlfjcvy" path="res://art/animations/libraries/player_animation_library.res" id="5_y3ssc"]
 [ext_resource type="Texture2D" uid="uid://buyy0k4sel1jv" path="res://art/animations/player/side_melee_attack_animation.png" id="6_cml8r"]
-[ext_resource type="Resource" uid="uid://dkg15qiqt8ey7" path="res://resources/player settings/player_wall_jump_test.tres" id="6_sbmmg"]
 [ext_resource type="Texture2D" uid="uid://cqgjvxjshes5r" path="res://art/animations/player/off_air_tv_sprite.png" id="6_v03m2"]
-[ext_resource type="Resource" uid="uid://bo8yyjv8cbldl" path="res://resources/player settings/player_wall_climb_test.tres" id="7_kl68f"]
 [ext_resource type="Texture2D" uid="uid://bcnb5lt32xrwk" path="res://art/animations/player/player_death_animation.png" id="7_pqnkb"]
-[ext_resource type="Resource" uid="uid://fuafdacqywrj" path="res://resources/player settings/player_dash_test.tres" id="8_p1id2"]
 [ext_resource type="Texture2D" uid="uid://byw8go2hhdsqe" path="res://art/animations/player/down_melee_attack_animation.png" id="9_00lax"]
-[ext_resource type="Resource" uid="uid://bbem3i2ax6wso" path="res://resources/player settings/player_camera_test.tres" id="9_gal0o"]
 [ext_resource type="Resource" uid="uid://btnfjksimbji" path="res://resources/stats/projectiles/player_projectile_stats.tres" id="9_pvtp8"]
-[ext_resource type="Resource" uid="uid://c2yxp5jjm133h" path="res://resources/player settings/player_melee_attack_test.tres" id="10_7kjia"]
-[ext_resource type="Resource" uid="uid://dto5d0iioyh1w" path="res://resources/player settings/player_ranged_attack_test.tres" id="11_0phs7"]
 [ext_resource type="PackedScene" uid="uid://or15uj1uxljv" path="res://scenes/components/sword.tscn" id="11_36jp2"]
 [ext_resource type="PackedScene" uid="uid://ddfce5yjcoj4n" path="res://scenes/components/hurtbox.tscn" id="12_hg1qy"]
 [ext_resource type="Shape2D" uid="uid://c5gajafy30fdo" path="res://resources/stats/hurtboxes/shapes/player_hurtbox_collision_shape.tres" id="13_b2ynj"]
@@ -890,15 +881,6 @@ material = ExtResource("1_6tbbc")
 collision_mask = 24496
 platform_floor_layers = 4294901936
 script = ExtResource("1_kqgw8")
-movement_stats = ExtResource("3_tv0nq")
-jump_stats = ExtResource("4_d7x4m")
-wall_slide_stats = ExtResource("5_tsxgg")
-wall_jump_stats = ExtResource("6_sbmmg")
-wall_climb_stats = ExtResource("7_kl68f")
-dash_stats = ExtResource("8_p1id2")
-camera_stats = ExtResource("9_gal0o")
-melee_attack_stats = ExtResource("10_7kjia")
-ranged_attack_stats = ExtResource("11_0phs7")
 metadata/_edit_lock_ = true
 
 [node name="RayCasts" type="Node2D" parent="."]

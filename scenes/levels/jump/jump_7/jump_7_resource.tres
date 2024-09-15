@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=11 format=3 uid="uid://edchgh4qidkr"]
+
+[ext_resource type="PackedScene" uid="uid://bolqe2bcdnuwv" path="res://scenes/levels/jump/jump_7/level_jump_7.tscn" id="1_bsgxy"]
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_v0md8"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_b38ha"]
+[ext_resource type="Resource" uid="uid://befe47wca374j" path="res://scenes/levels/jump/jump_7/menu settings/jump_7_jump.tres" id="4_vcqst"]
+[ext_resource type="Resource" uid="uid://ca4mbl4501hus" path="res://scenes/levels/jump/jump_7/menu settings/jump_7_movement.tres" id="5_efrdd"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_b65mk"]
+[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="7_drwdi"]
+
+[sub_resource type="Resource" id="Resource_moryk"]
+script = ExtResource("3_b38ha")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0
+
+[sub_resource type="Resource" id="Resource_552gp"]
+script = ExtResource("6_b65mk")
+enable_wall_jump = false
+wall_jump_vector = Vector2(100, 400)
+wall_jumping_grace_time = 0.1
+jump_off_wall_multiplier = 1.0
+
+[sub_resource type="Resource" id="Resource_q4ysp"]
+script = ExtResource("7_drwdi")
+CAMERA_STATS = SubResource("Resource_moryk")
+JUMP_STATS = ExtResource("4_vcqst")
+MOVEMENT_STATS = ExtResource("5_efrdd")
+WALL_JUMP_STATS = SubResource("Resource_552gp")
+
+[resource]
+script = ExtResource("2_v0md8")
+title = "Seção de desafio 1"
+description = "[rainbow set=1 val=0.8 freq=1.8][wave freq=8 amp=30]Parabéns[/wave][/rainbow] e bem vindo à nossa primeira fase de desafio! Ao fim de cada etapa concluída, precisaremos superar mais uma fase que compila cada um dos [color=b2b2b2]conhecimentos obtidos[/color] até então! Essas fases tendem a ficar mais complexas ao passar das etapas, mas sei que conseguiremos!"
+level_scene = ExtResource("1_bsgxy")
+stats = SubResource("Resource_q4ysp")
+done = true

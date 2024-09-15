@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=11 format=3 uid="uid://bpwlk8djhma48"]
+
+[ext_resource type="PackedScene" uid="uid://b0qx1qhny1i01" path="res://scenes/levels/jump/jump_5/level_jump_5.tscn" id="1_43kdj"]
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_s6lap"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_5efg0"]
+[ext_resource type="Resource" uid="uid://7wctwut8tu6f" path="res://scenes/levels/jump/jump_5/menu settings/jump_5_jump.tres" id="4_j2ui7"]
+[ext_resource type="Resource" uid="uid://bdd7ma5qemj53" path="res://scenes/levels/jump/jump_5/menu settings/jump_5_movement.tres" id="5_73wpm"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_bw4vl"]
+[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="7_ssmdg"]
+
+[sub_resource type="Resource" id="Resource_v44ci"]
+script = ExtResource("3_5efg0")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0
+
+[sub_resource type="Resource" id="Resource_gh5kp"]
+script = ExtResource("6_bw4vl")
+enable_wall_jump = false
+wall_jump_vector = Vector2(100, 400)
+wall_jumping_grace_time = 0.1
+jump_off_wall_multiplier = 1.0
+
+[sub_resource type="Resource" id="Resource_q4ysp"]
+script = ExtResource("7_ssmdg")
+CAMERA_STATS = SubResource("Resource_v44ci")
+JUMP_STATS = ExtResource("4_j2ui7")
+MOVEMENT_STATS = ExtResource("5_73wpm")
+WALL_JUMP_STATS = SubResource("Resource_gh5kp")
+
+[resource]
+script = ExtResource("2_s6lap")
+title = "Meep meep"
+description = "Existem duas variáveis que aprimoram a resposta tátil do jogo, tormando-o mais [color=b2b2b2]responsivo[/color] e punindo menos o jogador por um atraso de alguns frames no input de pulo. Essas variáveis se chamam Tempo de Coiote e Buffer de Pulo.
+O [color=b2b2b2]Tempo de Coiote[/color] permite o jogador pular mesmo algum tempo após deixar o chão. Não é realista, mas funciona.
+O [color=b2b2b2]Buffer de Pulo[/color] \"lembra\" que o pulo foi pressionado mesmo se o jogador estiver no ar, sendo executado assim que alcançar o chão."
+level_scene = ExtResource("1_43kdj")
+stats = SubResource("Resource_q4ysp")
+done = true

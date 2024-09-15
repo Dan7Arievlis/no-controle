@@ -15,14 +15,7 @@ extends Resource
 @export var projectile_material : Material
 @export var effects_material : Material
 @export_group("Collision")
-@export var body_collision_layer : Array[int]
-@export var body_collision_mask : Array[int]
-@export var hitbox_collision_layer : Array[int]
-@export var hitbox_collision_mask : Array[int]
-
-
-func int_array_to_decimal(int_array):
-	var decimal = 0
-	for i in int_array:
-		decimal += pow(2, (i - 1))
-	return decimal
+@export_flags_2d_physics var body_collision_layer = 0
+@export_flags_2d_physics var body_collision_mask = 0
+@export_flags_2d_physics var hitbox_collision_layer = 0
+@export_flags_2d_physics var hitbox_collision_mask = 0

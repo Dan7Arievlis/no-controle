@@ -13,7 +13,7 @@ var ranged_attack_stats = RangedAttackResource
 func new(_player : Player, _attack_pivot : MeleeAttack) -> void:
 	player = _player
 	attack_pivot = _attack_pivot
-	ranged_attack_stats = player.ranged_attack_stats
+	ranged_attack_stats = player.stats.RANGED_ATTACK_STATS
 
 
 func _ready() -> void:
@@ -22,6 +22,7 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if not is_instance_of(ranged_attack_stats, RangedAttackResource): return
 	if event is InputEventKey:
 		if ranged_attack_stats.enable_ranged_attack:
 			if event.pressed and Input.is_action_just_pressed("ranged_atk") and not player.is_hurt and not player.is_dead:

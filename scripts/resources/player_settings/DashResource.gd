@@ -2,7 +2,7 @@ class_name DashResource
 extends Resource
 
 @export_group("Dash")
-@export var enable_dash: bool = true
+@export var enable_dash: bool = false
 @export_subgroup("Impulse")
 @export var dash_force: float = 300.0
 @export_subgroup("Direction Controls")

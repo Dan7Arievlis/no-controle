@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SectionResource" load_steps=3 format=3 uid="uid://lxuak5q33hli"]
+
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="1_b65kr"]
+[ext_resource type="Script" path="res://scripts/resources/SectionResource.gd" id="9_sq5qe"]
+
+[resource]
+script = ExtResource("9_sq5qe")
+section_title = ""
+levels = Array[ExtResource("1_b65kr")]([])

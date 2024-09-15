@@ -27,10 +27,10 @@ func _ready() -> void:
 	$Hitbox/CollisionShape2D.shape = $CollisionShape2D.shape
 	hitbox = $Hitbox.hitbox_stats
 	
-	collision_layer = projectile_stats.int_array_to_decimal(projectile_stats.body_collision_layer)
-	collision_mask = projectile_stats.int_array_to_decimal(projectile_stats.body_collision_mask)
-	$Hitbox.collision_layer = projectile_stats.int_array_to_decimal(projectile_stats.hitbox_collision_layer)
-	$Hitbox.collision_mask = projectile_stats.int_array_to_decimal(projectile_stats.hitbox_collision_mask)
+	collision_layer = projectile_stats.body_collision_layer
+	collision_mask = projectile_stats.body_collision_mask
+	$Hitbox.collision_layer = projectile_stats.hitbox_collision_layer
+	$Hitbox.collision_mask = projectile_stats.hitbox_collision_mask
 	
 	$Sprite2D.flip_h = sign(direction.x) < 0
 	#$Sprite2D.flip_v = sign(direction.y) < 0

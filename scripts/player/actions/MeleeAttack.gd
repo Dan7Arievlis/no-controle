@@ -18,7 +18,7 @@ var melee_attack_stats : MeleeAttackResource
 
 func new(_player : Player) -> void:
 	player = _player
-	melee_attack_stats = player.melee_attack_stats
+	melee_attack_stats = player.stats.MELEE_ATTACK_STATS
 	swing_cooldown.wait_time = melee_attack_stats.swing_cooldown
 	
 	side_swing.hitbox_stats = HitboxStats.new(melee_attack_stats.melee_damage, melee_attack_stats.knockback_force)
@@ -31,6 +31,7 @@ func new(_player : Player) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if not melee_attack_stats: return
 	if event is InputEventKey:
 		if event.pressed and Input.is_action_just_pressed("melee_atk") and melee_attack_stats.enable_melee_attack and not player.is_hurt and not player.is_dead:
 			if swing_cooldown.time_left <= melee_attack_stats.swing_buffer and not swing_cooldown.is_stopped():

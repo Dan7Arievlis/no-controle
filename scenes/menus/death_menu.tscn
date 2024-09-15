@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://nxiywfl7pggr"]
+[gd_scene load_steps=5 format=3 uid="uid://nxiywfl7pggr"]
 
 [ext_resource type="Script" path="res://scripts/menus/DeathMenu.gd" id="1_p5hfe"]
 [ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="2_b0hto"]
+[ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="3_gs8x3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wymd0"]
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="DeathMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_p5hfe")
 
 [node name="Panel" type="Panel" parent="."]
@@ -29,41 +37,78 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 text = "Não foi dessa vez..."
+horizontal_alignment = 1
 
-[node name="TryAgain" type="Button" parent="Panel"]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="Panel"]
+process_mode = 3
+layer = 2
+visible = false
+
+[node name="TryAgain" type="Button" parent="Panel/CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -147.0
-offset_top = -26.5
+offset_top = -40.0
 offset_right = 147.0
-offset_bottom = 26.5
+offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_b0hto")
 theme_override_font_sizes/font_size = 32
 text = "Tentar novamente"
 
-[node name="MainMenu" type="Button" parent="Panel"]
+[node name="Panel2" type="Panel" parent="Panel/CanvasLayer/TryAgain"]
+material = ExtResource("3_gs8x3")
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wymd0")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Panel"]
+process_mode = 3
+layer = 2
+visible = false
+
+[node name="MainMenu" type="Button" parent="Panel/CanvasLayer2"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -147.0
-offset_top = 99.0
+offset_top = 80.0
 offset_right = 147.0
-offset_bottom = 152.0
+offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_b0hto")
 theme_override_font_sizes/font_size = 32
 text = "Menu Principal"
 
-[node name="MainMenu2" type="Button" parent="Panel"]
+[node name="Panel3" type="Panel" parent="Panel/CanvasLayer2/MainMenu"]
+material = ExtResource("3_gs8x3")
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wymd0")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="Panel"]
+process_mode = 3
+layer = 2
+visible = false
+
+[node name="MainMenu2" type="Button" parent="Panel/CanvasLayer3"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -75,9 +120,22 @@ offset_right = 147.0
 offset_bottom = 299.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_b0hto")
 theme_override_font_sizes/font_size = 32
 text = "Sair do jogo"
 
-[connection signal="pressed" from="Panel/TryAgain" to="." method="_on_try_again_pressed"]
-[connection signal="pressed" from="Panel/MainMenu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="Panel/MainMenu2" to="." method="_on_desktop_pressed"]
+[node name="Panel4" type="Panel" parent="Panel/CanvasLayer3/MainMenu2"]
+material = ExtResource("3_gs8x3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wymd0")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Panel/CanvasLayer/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="Panel/CanvasLayer2/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Panel/CanvasLayer3/MainMenu2" to="." method="_on_desktop_pressed"]

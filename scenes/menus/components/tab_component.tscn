@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dsnw6xqnsevdm"]
 
-[ext_resource type="Script" path="res://scripts/menus/TabComponent.gd" id="1_a41se"]
+[ext_resource type="Script" path="res://scripts/menus/components/TabComponent.gd" id="1_a41se"]
 
 [node name="TabComponent" type="MarginContainer"]
 anchors_preset = 15
@@ -13,3 +13,4 @@ script = ExtResource("1_a41se")
 [node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 2
 mouse_filter = 2
+mouse_default_cursor_shape = 2

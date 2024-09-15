@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/components/MovingPlatform.gd" id="1_ibphc"]
 [ext_resource type="Script" path="res://scripts/components/OneWayPlatform.gd" id="2_2nggx"]
 [ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="2_3bf82"]
-[ext_resource type="Texture2D" uid="uid://dj4bstaogd1xr" path="res://art/tilesets/moving_platfort_tile.png" id="2_wc6jm"]
+[ext_resource type="Texture2D" uid="uid://dj4bstaogd1xr" path="res://art/tilesets/moving_platform_tile.png" id="2_wc6jm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddko7"]
 size = Vector2(96, 15)
@@ -12,6 +12,7 @@ size = Vector2(96, 15)
 size = Vector2(96, 18)
 
 [node name="MovingPlatform" type="Path2D"]
+z_index = -1
 script = ExtResource("1_ibphc")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]

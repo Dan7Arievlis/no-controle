@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://di32xxa2m60xl"]
 
 [ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="1_84dps"]
-[ext_resource type="Script" path="res://scripts/PauseMenu.gd" id="1_uqa8v"]
+[ext_resource type="Script" path="res://scripts/menus/PauseMenu.gd" id="1_uqa8v"]
 [ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="3_uh3pd"]
-[ext_resource type="Script" path="res://scripts/menus/TestMenu.gd" id="4_0m4ex"]
+[ext_resource type="Script" path="res://scenes/levels/test/TestMenu.gd" id="4_0m4ex"]
 [ext_resource type="Resource" uid="uid://cuykxa5cdio2u" path="res://resources/player settings/player_movement_test.tres" id="4_8r2hw"]
 [ext_resource type="Resource" uid="uid://vrm272rj3wi0" path="res://resources/player settings/player_jump_test.tres" id="4_hsn85"]
 [ext_resource type="Resource" uid="uid://bbem3i2ax6wso" path="res://resources/player settings/player_camera_test.tres" id="4_kdxk1"]
@@ -60,7 +60,8 @@ mouse_filter = 2
 theme = ExtResource("3_uh3pd")
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/PanelContainer"]
+[node name="ComponentCreator" type="VBoxContainer" parent="Panel/PanelContainer"]
+unique_name_in_owner = true
 use_parent_material = true
 layout_mode = 2
 mouse_filter = 2
@@ -77,13 +78,13 @@ WALL_CLIMB_STATS = ExtResource("12_aiysm")
 WALL_JUMP_STATS = ExtResource("7_gvh7q")
 WALL_SLIDE_STATS = ExtResource("8_iy74r")
 
-[node name="Title" type="MarginContainer" parent="Panel/PanelContainer/VBoxContainer"]
+[node name="Title" type="MarginContainer" parent="Panel/PanelContainer/ComponentCreator"]
 layout_mode = 2
 theme_override_constants/margin_left = 35
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_bottom = 5
 
-[node name="Label" type="Label" parent="Panel/PanelContainer/VBoxContainer/Title"]
+[node name="Label" type="Label" parent="Panel/PanelContainer/ComponentCreator/Title"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Menu "

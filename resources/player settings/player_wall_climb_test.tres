@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_ho1uk")
-enable_wall_climb = false
+enable_wall_climb = true

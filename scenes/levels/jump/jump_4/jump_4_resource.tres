@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=11 format=3 uid="uid://dh16yisfeb78a"]
+
+[ext_resource type="PackedScene" uid="uid://dmv72p5dkjg23" path="res://scenes/levels/jump/jump_4/level_jump_4.tscn" id="1_35mmp"]
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_b0m7u"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_im80u"]
+[ext_resource type="Resource" uid="uid://dnp56jt36rdso" path="res://scenes/levels/jump/jump_4/menu settings/jump_4_jump.tres" id="4_58u36"]
+[ext_resource type="Resource" uid="uid://e5rehrukasgs" path="res://scenes/levels/jump/jump_4/menu settings/jump_4_movement.tres" id="5_injei"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_s7cj8"]
+[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="7_gec0q"]
+
+[sub_resource type="Resource" id="Resource_ek2jy"]
+script = ExtResource("3_im80u")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0
+
+[sub_resource type="Resource" id="Resource_uc6jt"]
+script = ExtResource("6_s7cj8")
+enable_wall_jump = false
+wall_jump_vector = Vector2(100, 400)
+wall_jumping_grace_time = 0.1
+jump_off_wall_multiplier = 1.0
+
+[sub_resource type="Resource" id="Resource_q4ysp"]
+script = ExtResource("7_gec0q")
+CAMERA_STATS = SubResource("Resource_ek2jy")
+JUMP_STATS = ExtResource("4_58u36")
+MOVEMENT_STATS = ExtResource("5_injei")
+WALL_JUMP_STATS = SubResource("Resource_uc6jt")
+
+[resource]
+script = ExtResource("2_b0m7u")
+title = "Esse é meu ápice"
+description = "Ajustar a [color=b2b2b2]velocidade[/color] e influência da [color=b2b2b2]gravidade[/color] sobre o corpo no [color=b2b2b2]ápice do pulo[/color] pode ajudar a cobrir maiores distâncias. Com esses valores ao extremo, nos impulsionamos para frente no ponto mais alto do pulo. É uma ferramente [color=b2b2b2]sutil[/color], mas importante, para garantir maior mobilidade e [color=b2b2b2][wave freq=4 amp=24]controle aéreo[/wave][/color]."
+level_scene = ExtResource("1_35mmp")
+stats = SubResource("Resource_q4ysp")
+done = true

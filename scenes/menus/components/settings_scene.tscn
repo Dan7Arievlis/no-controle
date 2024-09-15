@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://s8ay0tnlu1y4"]
 
-[ext_resource type="Script" path="res://scripts/menus/SettingsScene.gd" id="1_dl70k"]
+[ext_resource type="Script" path="res://scripts/menus/components/SettingsScene.gd" id="1_dl70k"]
 
 [node name="Settings" type="CenterContainer"]
 custom_minimum_size = Vector2(0, 260)
@@ -13,25 +13,29 @@ layout_mode = 2
 [node name="ResumeButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 32
-text = "Resume"
+text = "Voltar ao jogo"
 
 [node name="MainMenuButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 32
 text = "Menu Principal"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 visible = false
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 32
-text = "Settings"
+text = "Configurações"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 32
-text = "Quit"
+text = "Sair do jogo"
 
 [node name="SettingsMenu" type="VBoxContainer" parent="."]
 visible = false
@@ -54,7 +58,8 @@ popup/item_1/id = 1
 
 [node name="BackButton" type="Button" parent="SettingsMenu"]
 layout_mode = 2
-text = "Back"
+mouse_default_cursor_shape = 2
+text = "Voltar"
 
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

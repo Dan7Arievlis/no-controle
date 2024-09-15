@@ -1,0 +1,146 @@
+[gd_scene load_steps=5 format=3 uid="uid://go2uyf33ilo7"]
+
+[ext_resource type="Script" path="res://scripts/menus/WinMenu.gd" id="1_t4ejq"]
+[ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="2_qk34a"]
+[ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="3_hnih7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wymd0"]
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="WinMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_t4ejq")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_qk34a")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -248.0
+offset_right = 220.0
+offset_bottom = -149.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Nível concluído
+Parabéns!"
+horizontal_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Panel"]
+process_mode = 3
+layer = 2
+visible = false
+
+[node name="PlayAgain" type="Button" parent="Panel/CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -40.0
+offset_right = 147.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_qk34a")
+theme_override_font_sizes/font_size = 32
+text = "Jogar novamente"
+
+[node name="Panel2" type="Panel" parent="Panel/CanvasLayer/PlayAgain"]
+material = ExtResource("3_hnih7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wymd0")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Panel"]
+process_mode = 3
+layer = 2
+visible = false
+
+[node name="LevelSelection" type="Button" parent="Panel/CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.0
+offset_top = 63.0
+offset_right = 151.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_qk34a")
+theme_override_font_sizes/font_size = 32
+text = "Voltar para seleção
+de fases"
+
+[node name="Panel3" type="Panel" parent="Panel/CanvasLayer2/LevelSelection"]
+material = ExtResource("3_hnih7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wymd0")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="Panel"]
+process_mode = 3
+layer = 2
+visible = false
+
+[node name="Desktop" type="Button" parent="Panel/CanvasLayer3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = 219.0
+offset_right = 147.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_qk34a")
+theme_override_font_sizes/font_size = 32
+text = "Sair do jogo"
+
+[node name="Panel4" type="Panel" parent="Panel/CanvasLayer3/Desktop"]
+material = ExtResource("3_hnih7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wymd0")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Panel/CanvasLayer/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Panel/CanvasLayer2/LevelSelection" to="." method="_on_level_selection_pressed"]
+[connection signal="pressed" from="Panel/CanvasLayer3/Desktop" to="." method="_on_desktop_pressed"]

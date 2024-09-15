@@ -12,10 +12,11 @@ var _jump_buffer_timer: float = 0.0
 
 func _init(_player: Player):
 	player = _player
-	jump_stats = _player.jump_stats
+	jump_stats = _player.stats.JUMP_STATS
 
 
 func handle_jump(delta: float):
+	if not (jump_stats and jump_stats.enable_jump): return
 	_coyote_time(delta)
 	_jump_buffer(delta)
 	
@@ -33,7 +34,8 @@ func handle_jump(delta: float):
 			# ajusta a gravidade para não pular em alturas diferentes no coyote time
 			_jump(jump_stats.jump_velocity)
 		elif Input.is_action_just_pressed("jump") and _double_jump():
-			#TODO jump wait time
+			if jump_stats.jump_wait > 0.0:
+				await player.get_tree().create_timer(jump_stats.jump_wait).timeout
 			_jump(jump_stats.double_jump_velocity)
 		# Cortou o tamanho do pulo
 		if Input.is_action_just_released("jump") and player.velocity.y < 0:

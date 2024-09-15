@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxt62refq5emj"]
+
+[ext_resource type="Script" path="res://scripts/menus/components/LevelButton.gd" id="1_52fgb"]
+
+[node name="LevelButton" type="MarginContainer"]
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 0
+script = ExtResource("1_52fgb")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "button 1"
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

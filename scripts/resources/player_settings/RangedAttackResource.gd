@@ -2,7 +2,7 @@ class_name RangedAttackResource
 extends Resource
 
 @export_group("Ranged Attack")
-@export var enable_ranged_attack : bool
+@export var enable_ranged_attack : bool = false
 @export_subgroup("Projectile")
 @export var projectile : ProjectileStats
 @export_subgroup("Cannon")
