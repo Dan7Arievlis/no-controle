@@ -38,4 +38,4 @@ title = "Seção de desafio 1"
 description = "[rainbow set=1 val=0.8 freq=1.8][wave freq=8 amp=30]Parabéns[/wave][/rainbow] e bem vindo à nossa primeira fase de desafio! Ao fim de cada etapa concluída, precisaremos superar mais uma fase que compila cada um dos [color=b2b2b2]conhecimentos obtidos[/color] até então! Essas fases tendem a ficar mais complexas ao passar das etapas, mas sei que conseguiremos!"
 level_scene = ExtResource("1_bsgxy")
 stats = SubResource("Resource_q4ysp")
-done = true
+done = false

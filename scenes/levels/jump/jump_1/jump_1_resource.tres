@@ -69,4 +69,4 @@ title = "... um grande salto para humanidade"
 description = "Às vezes, não temos os atributos necessários para superar obstáculos. Quando isso acontecer, podemos pressionar [code][b][color=b2b2b2][ESC][/color][/b][/code] para modificar nossos atributos e [color=b2b2b2][wave amp=20 freq=10]alcançar novos patamares[/wave][/color]."
 level_scene = ExtResource("1_ux1ch")
 stats = SubResource("Resource_qbvip")
-done = true
+done = false

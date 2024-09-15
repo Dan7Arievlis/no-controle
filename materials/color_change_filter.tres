@@ -3,5 +3,6 @@
 [ext_resource type="Shader" path="res://materials/shaders/pause_menu.gdshader" id="1_bf270"]
 
 [resource]
+resource_local_to_scene = true
 shader = ExtResource("1_bf270")
 shader_parameter/overlay = Color(0, 0.115, 0.69, 1)

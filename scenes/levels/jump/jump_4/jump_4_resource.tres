@@ -38,4 +38,4 @@ title = "Esse é meu ápice"
 description = "Ajustar a [color=b2b2b2]velocidade[/color] e influência da [color=b2b2b2]gravidade[/color] sobre o corpo no [color=b2b2b2]ápice do pulo[/color] pode ajudar a cobrir maiores distâncias. Com esses valores ao extremo, nos impulsionamos para frente no ponto mais alto do pulo. É uma ferramente [color=b2b2b2]sutil[/color], mas importante, para garantir maior mobilidade e [color=b2b2b2][wave freq=4 amp=24]controle aéreo[/wave][/color]."
 level_scene = ExtResource("1_35mmp")
 stats = SubResource("Resource_q4ysp")
-done = true
+done = false

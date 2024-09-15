@@ -38,4 +38,4 @@ title = "Pulos e espinhos"
 description = "A parte mais importante do controle aéreo é manipular a [color=b2b2b2]altura[/color] de cada um de nossos pulos. Para isso, é comum [color=b2b2b2]reduzir a velocidade vertical[/color] quando se solta o botão de pulo!"
 level_scene = ExtResource("1_nw316")
 stats = SubResource("Resource_q4ysp")
-done = true
+done = false

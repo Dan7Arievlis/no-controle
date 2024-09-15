@@ -7,24 +7,40 @@ func _ready() -> void:
 	var exit = get_tree().get_first_node_in_group("Exit")
 	if exit:
 		exit.connect("exit_level", exit_level.bind())
-	#current_level = load(current_level_path)
 	current_level = SavedResources.current_level
-	current_level_path = "user%s" % current_level.resource_path.erase(0, 3)
-	print("in WinMenu.gd: loaded: %s" % current_level_path)
+	if current_level.resource_path.begins_with("res://"):
+		current_level_path = format_user_path(current_level.resource_path)
+	else:
+		current_level_path = current_level.resource_path
 	hide()
 
 
 func exit_level():
 	current_level.done = true
-	if not FileAccess.file_exists(current_level_path):
-		var file = FileAccess.open(current_level_path, FileAccess.READ_WRITE)
-		print("in WinMenu.gd: file created: %s (%s)" % [current_level_path, file])
-	var error = ResourceSaver.save(SavedResources.current_level, current_level_path)
-	if error != OK:
-		print("in WinMenu.gd: failed save: ", current_level_path)
-	else:
-		print("in WinMenu.gd: successful save: ", current_level_path)
+	save_progress()
 	show()
+
+
+func save_progress():
+	if not FileAccess.file_exists(current_level_path):
+		var dir_path = "user://levels/%s" % get_section()
+		if not DirAccess.dir_exists_absolute(dir_path):
+			DirAccess.make_dir_recursive_absolute(dir_path)
+		var file = FileAccess.open(current_level_path, FileAccess.READ_WRITE)
+	var error = ResourceSaver.save(SavedResources.current_level, current_level_path)
+
+
+func format_user_path(resorce_path : String):
+	var result : String = resorce_path.erase(0, 6)
+	var splited = result.split("/")
+	result = "user://%s/%s/%s" % [splited[1], splited[2], splited[4]]
+	return result
+
+
+func get_section():
+	var path : String = current_level_path.erase(0, 6)
+	var splited = path.split("/")
+	return splited[2]
 
 
 func _on_play_again_pressed() -> void:

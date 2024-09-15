@@ -40,4 +40,4 @@ O [color=b2b2b2]Tempo de Coiote[/color] permite o jogador pular mesmo algum temp
 O [color=b2b2b2]Buffer de Pulo[/color] \"lembra\" que o pulo foi pressionado mesmo se o jogador estiver no ar, sendo executado assim que alcançar o chão."
 level_scene = ExtResource("1_43kdj")
 stats = SubResource("Resource_q4ysp")
-done = true
+done = false

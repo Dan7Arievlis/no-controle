@@ -39,4 +39,4 @@ description = "O pulo duplo é uma ferramenta muito importante para possibilitar
 Também é usado para diversificar a geometia dos mapas, já que adiciona [color=b2b2b2][wave freq=8 amp=20]novas possibilidades de movimento[/wave] aéreo[/color] ao joagador."
 level_scene = ExtResource("1_0sh8b")
 stats = SubResource("Resource_q4ysp")
-done = true
+done = false

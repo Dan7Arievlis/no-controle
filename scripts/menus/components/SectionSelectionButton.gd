@@ -31,7 +31,6 @@ func initialize(offset : int, color : Color) -> void:
 
 func _on_texture_button_pressed() -> void:
 	SavedResources.current_section = section_resource
-	#ResourceSaver.save(section_resource, "res://resources/levels/current_section.tres")
 	get_tree().change_scene_to_file("res://scenes/menus/level_selection_menu.tscn")
 
 

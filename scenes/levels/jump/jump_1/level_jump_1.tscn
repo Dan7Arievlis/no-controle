@@ -21,7 +21,7 @@
 script = ExtResource("1_6vy4h")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-14, -4)
+position = Vector2(1, -5)
 zoom = Vector2(4, 4)
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -69,7 +69,6 @@ build_mode = 1
 polygon = PackedVector2Array(-1284, -846, -1284, 434, -290, 432, -289, 172, 292, 172, 292, -166, 472, -166, 472, -841)
 
 [node name="Player" parent="." instance=ExtResource("8_ioyvp")]
-position = Vector2(-15, 1)
 
 [node name="CameraFollow" parent="Player" instance=ExtResource("11_2pmq2")]
 
@@ -86,7 +85,6 @@ script = ExtResource("13_u7cnt")
 unique_name_in_owner = true
 
 [node name="WinMenu" parent="." instance=ExtResource("15_x5dtg")]
-current_level_path = "res://scenes/levels/jump/jump_1/jump_1_resource.tres"
 
 [node name="Control" type="Control" parent="."]
 modulate = Color(0.101961, 0.137255, 0.494118, 1)

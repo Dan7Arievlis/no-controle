@@ -48,20 +48,31 @@ text = "Escolher fase"
 [node name="Credits" type="Button" parent="Container"]
 layout_mode = 2
 offset_left = 1576.0
-offset_top = 516.0
+offset_top = 594.0
 offset_right = 1686.0
-offset_bottom = 580.0
+offset_bottom = 658.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 text = "Créditos"
 
+[node name="Settings" type="Button" parent="Container"]
+layout_mode = 2
+offset_left = 1576.0
+offset_top = 517.0
+offset_right = 1686.0
+offset_bottom = 581.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+text = "Opções"
+
 [node name="Quit" type="Button" parent="Container"]
 layout_mode = 2
 offset_left = 1576.0
-offset_top = 592.0
+offset_top = 670.0
 offset_right = 1686.0
-offset_bottom = 656.0
+offset_bottom = 734.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
@@ -99,11 +110,98 @@ size_flags_horizontal = 4
 mouse_default_cursor_shape = 2
 text = "Voltar"
 
+[node name="SettingPanel" type="PanelContainer" parent="Container"]
+visible = false
+layout_mode = 2
+offset_left = 1380.0
+offset_top = 229.0
+offset_right = 1850.0
+offset_bottom = 839.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/SettingPanel"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/SettingPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 232
+theme_override_constants/margin_bottom = 197
+
+[node name="Delete" type="Button" parent="Container/SettingPanel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_jilkv")
+text = "Apagar progresso"
+
+[node name="Back" type="Button" parent="Container/SettingPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+text = "Voltar"
+
+[node name="Popup" type="PanelContainer" parent="Container"]
+visible = false
+offset_left = 1401.0
+offset_top = 404.0
+offset_right = 1829.0
+offset_bottom = 631.0
+mouse_filter = 2
+theme = ExtResource("1_jilkv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/Popup"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Container/Popup/VBoxContainer"]
+custom_minimum_size = Vector2(0, 119)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0.0899999, 0.54, 1)
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rdiov")
+bbcode_enabled = true
+text = "[center]Tem certeza que deseja apagar [color=b2b2b2]TODO[/color] progresso feito?"
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/Popup/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 81
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/Popup/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="GridContainer" parent="Container/Popup/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 85
+columns = 2
+
+[node name="Decline" type="Button" parent="Container/Popup/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+text = "  Não  "
+
+[node name="Confirm" type="Button" parent="Container/Popup/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_jilkv")
+text = "  Sim  "
+
 [node name="Panel" type="Panel" parent="."]
 material = ExtResource("2_sgkru")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 4.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -120,5 +218,10 @@ texture = ExtResource("6_ysulq")
 
 [connection signal="pressed" from="Container/ChooseLevel" to="." method="_on_choose_level_pressed"]
 [connection signal="pressed" from="Container/Credits" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Container/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Container/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Container/PanelContainer/VBoxContainer/Back" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Container/SettingPanel/VBoxContainer/MarginContainer/Delete" to="." method="_on_delete_pressed"]
+[connection signal="pressed" from="Container/SettingPanel/VBoxContainer/Back" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Container/Popup/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Decline" to="." method="_on_delete_pressed"]
+[connection signal="pressed" from="Container/Popup/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/Confirm" to="." method="_on_confirm_pressed"]

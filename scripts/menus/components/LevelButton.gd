@@ -24,5 +24,4 @@ func _on_button_mouse_exited() -> void:
 func _on_button_pressed() -> void:
 	SavedResources.current_level = level_resource
 	SavedResources.current_stats = level_resource.stats.duplicate(true)
-	#ResourceSaver.save(level_resource, "res://resources/levels/current_level.tres")
 	get_tree().change_scene_to_packed(level_resource.level_scene)

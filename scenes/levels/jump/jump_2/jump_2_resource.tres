@@ -38,4 +38,4 @@ title = "Alterando gravidade"
 description = "Nosso personagem tem um grande pulo, mas algo não parece certo... É impressão minha ou ele flutua quando está [color=b2b2b2]caindo[/color]? Para tomarmos controle de onde pousar, vamos ajustar o seu [color=b2b2b2][wave freq=4 amp=32]arco de pulo[/wave][/color], fazendo-o cair mais rapidamente."
 level_scene = ExtResource("1_dyln4")
 stats = SubResource("Resource_q4ysp")
-done = true
+done = false
