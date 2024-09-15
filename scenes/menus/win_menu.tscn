@@ -22,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_qk34a")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="RichTextLabel" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -35,10 +35,10 @@ offset_right = 220.0
 offset_bottom = -149.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 48
-text = "Nível concluído
-Parabéns!"
-horizontal_alignment = 1
+theme_override_font_sizes/normal_font_size = 46
+bbcode_enabled = true
+text = "[center]Nível concluído
+[wave freq=9 amp=32]Parabéns!"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Panel"]
 process_mode = 3

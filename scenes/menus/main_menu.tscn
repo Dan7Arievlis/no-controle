@@ -143,6 +143,7 @@ text = "Voltar"
 
 [node name="Popup" type="PanelContainer" parent="Container"]
 visible = false
+layout_mode = 0
 offset_left = 1401.0
 offset_top = 404.0
 offset_right = 1829.0

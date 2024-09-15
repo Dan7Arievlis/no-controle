@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://b0qx1qhny1i01"]
+[gd_scene load_steps=25 format=4 uid="uid://b0qx1qhny1i01"]
 
 [ext_resource type="Script" path="res://scripts/levels/Level.gd" id="1_ye18g"]
 [ext_resource type="PackedScene" uid="uid://d5cyy80deyjo" path="res://scenes/levels/components/respawn_system.tscn" id="2_thfso"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cfdmv3tit4bya" path="res://scenes/levels/components/doorway.tscn" id="11_v0w4c"]
 [ext_resource type="Script" path="res://scenes/levels/jump/jump_5/jump_5_menu.gd" id="12_037l1"]
 [ext_resource type="PackedScene" uid="uid://di32xxa2m60xl" path="res://scenes/menus/pause_menu.tscn" id="12_uyhwr"]
+[ext_resource type="Shader" path="res://materials/shaders/pause_menu.gdshader" id="14_2rc1k"]
 [ext_resource type="PackedScene" uid="uid://nxiywfl7pggr" path="res://scenes/menus/death_menu.tscn" id="14_fj5up"]
 [ext_resource type="PackedScene" uid="uid://go2uyf33ilo7" path="res://scenes/menus/win_menu.tscn" id="15_38udn"]
 [ext_resource type="Theme" uid="uid://ckhww1aw5ghp1" path="res://themes/font_theme_16px.tres" id="16_pcjuq"]
@@ -25,6 +26,11 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -512)
 }
 point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rxp8t"]
+resource_local_to_scene = true
+shader = ExtResource("14_2rc1k")
+shader_parameter/overlay = Color(0, 0.115, 0.69, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rufa4"]
 
@@ -104,6 +110,9 @@ position = Vector2(-289, -889)
 [node name="PauseMenu" parent="." instance=ExtResource("12_uyhwr")]
 visible = false
 
+[node name="Panel" parent="PauseMenu" index="0"]
+material = SubResource("ShaderMaterial_rxp8t")
+
 [node name="ComponentCreator" parent="PauseMenu/Panel/PanelContainer" index="0"]
 script = ExtResource("12_037l1")
 
@@ -112,7 +121,6 @@ unique_name_in_owner = true
 visible = false
 
 [node name="WinMenu" parent="." instance=ExtResource("15_38udn")]
-current_level_path = "res://scenes/levels/jump/jump_5/jump_5_resource.tres"
 
 [node name="Control" type="Control" parent="."]
 modulate = Color(0.101961, 0.137255, 0.494118, 1)

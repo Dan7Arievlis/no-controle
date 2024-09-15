@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dnenixri6ry0b"]
+[gd_scene load_steps=19 format=4 uid="uid://dnenixri6ry0b"]
 
 [ext_resource type="Script" path="res://scripts/levels/Level.gd" id="1_6vy4h"]
 [ext_resource type="PackedScene" uid="uid://d5cyy80deyjo" path="res://scenes/levels/components/respawn_system.tscn" id="2_5x6oj"]
@@ -10,12 +10,18 @@
 [ext_resource type="PackedScene" uid="uid://dldwdaspvcq0w" path="res://scenes/entities/player.tscn" id="8_ioyvp"]
 [ext_resource type="PackedScene" uid="uid://bd1jkgc6dl7v8" path="res://scenes/levels/components/camera_follow.tscn" id="11_2pmq2"]
 [ext_resource type="PackedScene" uid="uid://di32xxa2m60xl" path="res://scenes/menus/pause_menu.tscn" id="12_7nj6h"]
+[ext_resource type="Shader" path="res://materials/shaders/pause_menu.gdshader" id="12_vcaky"]
 [ext_resource type="Script" path="res://scenes/levels/jump/jump_1/Jump_1_menu.gd" id="13_u7cnt"]
 [ext_resource type="PackedScene" uid="uid://nxiywfl7pggr" path="res://scenes/menus/death_menu.tscn" id="14_0oamy"]
 [ext_resource type="PackedScene" uid="uid://cfdmv3tit4bya" path="res://scenes/levels/components/doorway.tscn" id="14_44jp5"]
 [ext_resource type="PackedScene" uid="uid://go2uyf33ilo7" path="res://scenes/menus/win_menu.tscn" id="15_x5dtg"]
 [ext_resource type="Theme" uid="uid://ckhww1aw5ghp1" path="res://themes/font_theme_16px.tres" id="22_3sgnp"]
 [ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="23_7alvx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yxn5e"]
+resource_local_to_scene = true
+shader = ExtResource("12_vcaky")
+shader_parameter/overlay = Color(0, 0.115, 0.69, 1)
 
 [node name="LevelJump1" type="Node2D"]
 script = ExtResource("1_6vy4h")
@@ -77,6 +83,9 @@ position = Vector2(256, -217)
 
 [node name="PauseMenu" parent="." instance=ExtResource("12_7nj6h")]
 visible = false
+
+[node name="Panel" parent="PauseMenu" index="0"]
+material = SubResource("ShaderMaterial_yxn5e")
 
 [node name="ComponentCreator" parent="PauseMenu/Panel/PanelContainer" index="0"]
 script = ExtResource("13_u7cnt")

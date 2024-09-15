@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://ct8adj4ob802n"]
+[gd_scene load_steps=21 format=4 uid="uid://ct8adj4ob802n"]
 
 [ext_resource type="Script" path="res://scripts/levels/Level.gd" id="1_qhvt1"]
 [ext_resource type="PackedScene" uid="uid://d5cyy80deyjo" path="res://scenes/levels/components/respawn_system.tscn" id="2_axpil"]
@@ -12,11 +12,17 @@
 [ext_resource type="PackedScene" uid="uid://bd1jkgc6dl7v8" path="res://scenes/levels/components/camera_follow.tscn" id="11_d7k5w"]
 [ext_resource type="PackedScene" uid="uid://cfdmv3tit4bya" path="res://scenes/levels/components/doorway.tscn" id="12_h7lfa"]
 [ext_resource type="Script" path="res://scenes/levels/jump/jump_6/jump_6_menu.gd" id="12_li03g"]
+[ext_resource type="Shader" path="res://materials/shaders/pause_menu.gdshader" id="13_7bsdf"]
 [ext_resource type="PackedScene" uid="uid://di32xxa2m60xl" path="res://scenes/menus/pause_menu.tscn" id="13_71ofs"]
 [ext_resource type="PackedScene" uid="uid://nxiywfl7pggr" path="res://scenes/menus/death_menu.tscn" id="15_jg6vp"]
 [ext_resource type="PackedScene" uid="uid://go2uyf33ilo7" path="res://scenes/menus/win_menu.tscn" id="16_rmn55"]
 [ext_resource type="Theme" uid="uid://ckhww1aw5ghp1" path="res://themes/font_theme_16px.tres" id="17_0c6o0"]
 [ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="18_esfgj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fhrct"]
+resource_local_to_scene = true
+shader = ExtResource("13_7bsdf")
+shader_parameter/overlay = Color(0, 0.115, 0.69, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rufa4"]
 
@@ -103,6 +109,9 @@ position = Vector2(-1232, 39)
 
 [node name="PauseMenu" parent="." instance=ExtResource("13_71ofs")]
 visible = false
+
+[node name="Panel" parent="PauseMenu" index="0"]
+material = SubResource("ShaderMaterial_fhrct")
 
 [node name="ComponentCreator" parent="PauseMenu/Panel/PanelContainer" index="0"]
 script = ExtResource("12_li03g")
@@ -238,6 +247,23 @@ offset_left = -1282.0
 offset_top = 265.0
 offset_right = -1154.0
 offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pulo?"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="Control"]
+z_index = -2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1282.0
+offset_top = 154.0
+offset_right = -1154.0
+offset_bottom = 203.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Pulo?"

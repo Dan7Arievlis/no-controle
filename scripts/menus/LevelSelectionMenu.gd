@@ -33,6 +33,8 @@ func _add_level(level : LevelResource):
 func format_user_path(resorce_path : String):
 	var result : String = resorce_path.erase(0, 6)
 	var splited = result.split("/")
+	if splited.size() < 5:
+		return ""
 	result = "user://%s/%s/%s" % [splited[1], splited[2], splited[4]]
 	return result
 

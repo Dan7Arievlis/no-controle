@@ -28,6 +28,14 @@ func _on_back_pressed() -> void:
 func _unlock_next_section(section):
 	var res = true
 	for level in section.section_resource.levels:
-		res = res and level.done
+		res = res and FileAccess.file_exists(format_user_path(level.resource_path))
 	
 	return res
+
+
+func format_user_path(resorce_path : String):
+	var result : String = resorce_path.erase(0, 6)
+	var splited = result.split("/")
+	if splited.size() == 5:
+		result = "user://%s/%s/%s" % [splited[1], splited[2], splited[4]]
+	return result

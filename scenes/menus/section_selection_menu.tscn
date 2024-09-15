@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bfwogr4m135kn"]
+[gd_scene load_steps=19 format=3 uid="uid://bfwogr4m135kn"]
 
 [ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="1_pojvv"]
 [ext_resource type="Script" path="res://scripts/menus/SectionSelectionMenu.gd" id="2_duodq"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://scripts/resources/SectionResource.gd" id="4_n0x8i"]
 [ext_resource type="Resource" uid="uid://cjj8d3o1a68j0" path="res://resources/sections/jump_section.tres" id="5_hxav7"]
 [ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="5_jxo26"]
-[ext_resource type="PackedScene" uid="uid://c6ufn4s81gqkw" path="res://scenes/menus/main_menu.tscn" id="7_3cw4k"]
 
 [sub_resource type="Resource" id="Resource_tw4w7"]
 script = ExtResource("3_suxrm")
@@ -17,7 +16,6 @@ sections_enabled = 1
 script = ExtResource("5_jxo26")
 title = "Em breve"
 description = "Estou trabalhando nisso!"
-level_scene = ExtResource("7_3cw4k")
 done = false
 
 [sub_resource type="Resource" id="Resource_jwij4"]

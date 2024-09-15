@@ -48,7 +48,7 @@ func _on_play_again_pressed() -> void:
 
 
 func _on_level_selection_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menus/section_selection_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/level_selection_menu.tscn")
 
 
 func _on_desktop_pressed() -> void:
