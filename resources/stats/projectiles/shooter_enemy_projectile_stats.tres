@@ -7,10 +7,10 @@
 
 [resource]
 script = ExtResource("3_bnos5")
-life_time = 2.0
-life = 2
+life_time = 20.0
+life = 1
 damage = 1.0
-speed = 200.0
+speed = 400.0
 gravity = 0.0
 knockback_force = 100.0
 travel_animation = ExtResource("5_tm4g5")

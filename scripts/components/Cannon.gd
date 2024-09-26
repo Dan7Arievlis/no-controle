@@ -3,9 +3,6 @@ extends Node2D
 signal on_can_shoot()
 signal on_cannon_shot()
 
-@export var projectile_stats : ProjectileStats
-@export var cannon_stats : CannonStats
-
 @onready var projectile_spawner: Node2D = $ProjectileSpawner
 @onready var reload_timer: Timer = $ReloadTimer
 
@@ -13,7 +10,7 @@ var can_shoot : bool
 var ammo : int
 
 
-func _ready() -> void:
+func set_cannon(projectile_stats, cannon_stats) -> void:
 	projectile_spawner.projectile_stats = projectile_stats
 	projectile_spawner.shot_effect = cannon_stats.shot_effect
 	reload_timer.wait_time = cannon_stats.reload_time

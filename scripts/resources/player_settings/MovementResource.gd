@@ -19,5 +19,5 @@ extends Resource
 @export var can_run: bool = false
 @export var run_speed: float = 600.0 # pxl/s
 #
-@export_range(0.1, 20, 0.1) var turn_speed: float = 1.0 # pxl/s²
-@export_range(0.1, 20, 0.1) var air_turn_speed: float = 1.0 # pxl/s²
+@export_range(0.0, 20, 0.1) var turn_speed: float = 1.0 # pxl/s²
+@export_range(0.0, 20, 0.1) var air_turn_speed: float = 1.0 # pxl/s²

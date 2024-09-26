@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=12 format=3 uid="uid://tymlabgctln2"]
+
+[ext_resource type="PackedScene" uid="uid://c7wd7aae6cv0u" path="res://scenes/levels/wall/wall_1/level_wall_1.tscn" id="1_ymrbm"]
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_2outp"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_djtcf"]
+[ext_resource type="Resource" uid="uid://d0s2plldbkl58" path="res://scenes/levels/wall/wall_1/menu settings/wall_1_jump.tres" id="4_jd1v1"]
+[ext_resource type="Resource" uid="uid://bhn8b44g3bsvf" path="res://scenes/levels/wall/wall_1/menu settings/wall_1_movement.tres" id="5_hyqq8"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_ihu4d"]
+[ext_resource type="Resource" uid="uid://bgvj5mhf8tqv2" path="res://scenes/levels/wall/wall_1/menu settings/wall_1_wall_slide.tres" id="7_a0itf"]
+[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="8_sglfs"]
+
+[sub_resource type="Resource" id="Resource_f76m7"]
+script = ExtResource("3_djtcf")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0
+
+[sub_resource type="Resource" id="Resource_70k16"]
+script = ExtResource("6_ihu4d")
+enable_wall_jump = false
+wall_jump_vector = Vector2(100, 400)
+wall_jumping_grace_time = 0.1
+jump_off_wall_multiplier = 1.0
+
+[sub_resource type="Resource" id="Resource_qbvip"]
+script = ExtResource("8_sglfs")
+CAMERA_STATS = SubResource("Resource_f76m7")
+JUMP_STATS = ExtResource("4_jd1v1")
+MOVEMENT_STATS = ExtResource("5_hyqq8")
+WALL_JUMP_STATS = SubResource("Resource_70k16")
+WALL_SLIDE_STATS = ExtResource("7_a0itf")
+
+[resource]
+script = ExtResource("2_2outp")
+title = "Deslizando"
+description = ""
+level_scene = ExtResource("1_ymrbm")
+stats = SubResource("Resource_qbvip")
+done = false

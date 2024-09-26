@@ -16,7 +16,6 @@ func _init(_player: Player):
 
 
 func handle_jump(delta: float):
-	if not (jump_stats and jump_stats.enable_jump): return
 	_coyote_time(delta)
 	_jump_buffer(delta)
 	
@@ -51,7 +50,7 @@ func handle_jump(delta: float):
 	# está no ar
 	if not player.is_on_floor():
 		player.velocity.y += player.local_gravity * delta
-		# limitar evlocidade queda
+		# limitar velocidade queda
 		player.velocity.y = min(player.velocity.y, jump_stats.max_fall_speed)
 
 
@@ -71,7 +70,7 @@ func _coyote_time(delta: float):
 
 func _jump_buffer(delta: float):
 	# Jump Buffer
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and (jump_stats and jump_stats.enable_jump):
 		_jump_buffer_timer = jump_stats.jump_buffer
 	else:
 		_jump_buffer_timer -= delta
@@ -87,9 +86,3 @@ func _jump(jump_velocity: float):
 
 func _double_jump():
 	return jump_stats.double_jump and _can_double_jump
-
-
-#func _unhandled_input(event: InputEvent) -> void:
-	##TODO testar pular colocar pra beixo (ver código do pulo (não permitir PULAR se tiver com S apertado))
-	#if event.is_action_pressed("move_down") and Input.is_action_pressed("jump"):
-		#player.position.y += 1

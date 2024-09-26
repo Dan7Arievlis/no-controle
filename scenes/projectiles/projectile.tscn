@@ -64,7 +64,7 @@ _data = {
 "RESET": SubResource("Animation_23lov")
 }
 
-[node name="Projectile" type="RigidBody2D"]
+[node name="Projectile" type="RigidBody2D" groups=["Projectile"]]
 z_index = 4
 collision_layer = 0
 collision_mask = 0

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=12 format=3 uid="uid://d2boy56v4hhta"]
+
+[ext_resource type="PackedScene" uid="uid://b3s1fwjoyim2l" path="res://scenes/levels/dash/dash_1/level_dash_1.tscn" id="1_al73p"]
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_4eij3"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_rfp1a"]
+[ext_resource type="Resource" uid="uid://b8r1xsdhkn0g3" path="res://scenes/levels/dash/dash_1/menu settings/dash_1_dash.tres" id="4_iva81"]
+[ext_resource type="Resource" uid="uid://fya6dkns21ex" path="res://scenes/levels/dash/dash_1/menu settings/dash_1_jump.tres" id="5_26ru3"]
+[ext_resource type="Resource" uid="uid://cgpl1b5slpunl" path="res://scenes/levels/dash/dash_1/menu settings/dash_1_movement.tres" id="6_1cr0p"]
+[ext_resource type="Resource" uid="uid://bscn8vetqf7ol" path="res://scenes/levels/dash/dash_1/menu settings/dash_1_wall_jump.tres" id="7_16g4d"]
+[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="8_c458g"]
+[ext_resource type="Resource" uid="uid://cruogudajrppy" path="res://scenes/levels/dash/dash_1/menu settings/dash_1_wall_slide.tres" id="8_cwdnc"]
+
+[sub_resource type="Resource" id="Resource_f76m7"]
+script = ExtResource("3_rfp1a")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0
+
+[sub_resource type="Resource" id="Resource_qbvip"]
+script = ExtResource("8_c458g")
+CAMERA_STATS = SubResource("Resource_f76m7")
+DASH_STATS = ExtResource("4_iva81")
+JUMP_STATS = ExtResource("5_26ru3")
+MOVEMENT_STATS = ExtResource("6_1cr0p")
+WALL_JUMP_STATS = ExtResource("7_16g4d")
+WALL_SLIDE_STATS = ExtResource("8_cwdnc")
+
+[resource]
+script = ExtResource("2_4eij3")
+title = "Dash!"
+description = ""
+level_scene = ExtResource("1_al73p")
+stats = SubResource("Resource_qbvip")
+done = false

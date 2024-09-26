@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=11 format=3 uid="uid://t7m0ad4djlqn"]
+
+[ext_resource type="PackedScene" uid="uid://ce7s81lqelmgp" path="res://scenes/levels/walk/walk_3/level_walk_3.tscn" id="1_0otaq"]
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_p8o83"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_8xoxj"]
+[ext_resource type="Resource" uid="uid://bicncid3txatg" path="res://scenes/levels/walk/walk_3/menu settings/walk_3_jump.tres" id="4_lpwm5"]
+[ext_resource type="Resource" uid="uid://cqt0n6x58lroj" path="res://scenes/levels/walk/walk_3/menu settings/walk_3_movement.tres" id="5_dpcbl"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_irtc8"]
+[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="7_nr8jb"]
+
+[sub_resource type="Resource" id="Resource_f76m7"]
+script = ExtResource("3_8xoxj")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0
+
+[sub_resource type="Resource" id="Resource_70k16"]
+script = ExtResource("6_irtc8")
+enable_wall_jump = false
+wall_jump_vector = Vector2(100, 400)
+wall_jumping_grace_time = 0.1
+jump_off_wall_multiplier = 1.0
+
+[sub_resource type="Resource" id="Resource_qbvip"]
+script = ExtResource("7_nr8jb")
+CAMERA_STATS = SubResource("Resource_f76m7")
+JUMP_STATS = ExtResource("4_lpwm5")
+MOVEMENT_STATS = ExtResource("5_dpcbl")
+WALL_JUMP_STATS = SubResource("Resource_70k16")
+
+[resource]
+script = ExtResource("2_p8o83")
+title = "Controle aéreo"
+description = ""
+level_scene = ExtResource("1_0otaq")
+stats = SubResource("Resource_qbvip")
+done = false

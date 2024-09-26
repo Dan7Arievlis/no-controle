@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="JumpResource" load_steps=2 format=3 uid="uid://2pe1ypq61pcr"]
+
+[ext_resource type="Script" path="res://scripts/resources/player_settings/JumpResource.gd" id="1_fuk04"]
+
+[resource]
+script = ExtResource("1_fuk04")
+enable_jump = true
+jump_velocity = 430.0
+max_fall_speed = 620.0
+gravity_fall_multiplier = 2.3
+jump_cut_multiplier = 0.4
+gravity_apex_multiplier = 2.3
+apex_speed_multiplier = 2.3
+apex_margin = 50.0
+coyote_time = 0.16
+jump_buffer = 0.16
+double_jump = true
+double_jump_velocity = 260.0
+jump_wait = 0.0

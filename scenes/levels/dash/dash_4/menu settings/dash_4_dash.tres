@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DashResource" load_steps=2 format=3 uid="uid://d1hdobqd2ed6b"]
+
+[ext_resource type="Script" path="res://scripts/resources/player_settings/DashResource.gd" id="1_0sscm"]
+
+[resource]
+script = ExtResource("1_0sscm")
+enable_dash = true
+dash_force = 300.0
+one_directional_dash = true
+save_last_horizontal = false
+dash_time = 0.2
+dash_cooldown = 0.2

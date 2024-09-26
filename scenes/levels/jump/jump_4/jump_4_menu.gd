@@ -2,7 +2,6 @@ extends MenuComponentCreator
 
 func draw_menu(stats : PlayerStats):
 	var selection_tab = TAB_COMPONENT.instantiate()
-	var movement_page = PAGE_COMPONENT.instantiate()
 	
 	create_tab(selection_tab)
 	

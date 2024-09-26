@@ -52,9 +52,9 @@ point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_hbce2"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -610, 0, 0, 0, 0, 0, -610, 1057)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -610, 0, 0, 0, 0, 0, -610, 957, 0, 0, 0, 0, -510, 957)
 }
-point_count = 3
+point_count = 4
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7oaj3"]
 resource_local_to_scene = true
@@ -82,7 +82,7 @@ offset_bottom = 325.0
 [node name="RespawnSystem" parent="." instance=ExtResource("2_wr1rt")]
 
 [node name="InitialSpawn" parent="RespawnSystem" index="0"]
-position = Vector2(-606, 187)
+position = Vector2(-612, 203)
 
 [node name="RespawnTrigger" parent="RespawnSystem" instance=ExtResource("3_gdbax")]
 position = Vector2(-250, 180)
@@ -184,11 +184,12 @@ curve = SubResource("Curve2D_lnynp")
 loop = true
 
 [node name="MovingPlatform6" parent="TileMap" instance=ExtResource("9_kt1m6")]
-position = Vector2(-986, -1467)
+position = Vector2(-986, -1367)
 curve = SubResource("Curve2D_hbce2")
 loop = true
 
 [node name="Player" parent="." instance=ExtResource("9_ue0m3")]
+max_hp = 1024.0
 
 [node name="CameraFollow" parent="Player" instance=ExtResource("10_4pyfs")]
 

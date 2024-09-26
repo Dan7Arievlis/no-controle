@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bfwogr4m135kn"]
+[gd_scene load_steps=17 format=3 uid="uid://bfwogr4m135kn"]
 
 [ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="1_pojvv"]
 [ext_resource type="Script" path="res://scripts/menus/SectionSelectionMenu.gd" id="2_duodq"]
@@ -6,55 +6,14 @@
 [ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="4_dst4n"]
 [ext_resource type="Script" path="res://scripts/resources/SectionResource.gd" id="4_n0x8i"]
 [ext_resource type="Resource" uid="uid://cjj8d3o1a68j0" path="res://resources/sections/jump_section.tres" id="5_hxav7"]
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="5_jxo26"]
+[ext_resource type="Resource" uid="uid://26ntx8ety3f7" path="res://resources/sections/walk_section.tres" id="6_61u2y"]
+[ext_resource type="Resource" uid="uid://bb1l7y33n0xkn" path="res://resources/sections/wall_section.tres" id="7_ut7pr"]
+[ext_resource type="Resource" uid="uid://d1n5rko5qknx4" path="res://resources/sections/dash_section.tres" id="8_36oi6"]
+[ext_resource type="Resource" uid="uid://b3p3vpqc33aa6" path="res://resources/sections/attack_section.tres" id="9_k761c"]
 
 [sub_resource type="Resource" id="Resource_tw4w7"]
 script = ExtResource("3_suxrm")
 sections_enabled = 1
-
-[sub_resource type="Resource" id="Resource_brq2c"]
-script = ExtResource("5_jxo26")
-title = "Em breve"
-description = "Estou trabalhando nisso!"
-done = false
-
-[sub_resource type="Resource" id="Resource_jwij4"]
-script = ExtResource("4_n0x8i")
-section_title = "EM BREVE"
-levels = Array[ExtResource("5_jxo26")]([SubResource("Resource_brq2c")])
-
-[sub_resource type="Resource" id="Resource_3ppvq"]
-script = ExtResource("5_jxo26")
-title = ""
-description = ""
-done = false
-
-[sub_resource type="Resource" id="Resource_fqlfm"]
-script = ExtResource("4_n0x8i")
-section_title = ""
-levels = Array[ExtResource("5_jxo26")]([SubResource("Resource_3ppvq")])
-
-[sub_resource type="Resource" id="Resource_23x24"]
-script = ExtResource("5_jxo26")
-title = ""
-description = ""
-done = false
-
-[sub_resource type="Resource" id="Resource_lm46a"]
-script = ExtResource("4_n0x8i")
-section_title = ""
-levels = Array[ExtResource("5_jxo26")]([SubResource("Resource_23x24")])
-
-[sub_resource type="Resource" id="Resource_q3743"]
-script = ExtResource("5_jxo26")
-title = ""
-description = ""
-done = false
-
-[sub_resource type="Resource" id="Resource_wmsex"]
-script = ExtResource("4_n0x8i")
-section_title = ""
-levels = Array[ExtResource("5_jxo26")]([SubResource("Resource_q3743")])
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjo0j"]
 bg_color = Color(0.980392, 0.980392, 0.980392, 1)
@@ -62,6 +21,17 @@ expand_margin_left = 16.0
 expand_margin_top = 16.0
 expand_margin_right = 16.0
 expand_margin_bottom = 16.0
+
+[sub_resource type="InputEventKey" id="InputEventKey_hn5ec"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="InputEventKey" id="InputEventKey_bht68"]
+device = -1
+keycode = 4194308
+
+[sub_resource type="Shortcut" id="Shortcut_i6ahp"]
+events = [SubResource("InputEventKey_hn5ec"), SubResource("InputEventKey_bht68")]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dso0q"]
 corner_radius_top_left = 10
@@ -80,8 +50,8 @@ mouse_filter = 2
 theme = ExtResource("1_pojvv")
 script = ExtResource("2_duodq")
 section_enabler = SubResource("Resource_tw4w7")
-colors = Array[Color]([Color(0, 0.115, 0.69, 1), Color(0.336, 0, 0.63, 1), Color(0.0535872, 0.289066, 0.196954, 1), Color(0.63, 0.5145, 0, 1), Color(0.477462, 0, 0.0376517, 1)])
-sections = Array[ExtResource("4_n0x8i")]([ExtResource("5_hxav7"), SubResource("Resource_jwij4"), SubResource("Resource_fqlfm"), SubResource("Resource_lm46a"), SubResource("Resource_wmsex")])
+colors = Array[Color]([Color(0, 0.115, 0.69, 1), Color(0.336, 0, 0.63, 1), Color(0.0535872, 0.289066, 0.196954, 1), Color(0.65098, 0.498039, 0, 1), Color(0.477462, 0, 0.0376517, 1)])
+sections = Array[ExtResource("4_n0x8i")]([ExtResource("5_hxav7"), ExtResource("6_61u2y"), ExtResource("7_ut7pr"), ExtResource("8_36oi6"), ExtResource("9_k761c")])
 
 [node name="Panel" type="Panel" parent="."]
 material = ExtResource("4_dst4n")
@@ -122,6 +92,7 @@ offset_right = 190.0
 offset_bottom = 1010.0
 size_flags_horizontal = 0
 theme = ExtResource("1_pojvv")
+shortcut = SubResource("Shortcut_i6ahp")
 text = "Voltar"
 
 [node name="Panel" type="Panel" parent="VBoxContainer/CanvasLayer/Back"]

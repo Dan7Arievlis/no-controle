@@ -75,6 +75,7 @@ build_mode = 1
 polygon = PackedVector2Array(-1284, -846, -1284, 434, -290, 432, -289, 172, 292, 172, 292, -166, 472, -166, 472, -841)
 
 [node name="Player" parent="." instance=ExtResource("8_ioyvp")]
+max_hp = 1024.0
 
 [node name="CameraFollow" parent="Player" instance=ExtResource("11_2pmq2")]
 

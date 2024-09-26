@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="JumpResource" load_steps=2 format=3 uid="uid://d0s2plldbkl58"]
+
+[ext_resource type="Script" path="res://scripts/resources/player_settings/JumpResource.gd" id="1_naif3"]
+
+[resource]
+script = ExtResource("1_naif3")
+enable_jump = true
+jump_velocity = 450.0
+max_fall_speed = 450.0
+gravity_fall_multiplier = 1.0
+jump_cut_multiplier = 1.0
+gravity_apex_multiplier = 1.8
+apex_speed_multiplier = 1.8
+apex_margin = 35.0
+coyote_time = 0.16
+jump_buffer = 0.16
+double_jump = false
+double_jump_velocity = 300.0
+jump_wait = 0.1

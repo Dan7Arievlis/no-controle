@@ -1,6 +1,7 @@
 class_name Hurtbox
 extends Area2D
 
+signal got_hit(hp_value : float)
 
 @export var hurtbox_stats: HurtboxStats
 @export var collision_shape: Shape2D
@@ -41,6 +42,7 @@ func remove_hit(dealer : Node2D):
 func on_hit(hit: Hit):
 	if not disabled:
 		hp -= hit.damage
+		got_hit.emit(hp)
 	if hp <= 0.0:
 		_on_death()
 	

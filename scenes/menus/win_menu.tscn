@@ -42,7 +42,7 @@ text = "[center]Nível concluído
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Panel"]
 process_mode = 3
-layer = 2
+layer = 3
 visible = false
 
 [node name="PlayAgain" type="Button" parent="Panel/CanvasLayer"]
@@ -75,7 +75,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_wymd0")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="Panel"]
 process_mode = 3
-layer = 2
+layer = 3
 visible = false
 
 [node name="LevelSelection" type="Button" parent="Panel/CanvasLayer2"]
@@ -109,7 +109,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_wymd0")
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="Panel"]
 process_mode = 3
-layer = 2
+layer = 3
 visible = false
 
 [node name="Desktop" type="Button" parent="Panel/CanvasLayer3"]

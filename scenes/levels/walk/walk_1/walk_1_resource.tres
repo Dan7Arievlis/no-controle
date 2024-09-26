@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=11 format=3 uid="uid://5e6m104rechd"]
+
+[ext_resource type="PackedScene" uid="uid://crylbb47ulghw" path="res://scenes/levels/walk/walk_1/level_walk_1.tscn" id="1_jc5wi"]
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_w3mri"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_t42by"]
+[ext_resource type="Resource" uid="uid://crdxr00ddhv4o" path="res://scenes/levels/walk/walk_1/menu settings/walk_1_jump.tres" id="4_dsbki"]
+[ext_resource type="Resource" uid="uid://blwjuq6u84wnp" path="res://scenes/levels/walk/walk_1/menu settings/walk_1_movement.tres" id="5_snox2"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_wdmvn"]
+[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="7_ssbdw"]
+
+[sub_resource type="Resource" id="Resource_f76m7"]
+script = ExtResource("3_t42by")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0
+
+[sub_resource type="Resource" id="Resource_70k16"]
+script = ExtResource("6_wdmvn")
+enable_wall_jump = false
+wall_jump_vector = Vector2(100, 400)
+wall_jumping_grace_time = 0.1
+jump_off_wall_multiplier = 1.0
+
+[sub_resource type="Resource" id="Resource_qbvip"]
+script = ExtResource("7_ssbdw")
+CAMERA_STATS = SubResource("Resource_f76m7")
+JUMP_STATS = ExtResource("4_dsbki")
+MOVEMENT_STATS = ExtResource("5_snox2")
+WALL_JUMP_STATS = SubResource("Resource_70k16")
+
+[resource]
+script = ExtResource("2_w3mri")
+title = "Mudando de eixo"
+description = "Na etapa anterior, trabalhamos com um dos componentes do movimento do personagem. Mas há outras maneiras de configurar o controle aéreo e terrestre do personagem se nos voltarmos ao [color=b2b2b2][wave freq=4 amp=20]eixo das ordenadas[/wave][/color].
+A velocidade de movimento pode alterar o alcance de um pulo, mesmo seus impulsos estiverem inalterados.
+[color=b2b2b2][wave amp=20 freq=4]Preste atenção![/wave][/color] uma nova versão do personagem foi habilitada nas próximas seções! Agora, se ele receber dano suficiente, a fase será reiniciada!
+[shake level=4 rate=20]Oh não! Os espinhos sofreram uma [color=b2b2b2]mutação[/color] e agora podem se manifestar de diferentes formas [color=b2b2b2][shake level=5 rate=20]INTELIGENTES[/shake][/color]!!"
+level_scene = ExtResource("1_jc5wi")
+stats = SubResource("Resource_qbvip")
+done = false

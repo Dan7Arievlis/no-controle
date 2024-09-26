@@ -27,7 +27,6 @@ platform_floor_layers = 4294901776
 script = ExtResource("2_2nggx")
 
 [node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/Platform"]
-use_parent_material = true
 texture = ExtResource("2_wc6jm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Platform"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ddil1bpyjjq1s"]
+[gd_scene load_steps=21 format=3 uid="uid://ddil1bpyjjq1s"]
 
 [ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="1_l35j0"]
 [ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="2_6i65n"]
@@ -66,6 +66,17 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
+
+[sub_resource type="InputEventKey" id="InputEventKey_g3l13"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="InputEventKey" id="InputEventKey_0v6xb"]
+device = -1
+keycode = 4194308
+
+[sub_resource type="Shortcut" id="Shortcut_7kqdy"]
+events = [SubResource("InputEventKey_g3l13"), SubResource("InputEventKey_0v6xb")]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q803"]
 expand_margin_left = 16.0
@@ -177,6 +188,7 @@ theme_override_constants/margin_left = 52
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
+shortcut = SubResource("Shortcut_7kqdy")
 text = "Voltar"
 
 [node name="Panel" type="Panel" parent="."]

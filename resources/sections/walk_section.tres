@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SectionResource" load_steps=9 format=3 uid="uid://26ntx8ety3f7"]
+
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="1_txiex"]
+[ext_resource type="Resource" uid="uid://5e6m104rechd" path="res://scenes/levels/walk/walk_1/walk_1_resource.tres" id="2_mc6l4"]
+[ext_resource type="Resource" uid="uid://bglqjfpjw4lxb" path="res://scenes/levels/walk/walk_2/walk_2_resource.tres" id="3_d4mny"]
+[ext_resource type="Script" path="res://scripts/resources/SectionResource.gd" id="3_oep35"]
+[ext_resource type="Resource" uid="uid://t7m0ad4djlqn" path="res://scenes/levels/walk/walk_3/walk_3_resource.tres" id="4_e1x34"]
+[ext_resource type="Resource" uid="uid://dp2d4e0puwo8o" path="res://scenes/levels/walk/walk_4/walk_4_resource.tres" id="5_pj6nl"]
+[ext_resource type="Resource" uid="uid://gjjvul7ei2ry" path="res://scenes/levels/walk/walk_5/walk_5_resource.tres" id="6_jehd1"]
+[ext_resource type="Resource" uid="uid://diiw3j7p6v26j" path="res://scenes/levels/walk/walk_6/walk_6_resource.tres" id="7_aodwp"]
+
+[resource]
+script = ExtResource("3_oep35")
+section_title = "Caminhada e corida"
+levels = Array[ExtResource("1_txiex")]([ExtResource("2_mc6l4"), ExtResource("3_d4mny"), ExtResource("4_e1x34"), ExtResource("5_pj6nl"), ExtResource("6_jehd1"), ExtResource("7_aodwp")])

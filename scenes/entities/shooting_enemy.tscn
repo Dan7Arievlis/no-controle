@@ -1,15 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://dnu5tny4kcs4y"]
+[gd_scene load_steps=13 format=3 uid="uid://dnu5tny4kcs4y"]
 
 [ext_resource type="Script" path="res://scripts/enemies/ShootingEnemy.gd" id="1_cma0l"]
 [ext_resource type="PackedScene" uid="uid://g8ut0s3nuijv" path="res://scenes/components/hitbox.tscn" id="2_qtd7r"]
 [ext_resource type="PackedScene" uid="uid://ddfce5yjcoj4n" path="res://scenes/components/hurtbox.tscn" id="3_trvec"]
+[ext_resource type="Shape2D" uid="uid://dje1x35t32cxj" path="res://resources/stats/hurtboxes/shapes/base_enemy_hurtbox_collision_shape.tres" id="4_v7wak"]
 [ext_resource type="Script" path="res://scripts/components/ShootEnemyControl.gd" id="4_w48k4"]
 [ext_resource type="PackedScene" uid="uid://crson4lj6vv0i" path="res://scenes/components/cannon.tscn" id="5_gpn47"]
 [ext_resource type="AnimationLibrary" uid="uid://c4k61gdgd8163" path="res://art/animations/libraries/enemies/shooting_enemy_animation_library.res" id="5_r6cbp"]
-[ext_resource type="Resource" uid="uid://hlap1f0ayffq" path="res://resources/stats/projectiles/shooter_enemy_projectile_stats.tres" id="7_qkfc7"]
 [ext_resource type="Texture2D" uid="uid://bwjm5ea66ixlk" path="res://art/animations/enemies/shooting enemy/shooting_enemy_base.png" id="8_d5mm2"]
 [ext_resource type="Texture2D" uid="uid://cew0ihnqeqxeg" path="res://art/animations/enemies/shooting enemy/shooting_enemy_animation.png" id="9_ad4ym"]
-[ext_resource type="Resource" uid="uid://bkiigd47feeo" path="res://resources/stats/enemies/base_enemy_cannon.tres" id="10_8lllk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enkls"]
 size = Vector2(20, 22)
@@ -52,6 +51,7 @@ collision_mask = 1
 [node name="Hurtbox" parent="." instance=ExtResource("3_trvec")]
 collision_layer = 8192
 collision_mask = 14
+collision_shape = ExtResource("4_v7wak")
 disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -76,8 +76,6 @@ script = ExtResource("4_w48k4")
 
 [node name="Cannon" parent="Sprite2D/ShootControl" groups=["Enemy", "Hittable"] instance=ExtResource("5_gpn47")]
 position = Vector2(18, -5)
-projectile_stats = ExtResource("7_qkfc7")
-cannon_stats = ExtResource("10_8lllk")
 
 [connection signal="on_can_shoot" from="Sprite2D/ShootControl/Cannon" to="Sprite2D/ShootControl" method="_on_cannon_can_shoot"]
 [connection signal="on_cannon_shot" from="Sprite2D/ShootControl/Cannon" to="Sprite2D/ShootControl" method="_on_cannon_shot"]

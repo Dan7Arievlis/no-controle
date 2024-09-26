@@ -56,10 +56,10 @@ func spawn_effect(effect_resource : EffectResource, effect_rotation : float):
 
 
 func _hit():
-	var rotate = linear_velocity.angle()
-	if abs(rad_to_deg(rotate)) > 90:
-		rotate += PI
-	spawn_effect(projectile_stats.hit_effect, rotate) #projectile_stats.hit_effect.instantiate()
+	var _rotate = linear_velocity.angle()
+	if abs(rad_to_deg(_rotate)) > 90:
+		_rotate += PI
+	spawn_effect(projectile_stats.hit_effect, _rotate) #projectile_stats.hit_effect.instantiate()
 
 
 func _destroy():

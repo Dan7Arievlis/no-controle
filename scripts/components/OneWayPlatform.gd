@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var area_2d: Area2D = $Area2D
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("move_down") and Input.is_action_just_pressed("jump"):
 		area_2d.set_deferred("monitoring", true)
 	else:
@@ -17,5 +17,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		body.position.y += 2
 
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(_body: Node2D) -> void:
 	area_2d.set_deferred("monitoring", false)

@@ -4,6 +4,10 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 
 
+func _ready() -> void:
+	animation_player.play("enemies.shooting_enemy/shoot")
+
+
 func _on_cannon_can_shoot() -> void:
 	#TODO animação para atirar
 	animation_player.play("enemies.shooting_enemy/shoot")

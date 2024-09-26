@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+signal on_enemy_death()
+
 @export var enemy_stats : EnemyStats
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -43,9 +45,9 @@ func _walk():
 	animation_player.play("enemies.walking_enemy/walk")
 
 
-func _on_hurtbox_body_entered(body: Node2D) -> void:
+func _on_hurtbox_body_entered(_body: Node2D) -> void:
 	animation_player.play("enemies.walking_enemy/hurt")
 
 
-func _on_hurtbox_area_entered(area: Area2D) -> void:
+func _on_hurtbox_area_entered(_area: Area2D) -> void:
 	animation_player.play("enemies.walking_enemy/hurt")

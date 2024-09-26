@@ -2,7 +2,6 @@ extends MenuComponentCreator
 
 func draw_menu(stats : PlayerStats):
 	var selection_tab = TAB_COMPONENT.instantiate()
-	var movement_page = PAGE_COMPONENT.instantiate()
 	
 	create_tab(selection_tab)
 	
@@ -35,7 +34,7 @@ func draw_menu(stats : PlayerStats):
 	create_label("Velocidade máxima de queda: %.02f" % stats.JUMP_STATS.max_fall_speed, falling_page)
 	create_label("Modificadores de gravidade", falling_page)
 	create_label("Multiplicador de gravidade na queda: %.02f" % stats.JUMP_STATS.gravity_fall_multiplier, falling_page, 
-		"Altera o coportamento da gravidade em um pernsonagem em queda, recomendado para q não passe a sensação que está flutuando.")
+		"Altera o comportamento da gravidade em um personagem em queda, recomendado para que não passe a sensação que está flutuando.")
 	create_label("Multiplicador para corte do pulo: %.02f" % stats.JUMP_STATS.jump_cut_multiplier, falling_page,
 		"Afeta a altura do pulo ao soltar o botão de pulo durante a subida. Quando o multiplicador está em 0, a velocidade do pulo é cortada imediatamente e o personagem começa a cair no mesmo instante; quando o multiplicador é 1, o pulo permanece inalterado mesmo se o botão for liberado.")
 #endregion

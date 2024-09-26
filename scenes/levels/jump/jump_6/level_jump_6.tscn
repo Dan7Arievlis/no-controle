@@ -100,6 +100,7 @@ polygon = PackedVector2Array(-1403, 505, -714, 498, -714, 321, 981, 318, 1531, 1
 [node name="Player" parent="." instance=ExtResource("10_n1q61")]
 position = Vector2(-15, 1)
 clamp_size = Vector2(190, 300)
+max_hp = 1024.0
 
 [node name="CameraFollow" parent="Player" instance=ExtResource("11_d7k5w")]
 

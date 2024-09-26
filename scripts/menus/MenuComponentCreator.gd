@@ -17,7 +17,7 @@ const SMALL_PAGE : Vector2 = Vector2(630, 350)
 var triggers = {}
 
 
-func draw_menu(stats : PlayerStats):
+func draw_menu(_stats : PlayerStats):
 	pass
 
 
@@ -29,8 +29,6 @@ func create_observer(trigger_key : String, element : Control):
 	var trigger = triggers.get(trigger_key)
 	if trigger:
 		trigger.connect_element(element)
-	else:
-		print(triggers)
 
 
 func create_tab(tab, parent = null):

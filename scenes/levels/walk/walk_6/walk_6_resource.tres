@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=11 format=3 uid="uid://diiw3j7p6v26j"]
+
+[ext_resource type="PackedScene" uid="uid://r5v25dpoo8k0" path="res://scenes/levels/walk/walk_6/level_walk_6.tscn" id="1_yf7b1"]
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_iogbu"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_xc8bi"]
+[ext_resource type="Resource" uid="uid://b5r5kij1ufgfs" path="res://scenes/levels/walk/walk_6/menu settings/walk_6_jump.tres" id="4_hdq1s"]
+[ext_resource type="Resource" uid="uid://dk7w475asqweq" path="res://scenes/levels/walk/walk_6/menu settings/walk_6_movement.tres" id="5_534t0"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_ue2kl"]
+[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="7_wut0a"]
+
+[sub_resource type="Resource" id="Resource_f76m7"]
+script = ExtResource("3_xc8bi")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0
+
+[sub_resource type="Resource" id="Resource_70k16"]
+script = ExtResource("6_ue2kl")
+enable_wall_jump = false
+wall_jump_vector = Vector2(100, 400)
+wall_jumping_grace_time = 0.1
+jump_off_wall_multiplier = 1.0
+
+[sub_resource type="Resource" id="Resource_qbvip"]
+script = ExtResource("7_wut0a")
+CAMERA_STATS = SubResource("Resource_f76m7")
+JUMP_STATS = ExtResource("4_hdq1s")
+MOVEMENT_STATS = ExtResource("5_534t0")
+WALL_JUMP_STATS = SubResource("Resource_70k16")
+
+[resource]
+script = ExtResource("2_iogbu")
+title = "Fase de desafio 2"
+description = ""
+level_scene = ExtResource("1_yf7b1")
+stats = SubResource("Resource_qbvip")
+done = false

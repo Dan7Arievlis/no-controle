@@ -3,17 +3,30 @@ extends MenuComponentCreator
 
 func draw_menu(stats : PlayerStats):
 	var selection_tab = TAB_COMPONENT.instantiate()
-	var movement_page = PAGE_COMPONENT.instantiate()
-	
 	create_tab(selection_tab)
 	
 #region Movement Page
+	var movement_page = PAGE_COMPONENT.instantiate()
 	create_page(selection_tab, movement_page, "Movimento", LARGE_PAGE)
 	
 	create_toggle_button("Habilitar movimento", stats.MOVEMENT_STATS, "enable_movement", movement_page)
 	
 	var movement_set_tab = TAB_COMPONENT.instantiate()
 	create_tab(movement_set_tab, movement_page)
+	
+#region Speed Page
+	var speed_page = PAGE_COMPONENT.instantiate()
+	create_page(movement_set_tab, speed_page, "Velocidade", MEDIUM_PAGE)
+	
+	create_simple_slider("Velocidade de caminhada", 30, 300, 0.1, stats.MOVEMENT_STATS, "walk_speed", speed_page,
+		"Velocidade máxima que pode se alcançar ao caminhar.")
+	create_simple_slider("Velocidade de virada", 0, 20, 0.1, stats.MOVEMENT_STATS, "turn_speed", speed_page,
+		"Influencia no tempo para que a direção de movimento se iguale à direção do input enquanto no chão.")
+	create_simple_slider("Velocidade de virada no ar", 0, 20, 0.1, stats.MOVEMENT_STATS, "air_turn_speed", speed_page, 
+		"Influencia no controle de movimento aéreo. Valores baixos fixam a tajetória no ar em relação à direção do primeiro momento no ar.")
+	create_trigger("can_run", create_toggle_button("Pode correr", stats.MOVEMENT_STATS, "can_run", speed_page))
+	create_observer("can_run", create_simple_slider("Velocidade de corrida", 200, 600, 0.1, stats.MOVEMENT_STATS, "run_speed", speed_page))
+#endregion
 	
 #region Acceleration page
 	var acceleration_page = PAGE_COMPONENT.instantiate()
@@ -31,19 +44,6 @@ func draw_menu(stats : PlayerStats):
 		"Influencia o tempo para restaurar a velocidade máxima após excedê-la enquanto estiver no chão.")
 	create_simple_slider("Desaceleração de altas velocidades no ar", 0, 20, 0.1, stats.MOVEMENT_STATS, "air_high_speed_decel", acceleration_page,
 		"Influencia o tempo para restaurar a velocidade máxima após excedê-la enquanto estiver no ar.")
-#endregion
-	
-#region Speed Page
-	var speed_page = PAGE_COMPONENT.instantiate()
-	create_page(movement_set_tab, speed_page, "Velocidade", MEDIUM_PAGE)
-	
-	create_simple_slider("Velocidade de caminhada", 30, 300, 0.1, stats.MOVEMENT_STATS, "walk_speed", speed_page)
-	create_simple_slider("Velocidade de virada", 0, 20, 0.1, stats.MOVEMENT_STATS, "turn_speed", speed_page,
-		"Influencia no tempo para que a direção de movimento se iguale à direção do input enquanto no chão.")
-	create_simple_slider("Velocidade de virada no ar", 0, 20, 0.1, stats.MOVEMENT_STATS, "air_turn_speed", speed_page, 
-		"Influencia no controle de movimento aéreo. Valores baixos fixam a tajetória no ar em relação à direção do primeiro momento no ar.")
-	create_trigger("can_run", create_toggle_button("Pode correr", stats.MOVEMENT_STATS, "can_run", speed_page))
-	create_observer("can_run", create_simple_slider("Velocidade de corrida", 200, 600, 0.1, stats.MOVEMENT_STATS, "run_speed", speed_page))
 #endregion
 #endregion
 	
@@ -82,7 +82,7 @@ func draw_menu(stats : PlayerStats):
 	create_simple_slider("Velocidade máxima de queda", 10, 1200, 1, stats.JUMP_STATS, "max_fall_speed", falling_page)
 	create_label("Modificadores de gravidade", falling_page)
 	create_simple_slider("Multiplicador de gravidade na queda", 1, 5, 0.1, stats.JUMP_STATS, "gravity_fall_multiplier", falling_page,
-		"Altera o coportamento da gravidade em um pernsonagem em queda, recomendado para q não passe a sensação que está flutuando.")
+		"Altera o comportamento da gravidade em um personagem em queda, recomendado para que não passe a sensação que está flutuando.")
 	create_simple_slider("Multiplicador para corte do pulo", 0, 1, 0.01, stats.JUMP_STATS, "jump_cut_multiplier", falling_page,
 		"Afeta a altura do pulo ao soltar o botão de pulo durante a subida. Quando o multiplicador está em 0, a velocidade do pulo é cortada imediatamente e o personagem começa a cair no mesmo instante; quando o multiplicador é 1, o pulo permanece inalterado mesmo se o botão for liberado.")
 #endregion
@@ -113,7 +113,8 @@ func draw_menu(stats : PlayerStats):
 	var dash_impulse_page = PAGE_COMPONENT.instantiate()
 	create_page(dash_set_tab, dash_impulse_page, "Impulso", MEDIUM_PAGE)
 	
-	create_simple_slider("Força do dash", 10, 1000, 1, stats.DASH_STATS, "dash_force", dash_impulse_page)
+	create_simple_slider("Força do dash", 10, 1000, 1, stats.DASH_STATS, "dash_force", dash_impulse_page,
+		"Influencia a velocidade do dash")
 	create_label("Controles direcionais", dash_impulse_page)
 	create_toggle_button("Dash com uma direção", stats.DASH_STATS, "one_directional_dash", dash_impulse_page,
 		"Quando desabilitado, permite o jogador executar dash em 8 direções diferentes.")
@@ -125,7 +126,8 @@ func draw_menu(stats : PlayerStats):
 	var dash_timers = PAGE_COMPONENT.instantiate()
 	create_page(dash_set_tab, dash_timers, "Timers", MEDIUM_PAGE)
 	
-	create_simple_slider("Tempo do dash", 0.1, 1, 0.01, stats.DASH_STATS, "dash_time", dash_timers)
+	create_simple_slider("Tempo do dash", 0.1, 1, 0.01, stats.DASH_STATS, "dash_time", dash_timers,
+		"Tempo de duração do dash.")
 	create_simple_slider("Cooldown do dash", 0.1, 1, 0.01, stats.DASH_STATS, "dash_cooldown", dash_timers,
 		"Tempo de recarga do dash.")
 #endregion
@@ -250,6 +252,7 @@ func draw_menu(stats : PlayerStats):
 		"Quando habilitado, permite executar ataques à distância em 4 direções.")
 	create_toggle_button("8 direções", stats.RANGED_ATTACK_STATS, "_8_directions", directions_page,
 		"Quando habilitado, permite executar ataques à distância em 8 direções.")
+#endregion
 #endregion
 #endregion
 	

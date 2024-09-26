@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MovementResource" load_steps=2 format=3 uid="uid://wkqkm2ysficn"]
+
+[ext_resource type="Script" path="res://scripts/resources/player_settings/MovementResource.gd" id="1_6pmyq"]
+
+[resource]
+script = ExtResource("1_6pmyq")
+enable_movement = true
+accel_rate = 4.8
+decel_rate = 9.0
+air_accel_rate = 3.6
+air_decel_rate = 1.6
+high_speed_decel = 2.4
+air_high_speed_decel = 2.4
+walk_speed = 200.0
+can_run = false
+run_speed = 450.0
+turn_speed = 6.9
+air_turn_speed = 4.3

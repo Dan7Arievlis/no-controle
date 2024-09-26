@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WallSlideResource" load_steps=2 format=3 uid="uid://gn3gq5rbcov1"]
+
+[ext_resource type="Script" path="res://scripts/resources/player_settings/WallSlideResource.gd" id="1_f5n86"]
+
+[resource]
+script = ExtResource("1_f5n86")
+enable_wall_slide = true
+refresh_double_jump = false
+wall_friction = 1.2
+max_wall_slide_velocity = 300.0

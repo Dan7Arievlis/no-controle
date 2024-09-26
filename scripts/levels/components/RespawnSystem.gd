@@ -9,7 +9,7 @@ func _ready() -> void:
 	respawn_point = initial_spawn.position
 	player = get_parent().get_node("Player")
 	player.on_death.connect(respawn_player.bind())
-	death_menu.respawn_signal.connect(respawn.bind())
+	death_menu.connect("respawn_signal", respawn.bind())
 	respawn_player()
 
 

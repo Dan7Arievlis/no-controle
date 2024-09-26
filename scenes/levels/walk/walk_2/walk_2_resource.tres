@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=11 format=3 uid="uid://bglqjfpjw4lxb"]
+
+[ext_resource type="PackedScene" uid="uid://cgahdj1y1sab5" path="res://scenes/levels/walk/walk_2/level_walk_2.tscn" id="1_d4h15"]
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_c7a1k"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_r2bdd"]
+[ext_resource type="Resource" uid="uid://bck6lo1godmvx" path="res://scenes/levels/walk/walk_2/menu settings/walk_2_jump.tres" id="4_gp7hs"]
+[ext_resource type="Resource" uid="uid://6nta7xsour7l" path="res://scenes/levels/walk/walk_2/menu settings/walk_2_movement.tres" id="5_s2cu2"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_1u5a2"]
+[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="7_ju2ib"]
+
+[sub_resource type="Resource" id="Resource_f76m7"]
+script = ExtResource("3_r2bdd")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0
+
+[sub_resource type="Resource" id="Resource_70k16"]
+script = ExtResource("6_1u5a2")
+enable_wall_jump = false
+wall_jump_vector = Vector2(100, 400)
+wall_jumping_grace_time = 0.1
+jump_off_wall_multiplier = 1.0
+
+[sub_resource type="Resource" id="Resource_qbvip"]
+script = ExtResource("7_ju2ib")
+CAMERA_STATS = SubResource("Resource_f76m7")
+JUMP_STATS = ExtResource("4_gp7hs")
+MOVEMENT_STATS = ExtResource("5_s2cu2")
+WALL_JUMP_STATS = SubResource("Resource_70k16")
+
+[resource]
+script = ExtResource("2_c7a1k")
+title = "Tokyo Drift"
+description = "Parece que despejaram óleo no chão! Está deslizando muito!! Para conseguir desviar dos obstáculos e chegar ao fim, precisamos correr para [color=b2b2b2]direção contrária[/color] do movimento!"
+level_scene = ExtResource("1_d4h15")
+stats = SubResource("Resource_qbvip")
+done = false

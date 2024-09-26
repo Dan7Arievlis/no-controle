@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WallSlideResource" load_steps=2 format=3 uid="uid://cruogudajrppy"]
+
+[ext_resource type="Script" path="res://scripts/resources/player_settings/WallSlideResource.gd" id="1_lqgv3"]
+
+[resource]
+script = ExtResource("1_lqgv3")
+enable_wall_slide = false
+refresh_double_jump = false
+wall_friction = 5.0
+max_wall_slide_velocity = 600.0

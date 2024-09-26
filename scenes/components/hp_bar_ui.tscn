@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqdv1w1qdiu6k"]
+
+[ext_resource type="Texture2D" uid="uid://bjk3n4al8yx80" path="res://art/images/hp_bar/hp_bar_under.png" id="1_5jlu7"]
+[ext_resource type="Script" path="res://HpBarUI.gd" id="1_gsng1"]
+[ext_resource type="Texture2D" uid="uid://qybrve06dga4" path="res://art/images/hp_bar/hp_bar_over.png" id="2_hxr5j"]
+[ext_resource type="Texture2D" uid="uid://jrvonl8ajsfs" path="res://art/images/hp_bar/hp_bar_progress.png" id="3_eakm1"]
+[ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="5_kyajj"]
+
+[node name="HpBarUI" type="TextureProgressBar"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_under = ExtResource("1_5jlu7")
+texture_over = ExtResource("2_hxr5j")
+texture_progress = ExtResource("3_eakm1")
+script = ExtResource("1_gsng1")
+
+[node name="Panel" type="Panel" parent="."]
+material = ExtResource("5_kyajj")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

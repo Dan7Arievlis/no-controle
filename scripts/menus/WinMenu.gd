@@ -26,8 +26,8 @@ func save_progress():
 		var dir_path = "user://levels/%s" % get_section()
 		if not DirAccess.dir_exists_absolute(dir_path):
 			DirAccess.make_dir_recursive_absolute(dir_path)
-		var file = FileAccess.open(current_level_path, FileAccess.READ_WRITE)
-	var error = ResourceSaver.save(SavedResources.current_level, current_level_path)
+		FileAccess.open(current_level_path, FileAccess.READ_WRITE)
+	ResourceSaver.save(SavedResources.current_level, current_level_path)
 
 
 func format_user_path(resorce_path : String):

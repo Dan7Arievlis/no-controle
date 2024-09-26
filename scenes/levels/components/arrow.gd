@@ -1,7 +1,7 @@
 extends Sprite2D
 
 var time : float
-var render_offset : int
+var render_offset : float
 
 func _ready() -> void:
 	render_offset = position.y

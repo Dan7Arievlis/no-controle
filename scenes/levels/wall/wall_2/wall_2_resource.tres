@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=11 format=3 uid="uid://dtt0andd775k"]
+
+[ext_resource type="PackedScene" uid="uid://cw7levj88o73l" path="res://scenes/levels/wall/wall_2/level_wall_2.tscn" id="1_mdubi"]
+[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_mqtep"]
+[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_yath3"]
+[ext_resource type="Resource" uid="uid://dil0mt7kpm5wx" path="res://scenes/levels/wall/wall_2/menu settings/wall_2_jump.tres" id="4_vwe5q"]
+[ext_resource type="Resource" uid="uid://cm0guv7gc65av" path="res://scenes/levels/wall/wall_2/menu settings/wall_2_movement.tres" id="5_jv870"]
+[ext_resource type="Resource" uid="uid://lafr5nu0bd25" path="res://scenes/levels/wall/wall_2/menu settings/wall_2_wall_jump.tres" id="6_amm45"]
+[ext_resource type="Resource" uid="uid://cukww5fhpepax" path="res://scenes/levels/wall/wall_2/menu settings/wall_2_wall_slide.tres" id="7_i3dbh"]
+[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="8_6818o"]
+
+[sub_resource type="Resource" id="Resource_f76m7"]
+script = ExtResource("3_yath3")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0
+
+[sub_resource type="Resource" id="Resource_qbvip"]
+script = ExtResource("8_6818o")
+CAMERA_STATS = SubResource("Resource_f76m7")
+JUMP_STATS = ExtResource("4_vwe5q")
+MOVEMENT_STATS = ExtResource("5_jv870")
+WALL_JUMP_STATS = ExtResource("6_amm45")
+WALL_SLIDE_STATS = ExtResource("7_i3dbh")
+
+[resource]
+script = ExtResource("2_mqtep")
+title = "A diferença entre ratos e alpinistas"
+description = ""
+level_scene = ExtResource("1_mdubi")
+stats = SubResource("Resource_qbvip")
+done = false

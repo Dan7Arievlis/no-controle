@@ -831,7 +831,6 @@ animation = &"player/walk"
 animation = &"player/wall_slide"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_jc6p5"]
-graph_offset = Vector2(-532.963, -22.7077)
 nodes/Break/node = SubResource("AnimationNodeStateMachine_dy1vt")
 nodes/Break/position = Vector2(-880, -180)
 nodes/Crash/node = SubResource("AnimationNodeAnimation_wphu4")
@@ -1028,9 +1027,9 @@ parameters/Jump/current_index = 0
 parameters/Movement/current_state = "idle"
 parameters/Movement/transition_request = ""
 parameters/Movement/current_index = 0
-parameters/Movement_Transition/current_state = "walk"
-parameters/Movement_Transition/transition_request = ""
-parameters/Movement_Transition/current_index = 0
+parameters/Movement_Transition/current_state = "slide"
+parameters/Movement_Transition/transition_request = "walk"
+parameters/Movement_Transition/current_index = 2
 parameters/OneShot/active = false
 parameters/OneShot/internal_active = false
 parameters/OneShot/request = 0

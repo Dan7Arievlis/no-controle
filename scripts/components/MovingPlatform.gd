@@ -12,9 +12,13 @@ func _ready() -> void:
 	path.progress_ratio = progress
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	path.progress += direction
 	path.loop = loop
 	if not loop:
 		if path.progress_ratio >= 1 or path.progress_ratio <= 0:
+			if not loop:
+				set_physics_process(false)
+				await get_tree().create_timer(1).timeout
+				set_physics_process(true)
 			direction = -direction

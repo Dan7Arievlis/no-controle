@@ -2,7 +2,6 @@ extends MenuComponentCreator
 
 func draw_menu(stats : PlayerStats):
 	var selection_tab = TAB_COMPONENT.instantiate()
-	var movement_page = PAGE_COMPONENT.instantiate()
 	
 	create_tab(selection_tab)
 	
@@ -19,7 +18,7 @@ func draw_menu(stats : PlayerStats):
 	var impulses_page = PAGE_COMPONENT.instantiate()
 	create_page(jump_set_tab, impulses_page, "Impulsos", MEDIUM_PAGE)
 	
-	create_simple_slider("Velocidade do pulo", 10, 1000, 1, stats.JUMP_STATS, "jump_velocity", impulses_page,
+	create_simple_slider("Velocidade do pulo", 10, 800, 1, stats.JUMP_STATS, "jump_velocity", impulses_page,
 		"Influencia na altura máxima que um pulo poderá alcançar")
 	create_label("Tempo de Coiote e Buffer de Pulo", impulses_page)
 	create_simple_slider("Tempo de Coiote", 0.016, 0.3, 0.016, stats.JUMP_STATS, "coyote_time", impulses_page,
@@ -38,10 +37,10 @@ func draw_menu(stats : PlayerStats):
 	var falling_page = PAGE_COMPONENT.instantiate()
 	create_page(jump_set_tab, falling_page, "Queda", MEDIUM_PAGE)
 	
-	create_simple_slider("Velocidade máxima de queda", 10, 1200, 1, stats.JUMP_STATS, "max_fall_speed", falling_page)
+	create_simple_slider("Velocidade máxima de queda", 200, 1200, 1, stats.JUMP_STATS, "max_fall_speed", falling_page)
 	create_label("Modificadores de gravidade", falling_page)
 	create_simple_slider("Multiplicador de gravidade na queda", 1, 5, 0.1, stats.JUMP_STATS, "gravity_fall_multiplier", falling_page,
-		"Altera o coportamento da gravidade em um pernsonagem em queda, recomendado para q não passe a sensação que está flutuando.")
+		"Altera o comportamento da gravidade em um personagem em queda, recomendado para que não passe a sensação que está flutuando.")
 	create_simple_slider("Multiplicador para corte do pulo", 0, 1, 0.01, stats.JUMP_STATS, "jump_cut_multiplier", falling_page,
 		"Afeta a altura do pulo ao soltar o botão de pulo durante a subida. Quando o multiplicador está em 0, a velocidade do pulo é cortada imediatamente e o personagem começa a cair no mesmo instante; quando o multiplicador é 1, o pulo permanece inalterado mesmo se o botão for liberado.")
 #endregion

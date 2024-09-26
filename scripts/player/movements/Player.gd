@@ -2,6 +2,8 @@ class_name Player
 extends CharacterBody2D
 
 signal on_death
+signal max_life_changed(value : float)
+signal life_changed(value : float)
 
 #region Movement
 var input_direction: float
@@ -41,6 +43,8 @@ var is_attacking: bool
 @export var clamp_size := Vector2(190, 190) : set = set_camera_clamp_size
 @export_group("Damage Tolerance")
 @export_range(0, 1) var damage_movement_tolerance : float = 0.5
+@export_group("Hit Points")
+@export var max_hp : float
 
 #region onready
 @onready var sprite = $Sprite2D
@@ -79,6 +83,7 @@ var stats : PlayerStats :
 
 
 func _ready():
+	set_max_life()
 	animation_tree.active = true
 	animation_player.play("player/RESET")
 
@@ -118,6 +123,22 @@ func _physics_process(delta):
 	if wall_climb and not is_hurt: wall_climb.handle_wall_climb(delta)
 	
 	move_and_slide()
+
+
+func set_max_life():
+	call_deferred("_max_life_changed", max_hp)
+	hurtbox.connect("got_hit", _life_changed.bind())
+	hurtbox.hurtbox_stats.max_hp = max_hp
+	hurtbox.hp = max_hp
+	_life_changed(max_hp)
+
+
+func _life_changed(hp : float):
+	life_changed.emit(hp)
+
+
+func _max_life_changed(hp : float):
+	max_life_changed.emit(hp)
 
 
 func set_camera_clamp_size(new_size: Vector2):

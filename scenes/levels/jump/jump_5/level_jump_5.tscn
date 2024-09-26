@@ -101,6 +101,7 @@ curve = SubResource("Curve2D_qec4a")
 [node name="Player" parent="." instance=ExtResource("9_q4bq4")]
 position = Vector2(-15, 1)
 clamp_size = Vector2(190, 300)
+max_hp = 1024.0
 
 [node name="CameraFollow" parent="Player" instance=ExtResource("10_5ktjn")]
 

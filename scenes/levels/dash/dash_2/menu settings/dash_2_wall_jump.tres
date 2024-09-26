@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WallJumpResource" load_steps=2 format=3 uid="uid://yl31134lwpy"]
+
+[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="1_7001l"]
+
+[resource]
+script = ExtResource("1_7001l")
+enable_wall_jump = true
+wall_jump_vector = Vector2(100, 360)
+wall_jumping_grace_time = 0.1
+jump_off_wall_multiplier = 1.5

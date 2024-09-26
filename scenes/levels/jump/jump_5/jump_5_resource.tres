@@ -35,7 +35,7 @@ WALL_JUMP_STATS = SubResource("Resource_gh5kp")
 [resource]
 script = ExtResource("2_s6lap")
 title = "Meep meep"
-description = "Existem duas variáveis que aprimoram a resposta tátil do jogo, tormando-o mais [color=b2b2b2]responsivo[/color] e punindo menos o jogador por um atraso de alguns frames no input de pulo. Essas variáveis se chamam Tempo de Coiote e Buffer de Pulo.
+description = "Existem duas variáveis que aprimoram a resposta tátil do jogo, tornando-o mais [color=b2b2b2]responsivo[/color] e punindo menos o jogador por um atraso de alguns frames no input de pulo. Essas variáveis se chamam Tempo de Coiote e Buffer de Pulo.
 O [color=b2b2b2]Tempo de Coiote[/color] permite o jogador pular mesmo algum tempo após deixar o chão. Não é realista, mas funciona.
 O [color=b2b2b2]Buffer de Pulo[/color] \"lembra\" que o pulo foi pressionado mesmo se o jogador estiver no ar, sendo executado assim que alcançar o chão."
 level_scene = ExtResource("1_43kdj")

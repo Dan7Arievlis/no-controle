@@ -9,7 +9,7 @@ signal camera_clamped(position : Vector2)
 @onready var camera_follow: CameraFollow = $".."
 @onready var collision_shape_2d: CollisionShape2D = $Clamp/CollisionShape2D
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var size: Vector2 = collision_shape_2d.get_shape().size / 2
 	var target_position = Vector2.ZERO
 	var candidate_target_1 : float
