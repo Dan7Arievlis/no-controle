@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MeleeAttackResource" load_steps=2 format=3 uid="uid://2lvs8jrff2xn"]
+
+[ext_resource type="Script" uid="uid://cg01wxvfi0q3c" path="res://scripts/resources/player_settings/MeleeAttackResource.gd" id="1_rq3u1"]
+
+[resource]
+script = ExtResource("1_rq3u1")
+enable_melee_attack = true
+melee_damage = 1.0
+swing_time = 0.07
+swing_buffer = 0.08
+swing_cooldown = 0.3
+knockback_force = 300.0
+swing_recoil = 20.0
+strike_recoil = 10.0
+pogo_force = 500.0

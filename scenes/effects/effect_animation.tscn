@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://su5h3bknld3m"]
 
-[ext_resource type="Script" path="res://scripts/routines/EffectAnimation.gd" id="1_yiivr"]
+[ext_resource type="Script" uid="uid://ijtcnkkmtmhk" path="res://scripts/routines/EffectAnimation.gd" id="1_yiivr"]
 [ext_resource type="AnimationLibrary" uid="uid://bv6xjcprsyd6r" path="res://art/animations/libraries/effects_animation_library.res" id="4_nvypc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0ie6n"]
@@ -70,10 +70,10 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s5ue6"]
 _data = {
-"RESET": SubResource("Animation_770kd")
+&"RESET": SubResource("Animation_770kd")
 }
 
-[node name="EffectAnimation" type="Node2D"]
+[node name="EffectAnimation" type="Node2D" groups=["Animation Effect"]]
 z_index = 10
 script = ExtResource("1_yiivr")
 
@@ -84,8 +84,8 @@ hframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_s5ue6"),
-"effects": ExtResource("4_nvypc")
+&"": SubResource("AnimationLibrary_s5ue6"),
+&"effects": ExtResource("4_nvypc")
 }
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var player: Player
 @onready var attack_pivot: MeleeAttack
-@onready var cannon: Node2D = $Cannon
+@onready var cannon: Cannon = $Cannon
 @onready var reload_timer: Timer = $Cannon/ReloadTimer
 
 var shoot_buffer : float
@@ -14,11 +14,7 @@ func new(_player : Player, _attack_pivot : MeleeAttack) -> void:
 	player = _player
 	attack_pivot = _attack_pivot
 	ranged_attack_stats = player.stats.RANGED_ATTACK_STATS
-
-
-func _ready() -> void:
-	cannon.on_can_shoot.connect(on_cannon_can_shoot)
-	cannon.on_cannon_shot.connect(on_cannon_shot)
+	cannon.set_cannon(player.stats.PROJECTILE_STATS, player.stats.CANNON_STATS)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -61,8 +57,7 @@ func on_cannon_shot():
 		player.velocity.x -= cannon.cannon_stats.recoil * attack_pivot.scale.x
 
 
-
 func on_cannon_can_shoot():
 	if _auto_fire:
-		shoot()
 		_auto_fire = false
+		shoot()

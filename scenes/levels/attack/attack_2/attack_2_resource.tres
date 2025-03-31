@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=13 format=3 uid="uid://dvig3kssfoinm"]
+
+[ext_resource type="PackedScene" uid="uid://ot4ahj35dpht" path="res://scenes/levels/attack/attack_2/level_attack_2.tscn" id="1_kmwbg"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="2_bk227"]
+[ext_resource type="Script" uid="uid://ccmd3juk6gf68" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_fpidd"]
+[ext_resource type="Resource" uid="uid://bp13wwd0twjwo" path="res://scenes/levels/attack/attack_2/menu settings/attack_2_dash.tres" id="4_wu00h"]
+[ext_resource type="Resource" uid="uid://c3i42djgncgoe" path="res://scenes/levels/attack/attack_2/menu settings/attack_2_jump.tres" id="5_ijenj"]
+[ext_resource type="Resource" uid="uid://2lvs8jrff2xn" path="res://scenes/levels/attack/attack_2/menu settings/attack_2_melee.tres" id="6_byhpe"]
+[ext_resource type="Resource" uid="uid://c87m1nb26sh7d" path="res://scenes/levels/attack/attack_2/menu settings/attack_2_movement.tres" id="7_l3aby"]
+[ext_resource type="Resource" uid="uid://ddftkyux3404y" path="res://scenes/levels/attack/attack_2/menu settings/attack_2_wall_jump.tres" id="8_txbsl"]
+[ext_resource type="Resource" uid="uid://uq48u155vnk1" path="res://scenes/levels/attack/attack_2/menu settings/attack_2_wall_slide.tres" id="9_sgqqs"]
+[ext_resource type="Script" uid="uid://bhpqxby0frwcl" path="res://scripts/resources/PlayerStats.gd" id="10_7bwoi"]
+
+[sub_resource type="Resource" id="Resource_f76m7"]
+script = ExtResource("3_fpidd")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0
+
+[sub_resource type="Resource" id="Resource_qbvip"]
+script = ExtResource("10_7bwoi")
+CAMERA_STATS = SubResource("Resource_f76m7")
+DASH_STATS = ExtResource("4_wu00h")
+JUMP_STATS = ExtResource("5_ijenj")
+MELEE_ATTACK_STATS = ExtResource("6_byhpe")
+MOVEMENT_STATS = ExtResource("7_l3aby")
+WALL_JUMP_STATS = ExtResource("8_txbsl")
+WALL_SLIDE_STATS = ExtResource("9_sgqqs")
+
+[resource]
+script = ExtResource("2_bk227")
+title = "Pogo!"
+description = "Um estilo muito utilizado em jogos com espadas é o [color=b2b2b2]pogo[/color]! A palavra vem do brinquedo pula-pula e pode ser executado ao atingir [color=b2b2b2]inimigos[/color] ou [color=b2b2b2]espinhos[/color] com a espada enquanto no ar, jogando o personagem para cima [color=b2b2b2][wave freq=4 amp=20]como um salto[/wave][/color]!"
+level_scene = ExtResource("1_kmwbg")
+stats = SubResource("Resource_qbvip")
+done = false

@@ -1,8 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://c11olbmkmbije"]
 
 [ext_resource type="PackedScene" uid="uid://ddfce5yjcoj4n" path="res://scenes/components/hurtbox.tscn" id="1_dt0uk"]
-[ext_resource type="Script" path="res://scripts/enemies/TestEnemy.gd" id="1_ttlnq"]
-[ext_resource type="Texture2D" uid="uid://bapqg73e6fye1" path="res://art/icon.png" id="1_vckey"]
+[ext_resource type="Script" uid="uid://cs4vjqy4cjlrm" path="res://scripts/enemies/TestEnemy.gd" id="1_ttlnq"]
 [ext_resource type="AnimationLibrary" uid="uid://7i2x4ehf4r3j" path="res://art/animations/libraries/test_enemy_animation_library.res" id="3_4t0oq"]
 [ext_resource type="Shape2D" uid="uid://dje1x35t32cxj" path="res://resources/stats/hurtboxes/shapes/base_enemy_hurtbox_collision_shape.tres" id="3_uprto"]
 [ext_resource type="Resource" uid="uid://odhp81favghf" path="res://resources/stats/hurtboxes/base_enemy_hurtbox_stats.tres" id="3_vlihk"]
@@ -10,6 +9,24 @@
 [ext_resource type="Resource" uid="uid://bqxnaehd8062t" path="res://resources/stats/hitboxes/base_enemy_hitbox_stats.tres" id="5_i01yp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5dxvd"]
+
+[sub_resource type="Resource" id="Resource_if4mw"]
+metadata/__load_path__ = "res://art/icon.png"
+
+[sub_resource type="Animation" id="Animation_olxhf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitbox:collision_mask")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_o2rvu"]
 tracks/0/type = "method"
@@ -63,25 +80,10 @@ tracks/3/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_olxhf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Hitbox:collision_mask")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q6ntj"]
 _data = {
-"RESET": SubResource("Animation_olxhf"),
-"death": SubResource("Animation_o2rvu")
+&"RESET": SubResource("Animation_olxhf"),
+&"death": SubResource("Animation_o2rvu")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6oxj"]
@@ -100,7 +102,7 @@ debug_color = Color(0.911296, 0.284363, 0.212, 0.42)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.10625, 0.10625)
-texture = ExtResource("1_vckey")
+texture = SubResource("Resource_if4mw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

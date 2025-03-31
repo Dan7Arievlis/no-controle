@@ -1,12 +1,12 @@
 [gd_scene load_steps=27 format=4 uid="uid://bn87wm20vshji"]
 
-[ext_resource type="Script" path="res://scripts/levels/Level.gd" id="1_w1tiw"]
+[ext_resource type="Script" uid="uid://c8xxvfs7ullj8" path="res://scripts/levels/Level.gd" id="1_w1tiw"]
 [ext_resource type="PackedScene" uid="uid://d5cyy80deyjo" path="res://scenes/levels/components/respawn_system.tscn" id="2_q8tkr"]
 [ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="3_bueis"]
 [ext_resource type="PackedScene" uid="uid://cu3ma15rbghyg" path="res://scenes/levels/components/respawn_trigger.tscn" id="3_sg2s1"]
 [ext_resource type="TileSet" uid="uid://chlp3otlj0044" path="res://resources/tilesets/base_tile_set.tres" id="4_0p5p6"]
 [ext_resource type="TileSet" uid="uid://3ls8bo8my2y1" path="res://resources/tilesets/one_way_platforms_tile_set.tres" id="5_u7pjk"]
-[ext_resource type="Script" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="6_togkt"]
+[ext_resource type="Script" uid="uid://ckaxdjsjpay7d" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="6_togkt"]
 [ext_resource type="TileSet" uid="uid://b3sxykajd0y5s" path="res://resources/tilesets/spikes_tile_set.tres" id="7_wwwdb"]
 [ext_resource type="PackedScene" uid="uid://dnu5tny4kcs4y" path="res://scenes/entities/shooting_enemy.tscn" id="8_xh3cc"]
 [ext_resource type="PackedScene" uid="uid://dldwdaspvcq0w" path="res://scenes/entities/player.tscn" id="9_p4w6l"]
@@ -16,8 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://cfdmv3tit4bya" path="res://scenes/levels/components/doorway.tscn" id="11_2bf4a"]
 [ext_resource type="Resource" uid="uid://babs4srfct7ag" path="res://resources/stats/enemies/fast_enemy_cannon.tres" id="11_368gf"]
 [ext_resource type="PackedScene" uid="uid://di32xxa2m60xl" path="res://scenes/menus/pause_menu.tscn" id="12_ur8jl"]
-[ext_resource type="Script" path="res://scenes/levels/dash/dash_5/Dash_5_menu.gd" id="13_a5fwi"]
-[ext_resource type="Shader" path="res://materials/shaders/pause_menu.gdshader" id="13_l6oac"]
+[ext_resource type="Script" uid="uid://carswmimvefsa" path="res://scenes/levels/dash/dash_5/Dash_5_menu.gd" id="13_a5fwi"]
+[ext_resource type="Shader" uid="uid://dwh6b4iw50hbj" path="res://materials/shaders/pause_menu.gdshader" id="13_l6oac"]
 [ext_resource type="PackedScene" uid="uid://nxiywfl7pggr" path="res://scenes/menus/death_menu.tscn" id="15_43xi8"]
 [ext_resource type="PackedScene" uid="uid://go2uyf33ilo7" path="res://scenes/menus/win_menu.tscn" id="16_talhw"]
 [ext_resource type="PackedScene" uid="uid://cqdv1w1qdiu6k" path="res://scenes/components/hp_bar_ui.tscn" id="17_rjc1y"]
@@ -217,9 +217,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1077.0
-offset_top = -844.0
-offset_right = -2073.0
-offset_bottom = -1471.0
+offset_top = 41.0
+offset_right = -2043.0
+offset_bottom = -608.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(18.5862, 39.99)
@@ -233,13 +233,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -285.0
-offset_top = 145.0
-offset_right = -169.0
-offset_bottom = 210.0
+offset_left = -184.0
+offset_top = 17.0
+offset_right = -68.0
+offset_bottom = 82.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "label"
+text = "AVENTE!! >>>>>"
 horizontal_alignment = 1
 
 [connection signal="camera_ready" from="Player/CameraFollow" to="Player" method="_on_camera_follow_camera_ready"]

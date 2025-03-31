@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dldwdaspvcq0w" path="res://scenes/entities/player.tscn" id="4_7hjwl"]
 [ext_resource type="TileSet" uid="uid://3ls8bo8my2y1" path="res://resources/tilesets/one_way_platforms_tile_set.tres" id="4_761at"]
 [ext_resource type="PackedScene" uid="uid://bd1jkgc6dl7v8" path="res://scenes/levels/components/camera_follow.tscn" id="4_hb07s"]
-[ext_resource type="Script" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="5_eqde4"]
+[ext_resource type="Script" uid="uid://ckaxdjsjpay7d" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="5_eqde4"]
 [ext_resource type="PackedScene" uid="uid://c8kcmwwko2dpd" path="res://scenes/components/moving_platform.tscn" id="6_gs6h0"]
 [ext_resource type="PackedScene" uid="uid://dr1om0eg75s8l" path="res://scenes/entities/walking_enemy.tscn" id="6_uk50j"]
 [ext_resource type="TileSet" uid="uid://b3sxykajd0y5s" path="res://resources/tilesets/spikes_tile_set.tres" id="7_3sc4x"]

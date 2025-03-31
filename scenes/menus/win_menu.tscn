@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://go2uyf33ilo7"]
 
-[ext_resource type="Script" path="res://scripts/menus/WinMenu.gd" id="1_t4ejq"]
+[ext_resource type="Script" uid="uid://dmu0cgb2j1414" path="res://scripts/menus/WinMenu.gd" id="1_t4ejq"]
 [ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="2_qk34a"]
 [ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="3_hnih7"]
 

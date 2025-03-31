@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="RangedAttackResource" load_steps=2 format=3 uid="uid://cso4obtygja5w"]
+
+[ext_resource type="Script" uid="uid://b010o4bnshp4r" path="res://scripts/resources/player_settings/RangedAttackResource.gd" id="1_r05y4"]
+
+[resource]
+script = ExtResource("1_r05y4")
+enable_ranged_attack = true
+_4_directions = false
+_8_directions = false

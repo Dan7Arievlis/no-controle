@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://di32xxa2m60xl"]
 
 [ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="1_84dps"]
-[ext_resource type="Script" path="res://scripts/menus/PauseMenu.gd" id="1_uqa8v"]
+[ext_resource type="Script" uid="uid://b8nl4ug2kokeh" path="res://scripts/menus/PauseMenu.gd" id="1_uqa8v"]
 [ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="3_uh3pd"]
-[ext_resource type="Script" path="res://scenes/levels/test/TestMenu.gd" id="4_0m4ex"]
+[ext_resource type="Script" uid="uid://csapx2m55eplr" path="res://scenes/levels/test/TestMenu.gd" id="4_0m4ex"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3xvs"]
 corner_radius_top_left = 10

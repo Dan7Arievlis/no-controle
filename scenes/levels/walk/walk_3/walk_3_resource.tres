@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=11 format=3 uid="uid://t7m0ad4djlqn"]
 
 [ext_resource type="PackedScene" uid="uid://ce7s81lqelmgp" path="res://scenes/levels/walk/walk_3/level_walk_3.tscn" id="1_0otaq"]
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_p8o83"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_8xoxj"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="2_p8o83"]
+[ext_resource type="Script" uid="uid://ccmd3juk6gf68" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_8xoxj"]
 [ext_resource type="Resource" uid="uid://bicncid3txatg" path="res://scenes/levels/walk/walk_3/menu settings/walk_3_jump.tres" id="4_lpwm5"]
 [ext_resource type="Resource" uid="uid://cqt0n6x58lroj" path="res://scenes/levels/walk/walk_3/menu settings/walk_3_movement.tres" id="5_dpcbl"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_irtc8"]
-[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="7_nr8jb"]
+[ext_resource type="Script" uid="uid://ckw8qcv0a4qrb" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_irtc8"]
+[ext_resource type="Script" uid="uid://bhpqxby0frwcl" path="res://scripts/resources/PlayerStats.gd" id="7_nr8jb"]
 
 [sub_resource type="Resource" id="Resource_f76m7"]
 script = ExtResource("3_8xoxj")
@@ -35,7 +35,7 @@ WALL_JUMP_STATS = SubResource("Resource_70k16")
 [resource]
 script = ExtResource("2_p8o83")
 title = "Controle aéreo"
-description = ""
+description = "Para aumentar a autonomia no movimento horizontal aéreo para [color=b2b2b2]mudar de direção no ar[/color] e excutar novas curvas no arco de pulo. Ao aumentar este controle, permite-se que o pernonagem recue de um pulo mal executado e volte para posição inicial para tentar novamente, ou mesmo [color=b2b2b2][wave freq=4 amp=24]dar a volta em obstáculos[/wave][/color] ainda no ar."
 level_scene = ExtResource("1_0otaq")
 stats = SubResource("Resource_qbvip")
 done = false

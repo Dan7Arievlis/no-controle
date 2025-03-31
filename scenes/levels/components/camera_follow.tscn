@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bd1jkgc6dl7v8"]
 
-[ext_resource type="Script" path="res://scripts/player/movements/CameraFollow.gd" id="1_rsmby"]
-[ext_resource type="Script" path="res://scripts/levels/components/ClampCamera.gd" id="2_ssrae"]
+[ext_resource type="Script" uid="uid://cgumpo0qnnqs5" path="res://scripts/player/movements/CameraFollow.gd" id="1_rsmby"]
+[ext_resource type="Script" uid="uid://b018hk466y7r6" path="res://scripts/levels/components/ClampCamera.gd" id="2_ssrae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3a6f"]
 size = Vector2(180, 200)

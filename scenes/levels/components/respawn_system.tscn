@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d5cyy80deyjo"]
 
-[ext_resource type="Script" path="res://scripts/levels/components/RespawnSystem.gd" id="1_4sb2a"]
+[ext_resource type="Script" uid="uid://dtx8er1pfsl58" path="res://scripts/levels/components/RespawnSystem.gd" id="1_4sb2a"]
 
 [node name="RespawnSystem" type="Node2D"]
 script = ExtResource("1_4sb2a")

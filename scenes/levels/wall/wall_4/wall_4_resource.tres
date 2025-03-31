@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=11 format=3 uid="uid://cc5k43cfv82sk"]
 
 [ext_resource type="PackedScene" uid="uid://cbexr7a6aae86" path="res://scenes/levels/wall/wall_4/level_wall_4.tscn" id="1_dsmx8"]
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_x86n5"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_unmg0"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="2_x86n5"]
+[ext_resource type="Script" uid="uid://ccmd3juk6gf68" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_unmg0"]
 [ext_resource type="Resource" uid="uid://dbhsnon8k72i7" path="res://scenes/levels/wall/wall_4/menu settings/wall_4_jump.tres" id="4_u3hhx"]
 [ext_resource type="Resource" uid="uid://wkqkm2ysficn" path="res://scenes/levels/wall/wall_4/menu settings/wall_4_movement.tres" id="5_gok87"]
 [ext_resource type="Resource" uid="uid://cfbfmd5j7oxki" path="res://scenes/levels/wall/wall_4/menu settings/wall_4_wall_jump.tres" id="6_ey8cg"]
 [ext_resource type="Resource" uid="uid://dlaveyjdx5yr8" path="res://scenes/levels/wall/wall_4/menu settings/wall_4_wall_slide.tres" id="7_rr75a"]
-[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="8_ybphl"]
+[ext_resource type="Script" uid="uid://bhpqxby0frwcl" path="res://scripts/resources/PlayerStats.gd" id="8_ybphl"]
 
 [sub_resource type="Resource" id="Resource_f76m7"]
 script = ExtResource("3_unmg0")
@@ -29,8 +29,8 @@ WALL_SLIDE_STATS = ExtResource("7_rr75a")
 
 [resource]
 script = ExtResource("2_x86n5")
-title = "Pulos e acrobacias"
-description = ""
+title = "Atualizando pulo"
+description = "É possível recarregar o pulo duplo a cada vez que deslizar em uma parede. Possibilitando [color=b2b2b2][wave freq=5 amp=20]movimentos mais ágeis[/wave][/color]."
 level_scene = ExtResource("1_dsmx8")
 stats = SubResource("Resource_qbvip")
 done = false

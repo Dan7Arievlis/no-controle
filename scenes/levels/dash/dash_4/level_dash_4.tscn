@@ -1,11 +1,11 @@
 [gd_scene load_steps=23 format=4 uid="uid://bp2py7d7v6mt4"]
 
-[ext_resource type="Script" path="res://scripts/levels/Level.gd" id="1_jb5w3"]
+[ext_resource type="Script" uid="uid://c8xxvfs7ullj8" path="res://scripts/levels/Level.gd" id="1_jb5w3"]
 [ext_resource type="PackedScene" uid="uid://d5cyy80deyjo" path="res://scenes/levels/components/respawn_system.tscn" id="2_8x3cv"]
 [ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="3_jq4cc"]
 [ext_resource type="TileSet" uid="uid://chlp3otlj0044" path="res://resources/tilesets/base_tile_set.tres" id="4_xdu7d"]
 [ext_resource type="TileSet" uid="uid://3ls8bo8my2y1" path="res://resources/tilesets/one_way_platforms_tile_set.tres" id="5_4r5yg"]
-[ext_resource type="Script" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="6_vacon"]
+[ext_resource type="Script" uid="uid://ckaxdjsjpay7d" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="6_vacon"]
 [ext_resource type="TileSet" uid="uid://b3sxykajd0y5s" path="res://resources/tilesets/spikes_tile_set.tres" id="7_ebs2v"]
 [ext_resource type="PackedScene" uid="uid://dldwdaspvcq0w" path="res://scenes/entities/player.tscn" id="8_bpw1r"]
 [ext_resource type="PackedScene" uid="uid://dnu5tny4kcs4y" path="res://scenes/entities/shooting_enemy.tscn" id="8_qmgsl"]
@@ -14,8 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://cfdmv3tit4bya" path="res://scenes/levels/components/doorway.tscn" id="10_kra6x"]
 [ext_resource type="Resource" uid="uid://bkiigd47feeo" path="res://resources/stats/enemies/base_enemy_cannon.tres" id="10_w5ak5"]
 [ext_resource type="PackedScene" uid="uid://di32xxa2m60xl" path="res://scenes/menus/pause_menu.tscn" id="11_bmfp6"]
-[ext_resource type="Shader" path="res://materials/shaders/pause_menu.gdshader" id="12_b0u2h"]
-[ext_resource type="Script" path="res://scenes/levels/dash/dash_4/Dash_4_menu.gd" id="13_05338"]
+[ext_resource type="Shader" uid="uid://dwh6b4iw50hbj" path="res://materials/shaders/pause_menu.gdshader" id="12_b0u2h"]
+[ext_resource type="Script" uid="uid://cbrlng03r1n8t" path="res://scenes/levels/dash/dash_4/Dash_4_menu.gd" id="13_05338"]
 [ext_resource type="PackedScene" uid="uid://nxiywfl7pggr" path="res://scenes/menus/death_menu.tscn" id="14_07d0k"]
 [ext_resource type="PackedScene" uid="uid://go2uyf33ilo7" path="res://scenes/menus/win_menu.tscn" id="15_c8o8j"]
 [ext_resource type="PackedScene" uid="uid://cqdv1w1qdiu6k" path="res://scenes/components/hp_bar_ui.tscn" id="16_c2n7r"]
@@ -78,7 +78,7 @@ metadata/_edit_lock_ = true
 [node name="ViewBox" type="CollisionPolygon2D" parent="TileMap/ClampCamera"]
 position = Vector2(-26, 2)
 build_mode = 1
-polygon = PackedVector2Array(1290, -477, 1200, -109, -933, -109, -935, 299, 1728, 297, 1728, -477)
+polygon = PackedVector2Array(1290, -477, 1200, -109, -933, -109, -935, 299, 1974, 290, 1974, -482)
 
 [node name="Node2D" type="Node2D" parent="TileMap"]
 
@@ -89,7 +89,7 @@ projectile_stats = ExtResource("9_xnrks")
 cannon_stats = ExtResource("10_w5ak5")
 
 [node name="Player" parent="." instance=ExtResource("8_bpw1r")]
-max_hp = 1.0
+max_hp = 2.0
 
 [node name="CameraFollow" parent="Player" instance=ExtResource("9_waytr")]
 

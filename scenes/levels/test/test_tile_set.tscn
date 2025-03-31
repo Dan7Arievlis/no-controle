@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://chlp3otlj0044" path="res://resources/tilesets/base_tile_set.tres" id="1_0uiqn"]
 [ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="1_s7sr1"]
 [ext_resource type="TileSet" uid="uid://3ls8bo8my2y1" path="res://resources/tilesets/one_way_platforms_tile_set.tres" id="2_fcu8d"]
-[ext_resource type="Script" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="3_38d2x"]
+[ext_resource type="Script" uid="uid://ckaxdjsjpay7d" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="3_38d2x"]
 [ext_resource type="Texture2D" uid="uid://bvpdp132f48na" path="res://art/tilesets/spikes_tile_set.png" id="5_txw5p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_esc28"]

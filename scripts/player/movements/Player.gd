@@ -58,6 +58,7 @@ var is_attacking: bool
 @onready var cannon: Node2D = $AttackPivot/RangedAttackInput/Cannon
 #endregion
 
+# Player.gd
 #region Moveset
 var movement : Movement
 var jump : Jump
@@ -103,15 +104,13 @@ func _process(delta):
 	
 	_handle_animation()
 
-
+# Player.gd
 func _physics_process(delta):
 	if is_dead: return
 	if not stats: return
 	movement.handle_movement(delta)
 	
 	var special_moveset = (is_dashing or is_wall_sliding or wall_jumping_timer > 0.0)
-	#if is_wall_sliding and stats.WALL_SLIDE_STATS and stats.WALL_SLIDE_STATS.refresh_double_jump:
-		#jump._can_double_jump = true
 	if jump and not special_moveset:
 		jump.handle_jump(delta)
 	elif not special_moveset:
@@ -228,6 +227,7 @@ func _on_camera_follow_camera_ready(camera_follow):
 
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	#TODO animação de hit
+	if body.is_in_group("Target"): return
 	is_hurt = true
 	if body.is_in_group("Spikes"):
 		velocity = (Vector2.UP * 300).rotated(body.get_angle_to(attack_pivot.position))

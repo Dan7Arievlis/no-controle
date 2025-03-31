@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=12 format=3 uid="uid://tymlabgctln2"]
 
 [ext_resource type="PackedScene" uid="uid://c7wd7aae6cv0u" path="res://scenes/levels/wall/wall_1/level_wall_1.tscn" id="1_ymrbm"]
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_2outp"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_djtcf"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="2_2outp"]
+[ext_resource type="Script" uid="uid://ccmd3juk6gf68" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_djtcf"]
 [ext_resource type="Resource" uid="uid://d0s2plldbkl58" path="res://scenes/levels/wall/wall_1/menu settings/wall_1_jump.tres" id="4_jd1v1"]
 [ext_resource type="Resource" uid="uid://bhn8b44g3bsvf" path="res://scenes/levels/wall/wall_1/menu settings/wall_1_movement.tres" id="5_hyqq8"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_ihu4d"]
+[ext_resource type="Script" uid="uid://ckw8qcv0a4qrb" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_ihu4d"]
 [ext_resource type="Resource" uid="uid://bgvj5mhf8tqv2" path="res://scenes/levels/wall/wall_1/menu settings/wall_1_wall_slide.tres" id="7_a0itf"]
-[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="8_sglfs"]
+[ext_resource type="Script" uid="uid://bhpqxby0frwcl" path="res://scripts/resources/PlayerStats.gd" id="8_sglfs"]
 
 [sub_resource type="Resource" id="Resource_f76m7"]
 script = ExtResource("3_djtcf")
@@ -37,7 +37,7 @@ WALL_SLIDE_STATS = ExtResource("7_a0itf")
 [resource]
 script = ExtResource("2_2outp")
 title = "Deslizando"
-description = ""
+description = "A primeira etapa para o pulo na parede é [color=b2b2b2]controlar o deslize[/color] por ela. Às vezes, é preferido que o personagem permaneça [color=b2b2b2]imóvel ao agarrar-se[/color] à uma parede, outras vezes, é priorizado o [color=b2b2b2]controle de sua posição[/color], deixando uma velocidade de deslize baixa, ou ainda, pode-se ter uma alta velocidade de deslize, mas uma [color=b2b2b2]aceleração muito baixa[/color] para alcançar a velocidade terminal."
 level_scene = ExtResource("1_ymrbm")
 stats = SubResource("Resource_qbvip")
 done = false

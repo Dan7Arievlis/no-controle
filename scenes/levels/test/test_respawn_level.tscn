@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="3_nujew"]
 [ext_resource type="TileSet" uid="uid://chlp3otlj0044" path="res://resources/tilesets/base_tile_set.tres" id="4_5727v"]
 [ext_resource type="TileSet" uid="uid://3ls8bo8my2y1" path="res://resources/tilesets/one_way_platforms_tile_set.tres" id="5_tnmpx"]
-[ext_resource type="Script" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="6_r1rks"]
+[ext_resource type="Script" uid="uid://ckaxdjsjpay7d" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="6_r1rks"]
 [ext_resource type="TileSet" uid="uid://b3sxykajd0y5s" path="res://resources/tilesets/spikes_tile_set.tres" id="7_rkfdh"]
 [ext_resource type="PackedScene" uid="uid://c8kcmwwko2dpd" path="res://scenes/components/moving_platform.tscn" id="8_edayj"]
 [ext_resource type="PackedScene" uid="uid://dldwdaspvcq0w" path="res://scenes/entities/player.tscn" id="9_qlmer"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://nxiywfl7pggr"]
 
-[ext_resource type="Script" path="res://scripts/menus/DeathMenu.gd" id="1_p5hfe"]
+[ext_resource type="Script" uid="uid://dtbnvt7naij5i" path="res://scripts/menus/DeathMenu.gd" id="1_p5hfe"]
 [ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="2_b0hto"]
 [ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="3_gs8x3"]
 

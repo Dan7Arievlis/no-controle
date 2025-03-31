@@ -25,10 +25,14 @@ extends Resource
 			BACKUP_JUMP_STATS = stats.duplicate() as JumpResource
 	get():
 		return BACKUP_JUMP_STATS
+var MELEE_HITBOX_STATS : HitboxStats :
+	get():
+		return BACKUP_MELEE_HITBOX_STATS
 @export var MELEE_ATTACK_STATS : MeleeAttackResource :
 	set(stats):
 		if stats:
 			BACKUP_MELEE_ATTACK_STATS = stats.duplicate() as MeleeAttackResource
+			BACKUP_MELEE_HITBOX_STATS = HitboxStats.new(BACKUP_MELEE_ATTACK_STATS.melee_damage, BACKUP_MELEE_ATTACK_STATS.knockback_force)
 	get():
 		return BACKUP_MELEE_ATTACK_STATS
 @export var MOVEMENT_STATS : MovementResource :
@@ -73,6 +77,7 @@ var BACKUP_CANNON_STATS : CannonStats
 var BACKUP_DASH_STATS : DashResource
 var BACKUP_JUMP_STATS : JumpResource
 var BACKUP_MELEE_ATTACK_STATS : MeleeAttackResource
+var BACKUP_MELEE_HITBOX_STATS : HitboxStats
 var BACKUP_MOVEMENT_STATS : MovementResource
 var BACKUP_PROJECTILE_STATS : ProjectileStats
 var BACKUP_RANGED_ATTACK_STATS : RangedAttackResource

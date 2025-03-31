@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=11 format=3 uid="uid://gjjvul7ei2ry"]
 
 [ext_resource type="PackedScene" uid="uid://ca83axwew5dbw" path="res://scenes/levels/walk/walk_5/level_walk_5.tscn" id="1_hfcrn"]
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_vdubb"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_lxlo0"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="2_vdubb"]
+[ext_resource type="Script" uid="uid://ccmd3juk6gf68" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_lxlo0"]
 [ext_resource type="Resource" uid="uid://2pe1ypq61pcr" path="res://scenes/levels/walk/walk_5/menu settings/walk_5_jump.tres" id="4_qfqow"]
 [ext_resource type="Resource" uid="uid://di21qfq1fp40r" path="res://scenes/levels/walk/walk_5/menu settings/walk_5_movement.tres" id="5_yfxt0"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_cahbw"]
-[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="7_mfbym"]
+[ext_resource type="Script" uid="uid://ckw8qcv0a4qrb" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_cahbw"]
+[ext_resource type="Script" uid="uid://bhpqxby0frwcl" path="res://scripts/resources/PlayerStats.gd" id="7_mfbym"]
 
 [sub_resource type="Resource" id="Resource_f76m7"]
 script = ExtResource("3_lxlo0")
@@ -35,7 +35,7 @@ WALL_JUMP_STATS = SubResource("Resource_70k16")
 [resource]
 script = ExtResource("2_vdubb")
 title = "Acelerando!"
-description = ""
+description = "Agora, quando o personagem começa a se mover, alcança a velocidade máxima [color=b2b2b2]instantaneamente[/color], como se fosse um robô!! (que, no caso, é mesmo!) Mas, supondo que não seja, como mudar isso e dar mais personalidade ao personagem apenas no caminhar? Fácil! Apenas aplicar simples [color=b2b2b2][wave amp=24 freq=5]física newtoniana[/wave][/color]!! Com uma simples implementação de [color=b2b2b2]aceleração[/color] no movimento, é possível criar vários estilos de movimento para diferentes personagens!"
 level_scene = ExtResource("1_hfcrn")
 stats = SubResource("Resource_qbvip")
 done = false

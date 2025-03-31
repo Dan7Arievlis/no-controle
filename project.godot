@@ -12,7 +12,7 @@ config_version=5
 
 config/name="No Controle"
 run/main_scene="res://scenes/menus/main_menu.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://art/images/icon.png"
 
 [autoload]
@@ -40,6 +40,13 @@ Spikes=""
 "Pause Menu"=""
 Exit=""
 Projectile=""
+Target=""
+Cannon=""
+"Animation Effect"=""
+
+[gui]
+
+timers/tooltip_delay_sec=0.0
 
 [input]
 

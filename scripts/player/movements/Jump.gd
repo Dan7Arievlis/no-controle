@@ -22,7 +22,7 @@ func handle_jump(delta: float):
 	# pulo duplo
 	if player.is_on_floor() and not Input.is_action_pressed("jump"):
 		_can_double_jump = false
-	
+
 	# está no ápice do pulo
 	if player.is_in_apex:
 		player.local_gravity = player.gravity / jump_stats.gravity_apex_multiplier

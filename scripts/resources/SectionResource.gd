@@ -1,3 +1,4 @@
+# SectionResource.gd
 class_name SectionResource
 extends Resource
 

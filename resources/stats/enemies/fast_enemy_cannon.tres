@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CannonStats" load_steps=2 format=3 uid="uid://babs4srfct7ag"]
 
-[ext_resource type="Script" path="res://scripts/resources/CannonStats.gd" id="1_j216o"]
+[ext_resource type="Script" uid="uid://ochlx16padig" path="res://scripts/resources/CannonStats.gd" id="1_j216o"]
 
 [resource]
 script = ExtResource("1_j216o")

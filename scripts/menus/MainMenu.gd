@@ -10,6 +10,7 @@ const COLOR_CHANGE_MATERIAL = preload("res://materials/color_change_material.tre
 func _ready() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	get_tree().call_group("Projectile", "queue_free")
+	get_tree().call_group("Animation Effect", "queue_free")
 
 
 func _on_choose_level_pressed() -> void:

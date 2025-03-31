@@ -33,18 +33,18 @@ func handle_dash(_delta: float):
 
 
 func get_dash_vector() -> Vector2:
-	var vertical_direction := 0.0
-	if Input.get_axis("move_up", "move_down"):
-		vertical_direction = Input.get_axis("move_up", "move_down")
-	if not dash_stats.one_directional_dash:
-		dash_direction = Vector2(player.input_direction, vertical_direction)
+	var horizontal_direction := 0.0
+	var vertical_direction := Input.get_axis("move_up", "move_down")
 	if player.input_direction:
 		last_x_direction = player.input_direction
-		dash_direction.x = last_x_direction
-	elif not vertical_direction and not dash_stats.one_directional_dash:
-		dash_direction = Vector2(last_x_direction, 0)
-	if not dash_stats.save_last_horizontal:
-		dash_direction = Vector2(player.input_direction, vertical_direction)
+	if not dash_stats.save_last_horizontal or player.input_direction == 0 and vertical_direction != 0:
+		horizontal_direction = player.input_direction 
+	else:
+		horizontal_direction = last_x_direction
+	if dash_stats.one_directional_dash:
+		dash_direction = Vector2(horizontal_direction, 0)
+	else:
+		dash_direction = Vector2(horizontal_direction, vertical_direction)
 		
 	return dash_direction * dash_stats.dash_force
 

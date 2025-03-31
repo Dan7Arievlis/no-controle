@@ -2,6 +2,7 @@ extends Control
 
 @onready var label: Label = $Label
 @onready var check_button: CheckButton = $CheckButton
+@onready var question_button: Button = %QuestionButton
 
 var change_stats : Resource
 var change_variable : String
@@ -27,7 +28,8 @@ func add_tooltip(tooltip):
 		if i >= max_length and ch == ' ':
 			result += '\n'
 			i = 0
-	label.tooltip_text = result
+	question_button.tooltip_text = result
+	question_button.visible = not result.is_empty()
 
 
 func connect_element(element : CanvasItem):

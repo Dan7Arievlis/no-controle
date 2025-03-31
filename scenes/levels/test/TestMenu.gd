@@ -237,7 +237,7 @@ func draw_menu(stats : PlayerStats):
 	var cannon_page = PAGE_COMPONENT.instantiate()
 	create_page(ranged_set_tab, cannon_page, "Canhão", SMALL_PAGE)
 	
-	#create_simple_slider("Tempo de recarga", 0.01, 2, 0.01, stats.CANNON_STATS, "reload_time", cannon_page)
+	create_simple_slider("Tempo de recarga", 0.01, 2, 0.01, stats.CANNON_STATS, "reload_time", cannon_page)
 	create_simple_slider("Coice", 0, 200, 1, stats.CANNON_STATS, "recoil", cannon_page,
 		"Força exercida sobre o jogador quando realizar um ataque à distância parado.")
 	#create_simple_slider("Munição máxima", -1, 5, 1, stats.CANNON_STATS, "max_ammo", cannon_page,

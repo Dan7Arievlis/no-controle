@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://bats1xt8ht50p" path="res://resources/effects/enemy_projectile_destroy_effect.tres" id="1_68fj3"]
 [ext_resource type="Resource" uid="uid://mh06irviantv" path="res://resources/effects/enemy_projectile_hit_effect.tres" id="2_1viij"]
-[ext_resource type="Script" path="res://scripts/resources/ProjectileStats.gd" id="3_txbsa"]
+[ext_resource type="Script" uid="uid://cj5u23i8uxjtd" path="res://scripts/resources/ProjectileStats.gd" id="3_txbsa"]
 [ext_resource type="Resource" uid="uid://6veafbrq436b" path="res://resources/effects/enemy_projectile_travel_effect.tres" id="4_ap7do"]
 
 [resource]

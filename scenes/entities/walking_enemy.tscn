@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dr1om0eg75s8l"]
 
-[ext_resource type="Script" path="res://scripts/enemies/WalkingEnemy.gd" id="1_7jpjx"]
+[ext_resource type="Script" uid="uid://baceo2dbqmgk5" path="res://scripts/enemies/WalkingEnemy.gd" id="1_7jpjx"]
 [ext_resource type="PackedScene" uid="uid://g8ut0s3nuijv" path="res://scenes/components/hitbox.tscn" id="2_3kx52"]
 [ext_resource type="Resource" uid="uid://do2uflangx4e8" path="res://resources/stats/enemies/base_enemy.tres" id="2_tvkxj"]
 [ext_resource type="PackedScene" uid="uid://ddfce5yjcoj4n" path="res://scenes/components/hurtbox.tscn" id="3_4p8au"]
@@ -317,8 +317,8 @@ tracks/13/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bm3x2"]
 _data = {
-"RESET": SubResource("Animation_0akvx"),
-"death": SubResource("Animation_ral8n")
+&"RESET": SubResource("Animation_0akvx"),
+&"death": SubResource("Animation_ral8n")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0sb7f"]

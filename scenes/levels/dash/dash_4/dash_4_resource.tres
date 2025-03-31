@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=12 format=3 uid="uid://cwc61fn6bgpa6"]
 
 [ext_resource type="PackedScene" uid="uid://bp2py7d7v6mt4" path="res://scenes/levels/dash/dash_4/level_dash_4.tscn" id="1_d3alo"]
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_ephfa"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_51gcw"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="2_ephfa"]
+[ext_resource type="Script" uid="uid://ccmd3juk6gf68" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_51gcw"]
 [ext_resource type="Resource" uid="uid://d1hdobqd2ed6b" path="res://scenes/levels/dash/dash_4/menu settings/dash_4_dash.tres" id="4_4jqss"]
 [ext_resource type="Resource" uid="uid://bvxhv6p0lk7q2" path="res://scenes/levels/dash/dash_4/menu settings/dash_4_jump.tres" id="5_cmasv"]
 [ext_resource type="Resource" uid="uid://jjoxib8qcah5" path="res://scenes/levels/dash/dash_4/menu settings/dash_4_movement.tres" id="6_b87if"]
 [ext_resource type="Resource" uid="uid://cpy4ocme1ean" path="res://scenes/levels/dash/dash_4/menu settings/dash_4_wall_jump.tres" id="7_8ppd5"]
 [ext_resource type="Resource" uid="uid://drs2q5urby45a" path="res://scenes/levels/dash/dash_4/menu settings/dash_4_wall_slide.tres" id="8_86wke"]
-[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="9_s06ce"]
+[ext_resource type="Script" uid="uid://bhpqxby0frwcl" path="res://scripts/resources/PlayerStats.gd" id="9_s06ce"]
 
 [sub_resource type="Resource" id="Resource_f76m7"]
 script = ExtResource("3_51gcw")
@@ -32,7 +32,7 @@ WALL_SLIDE_STATS = ExtResource("8_86wke")
 [resource]
 script = ExtResource("2_ephfa")
 title = "Desviando"
-description = ""
+description = "[color=b2b2b2]CUIDADO![/color] Alguém colocou um canhão no caminho e precisamos ultrapassá-lo, mas não temos velocidade para isso... Esgueire-se para [color=b2b2b2]cobertura[/color] e evite os tiros!"
 level_scene = ExtResource("1_d3alo")
 stats = SubResource("Resource_qbvip")
 done = false

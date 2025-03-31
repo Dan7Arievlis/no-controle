@@ -1,3 +1,4 @@
+# MenuComponentCreator
 class_name MenuComponentCreator
 extends VBoxContainer
 
@@ -10,12 +11,11 @@ const LABEL_COMPONENT = preload("res://scenes/menus/components/label_component.t
 const SETTINGS_SCENE = preload("res://scenes/menus/components/settings_scene.tscn")
 
 const LARGE_PAGE : Vector2 = Vector2(700, 630)
-const MEDIUM_PAGE_PLUS : Vector2 = Vector2(670, 550)
-const MEDIUM_PAGE : Vector2 = Vector2(670, 470)
-const SMALL_PAGE : Vector2 = Vector2(630, 350)
+const MEDIUM_PAGE_PLUS : Vector2 = Vector2(690, 550)
+const MEDIUM_PAGE : Vector2 = Vector2(690, 470)
+const SMALL_PAGE : Vector2 = Vector2(655, 350)
 
 var triggers = {}
-
 
 func draw_menu(_stats : PlayerStats):
 	pass

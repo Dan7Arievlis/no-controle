@@ -21,9 +21,9 @@ func new(_player : Player) -> void:
 	melee_attack_stats = player.stats.MELEE_ATTACK_STATS
 	swing_cooldown.wait_time = melee_attack_stats.swing_cooldown
 	
-	side_swing.hitbox_stats = HitboxStats.new(melee_attack_stats.melee_damage, melee_attack_stats.knockback_force)
-	down_swing.hitbox_stats = HitboxStats.new(melee_attack_stats.melee_damage, melee_attack_stats.knockback_force)
-	up_swing.hitbox_stats = HitboxStats.new(melee_attack_stats.melee_damage, melee_attack_stats.knockback_force)
+	side_swing.hitbox_stats = player.stats.MELEE_HITBOX_STATS
+	down_swing.hitbox_stats = player.stats.MELEE_HITBOX_STATS
+	up_swing.hitbox_stats  =  player.stats.MELEE_HITBOX_STATS
 
 	side_swing.hide()
 	down_swing.hide()
@@ -100,7 +100,11 @@ func _on_down_swing_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):
 		player.velocity.y = -melee_attack_stats.strike_recoil * 3
 	if body.is_in_group("Pogo"):
+		player.local_gravity = player.gravity
 		player.velocity.y = -melee_attack_stats.pogo_force
+		player.dash.can_dash = true
+		player.dash.has_dashed = false
+		return
 	elif not body.is_in_group("Terrain"):
 		body.apply_impulse(Vector2(down_swing.hitbox_stats.knockback_force * sin(body.get_angle_to(player.attack_pivot.position)), down_swing.hitbox_stats.knockback_force))
 	else:

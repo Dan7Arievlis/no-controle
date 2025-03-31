@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="SectionResource" load_steps=10 format=3 uid="uid://cjj8d3o1a68j0"]
 
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="1_rh1x3"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="1_rh1x3"]
 [ext_resource type="Resource" uid="uid://ch8lamlnt7hv6" path="res://scenes/levels/jump/jump_1/jump_1_resource.tres" id="2_xmkc2"]
 [ext_resource type="Resource" uid="uid://c1vg0gscwbe0f" path="res://scenes/levels/jump/jump_3/jump_3_resource.tres" id="3_5wrbo"]
-[ext_resource type="Script" path="res://scripts/resources/SectionResource.gd" id="3_fit74"]
+[ext_resource type="Script" uid="uid://cxykxa4fw424o" path="res://scripts/resources/SectionResource.gd" id="3_fit74"]
 [ext_resource type="Resource" uid="uid://bwor0hepo0noc" path="res://scenes/levels/jump/jump_2/jump_2_resource.tres" id="4_a878y"]
 [ext_resource type="Resource" uid="uid://dh16yisfeb78a" path="res://scenes/levels/jump/jump_4/jump_4_resource.tres" id="5_esxly"]
 [ext_resource type="Resource" uid="uid://bpwlk8djhma48" path="res://scenes/levels/jump/jump_5/jump_5_resource.tres" id="6_hurku"]

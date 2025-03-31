@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c8kcmwwko2dpd"]
 
-[ext_resource type="Script" path="res://scripts/components/MovingPlatform.gd" id="1_ibphc"]
-[ext_resource type="Script" path="res://scripts/components/OneWayPlatform.gd" id="2_2nggx"]
+[ext_resource type="Script" uid="uid://c5ekt5tsqew01" path="res://scripts/components/MovingPlatform.gd" id="1_ibphc"]
+[ext_resource type="Script" uid="uid://dq8bosqytvfnb" path="res://scripts/components/OneWayPlatform.gd" id="2_2nggx"]
 [ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="2_3bf82"]
 [ext_resource type="Texture2D" uid="uid://dj4bstaogd1xr" path="res://art/tilesets/moving_platform_tile.png" id="2_wc6jm"]
 
@@ -27,6 +27,7 @@ platform_floor_layers = 4294901776
 script = ExtResource("2_2nggx")
 
 [node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/Platform"]
+material = ExtResource("2_3bf82")
 texture = ExtResource("2_wc6jm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Platform"]

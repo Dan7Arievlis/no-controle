@@ -1,6 +1,7 @@
 extends MarginContainer
 
 @onready var label: Label = $HBoxContainer/Label
+@onready var question_button: Button = %QuestionButton
 
 func initialize(text : String, tooltip : String = ""):
 	label.text = text
@@ -17,4 +18,5 @@ func add_tooltip(tooltip):
 		if i >= max_length and ch == ' ':
 			result += '\n'
 			i = 0
-	label.tooltip_text = result
+	question_button.tooltip_text = result
+	question_button.visible = not result.is_empty()

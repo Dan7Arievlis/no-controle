@@ -2,12 +2,12 @@
 
 [ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="1_l35j0"]
 [ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="2_6i65n"]
-[ext_resource type="Script" path="res://scripts/menus/LevelSelectionMenu.gd" id="2_gxkpd"]
+[ext_resource type="Script" uid="uid://knccpm0db2li" path="res://scripts/menus/LevelSelectionMenu.gd" id="2_gxkpd"]
 [ext_resource type="Texture2D" uid="uid://qka4x7o0wddg" path="res://art/images/check_mark.png" id="2_msdrk"]
-[ext_resource type="Script" path="res://scripts/resources/SectionResource.gd" id="4_lgrt0"]
+[ext_resource type="Script" uid="uid://cxykxa4fw424o" path="res://scripts/resources/SectionResource.gd" id="4_lgrt0"]
 [ext_resource type="PackedScene" uid="uid://v61712gtq7h3" path="res://scenes/levels/test/enemy_test_level.tscn" id="5_3hvnx"]
 [ext_resource type="PackedScene" uid="uid://blmnd2rtmhjxs" path="res://scenes/levels/test/test_level.tscn" id="5_qifof"]
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="6_5gno8"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="6_5gno8"]
 [ext_resource type="PackedScene" uid="uid://cp3m3davov82s" path="res://scenes/levels/test/test_respawn_level.tscn" id="6_61j06"]
 
 [sub_resource type="Resource" id="Resource_yvfws"]
@@ -189,6 +189,7 @@ theme_override_constants/margin_left = 52
 layout_mode = 2
 size_flags_horizontal = 0
 shortcut = SubResource("Shortcut_7kqdy")
+shortcut_in_tooltip = false
 text = "Voltar"
 
 [node name="Panel" type="Panel" parent="."]

@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4e4qjctdojyb"]
+[gd_scene load_steps=3 format=3 uid="uid://d4e4qjctdojyb"]
 
-[ext_resource type="Script" path="res://scripts/menus/components/SimpleSliderComponent.gd" id="2_s5imx"]
+[ext_resource type="Script" uid="uid://dmdj3r2yyotps" path="res://scripts/menus/components/SimpleSliderComponent.gd" id="2_s5imx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg3in"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 7.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0.0716666, 0.43, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="SimpleSlider" type="MarginContainer"]
 offset_right = 40.0
@@ -26,8 +37,17 @@ size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 
 [node name="ValueLabel" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(62, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "10"
+
+[node name="QuestionButton" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/disabled = SubResource("StyleBoxFlat_sg3in")
+disabled = true
+text = "?"
 
 [connection signal="value_changed" from="HBoxContainer/HSlider" to="." method="_on_slider_value_changed"]

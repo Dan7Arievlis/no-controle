@@ -1,23 +1,24 @@
-[gd_scene load_steps=20 format=4 uid="uid://d6bq6qawl0r2"]
+[gd_scene load_steps=21 format=4 uid="uid://d6bq6qawl0r2"]
 
-[ext_resource type="Script" path="res://scripts/levels/Level.gd" id="1_3860o"]
+[ext_resource type="Script" uid="uid://c8xxvfs7ullj8" path="res://scripts/levels/Level.gd" id="1_3860o"]
 [ext_resource type="PackedScene" uid="uid://d5cyy80deyjo" path="res://scenes/levels/components/respawn_system.tscn" id="2_eo66u"]
 [ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="4_fxwdr"]
 [ext_resource type="TileSet" uid="uid://chlp3otlj0044" path="res://resources/tilesets/base_tile_set.tres" id="5_s82as"]
 [ext_resource type="TileSet" uid="uid://3ls8bo8my2y1" path="res://resources/tilesets/one_way_platforms_tile_set.tres" id="6_lslkq"]
-[ext_resource type="Script" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="7_m1og6"]
+[ext_resource type="Script" uid="uid://ckaxdjsjpay7d" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="7_m1og6"]
 [ext_resource type="TileSet" uid="uid://b3sxykajd0y5s" path="res://resources/tilesets/spikes_tile_set.tres" id="8_0637j"]
 [ext_resource type="PackedScene" uid="uid://dldwdaspvcq0w" path="res://scenes/entities/player.tscn" id="9_emknj"]
 [ext_resource type="PackedScene" uid="uid://bd1jkgc6dl7v8" path="res://scenes/levels/components/camera_follow.tscn" id="10_xubjw"]
 [ext_resource type="PackedScene" uid="uid://cfdmv3tit4bya" path="res://scenes/levels/components/doorway.tscn" id="11_v0nnc"]
 [ext_resource type="PackedScene" uid="uid://di32xxa2m60xl" path="res://scenes/menus/pause_menu.tscn" id="12_vj7nv"]
-[ext_resource type="Shader" path="res://materials/shaders/pause_menu.gdshader" id="13_haqo5"]
-[ext_resource type="Script" path="res://scenes/levels/dash/dash_3/Dash_3_menu.gd" id="14_gge4b"]
+[ext_resource type="Shader" uid="uid://dwh6b4iw50hbj" path="res://materials/shaders/pause_menu.gdshader" id="13_haqo5"]
+[ext_resource type="Script" uid="uid://50hxcmaluojm" path="res://scenes/levels/dash/dash_3/Dash_3_menu.gd" id="14_gge4b"]
 [ext_resource type="PackedScene" uid="uid://nxiywfl7pggr" path="res://scenes/menus/death_menu.tscn" id="15_ws2k3"]
 [ext_resource type="PackedScene" uid="uid://go2uyf33ilo7" path="res://scenes/menus/win_menu.tscn" id="16_ngitq"]
 [ext_resource type="PackedScene" uid="uid://cqdv1w1qdiu6k" path="res://scenes/components/hp_bar_ui.tscn" id="17_fedi6"]
 [ext_resource type="Theme" uid="uid://ckhww1aw5ghp1" path="res://themes/font_theme_16px.tres" id="18_7iy7k"]
 [ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="19_7yofd"]
+[ext_resource type="PackedScene" uid="uid://cu3ma15rbghyg" path="res://scenes/levels/components/respawn_trigger.tscn" id="19_i38qp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yxn5e"]
 resource_local_to_scene = true
@@ -154,6 +155,9 @@ grow_vertical = 2
 text = "^
 SAÍDA"
 horizontal_alignment = 1
+
+[node name="RespawnTrigger" parent="." instance=ExtResource("19_i38qp")]
+position = Vector2(932, -428)
 
 [connection signal="camera_ready" from="Player/CameraFollow" to="Player" method="_on_camera_follow_camera_ready"]
 

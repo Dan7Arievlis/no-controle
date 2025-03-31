@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://cfdmv3tit4bya"]
 
 [ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="1_0sthy"]
-[ext_resource type="Script" path="res://scripts/levels/components/Doorway.gd" id="1_2dsri"]
+[ext_resource type="Script" uid="uid://nm47gpvpqj3n" path="res://scripts/levels/components/Doorway.gd" id="1_2dsri"]
 [ext_resource type="Texture2D" uid="uid://4wbrxxr14y2u" path="res://art/images/doorway.png" id="2_4alx2"]
-[ext_resource type="Script" path="res://scenes/levels/components/arrow.gd" id="2_opvuc"]
+[ext_resource type="Script" uid="uid://biavc87qbm2lf" path="res://scenes/levels/components/arrow.gd" id="2_opvuc"]
 [ext_resource type="Texture2D" uid="uid://hakrb3cpb3t8" path="res://art/images/arrow.png" id="3_04haj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a58qw"]
@@ -34,6 +34,8 @@ position = Vector2(0, -42)
 scale = Vector2(0.4375, 0.4375)
 texture = ExtResource("3_04haj")
 script = ExtResource("2_opvuc")
+amp = 6.0
+freq = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 14.5)

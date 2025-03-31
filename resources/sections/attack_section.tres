@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="SectionResource" load_steps=4 format=3 uid="uid://b3p3vpqc33aa6"]
+[gd_resource type="Resource" script_class="SectionResource" load_steps=7 format=3 uid="uid://b3p3vpqc33aa6"]
 
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="1_d47kt"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="1_d47kt"]
 [ext_resource type="Resource" uid="uid://bakwl75v5pmbk" path="res://scenes/levels/attack/attack_1/attack_1_resource.tres" id="2_qpqsl"]
-[ext_resource type="Script" path="res://scripts/resources/SectionResource.gd" id="2_rnb5o"]
+[ext_resource type="Script" uid="uid://cxykxa4fw424o" path="res://scripts/resources/SectionResource.gd" id="2_rnb5o"]
+[ext_resource type="Resource" uid="uid://dvig3kssfoinm" path="res://scenes/levels/attack/attack_2/attack_2_resource.tres" id="3_b7x0c"]
+[ext_resource type="Resource" uid="uid://dvvdlmv4whur0" path="res://scenes/levels/attack/attack_3/attack_3_resource.tres" id="4_xusbk"]
+[ext_resource type="Resource" uid="uid://dlon3dywyu223" path="res://scenes/levels/attack/attack_4/attack_4_resource.tres" id="5_yc6hc"]
 
 [resource]
 script = ExtResource("2_rnb5o")
-section_title = ""
-levels = Array[ExtResource("1_d47kt")]([ExtResource("2_qpqsl")])
+section_title = "Ataques"
+levels = Array[ExtResource("1_d47kt")]([ExtResource("2_qpqsl"), ExtResource("3_b7x0c"), ExtResource("4_xusbk"), ExtResource("5_yc6hc")])

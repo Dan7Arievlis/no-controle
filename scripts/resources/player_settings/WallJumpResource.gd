@@ -1,3 +1,4 @@
+# WallJumpResource.gd
 class_name WallJumpResource
 extends Resource
 

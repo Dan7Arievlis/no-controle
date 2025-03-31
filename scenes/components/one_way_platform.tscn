@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ca16g268ldjp6"]
 
 [ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="1_s8vtg"]
-[ext_resource type="Script" path="res://scripts/components/OneWayPlatform.gd" id="2_q31s1"]
+[ext_resource type="Script" uid="uid://dq8bosqytvfnb" path="res://scripts/components/OneWayPlatform.gd" id="2_q31s1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddko7"]
 size = Vector2(32, 15)

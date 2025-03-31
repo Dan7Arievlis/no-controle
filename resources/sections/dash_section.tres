@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SectionResource" load_steps=8 format=3 uid="uid://d1n5rko5qknx4"]
 
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="1_mdyvo"]
-[ext_resource type="Script" path="res://scripts/resources/SectionResource.gd" id="2_h4sfv"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="1_mdyvo"]
+[ext_resource type="Script" uid="uid://cxykxa4fw424o" path="res://scripts/resources/SectionResource.gd" id="2_h4sfv"]
 [ext_resource type="Resource" uid="uid://d2boy56v4hhta" path="res://scenes/levels/dash/dash_1/dash_1_resource.tres" id="2_nhpsx"]
 [ext_resource type="Resource" uid="uid://bjf38hkdbqca8" path="res://scenes/levels/dash/dash_2/dash_2_resource.tres" id="3_bxr11"]
 [ext_resource type="Resource" uid="uid://6u2mbpgicnpd" path="res://scenes/levels/dash/dash_3/dash_3_resource.tres" id="4_tv8v8"]
@@ -10,5 +10,5 @@
 
 [resource]
 script = ExtResource("2_h4sfv")
-section_title = ""
+section_title = "Dash!"
 levels = Array[ExtResource("1_mdyvo")]([ExtResource("2_nhpsx"), ExtResource("3_bxr11"), ExtResource("4_tv8v8"), ExtResource("5_3nisn"), ExtResource("6_d1p3g")])

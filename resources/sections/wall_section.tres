@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SectionResource" load_steps=8 format=3 uid="uid://bb1l7y33n0xkn"]
 
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="1_6ie6m"]
-[ext_resource type="Script" path="res://scripts/resources/SectionResource.gd" id="2_jsdqc"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="1_6ie6m"]
+[ext_resource type="Script" uid="uid://cxykxa4fw424o" path="res://scripts/resources/SectionResource.gd" id="2_jsdqc"]
 [ext_resource type="Resource" uid="uid://tymlabgctln2" path="res://scenes/levels/wall/wall_1/wall_1_resource.tres" id="2_ll2wl"]
 [ext_resource type="Resource" uid="uid://dtt0andd775k" path="res://scenes/levels/wall/wall_2/wall_2_resource.tres" id="3_u4d3a"]
 [ext_resource type="Resource" uid="uid://mxy6hubeyxvo" path="res://scenes/levels/wall/wall_3/wall_3_resource.tres" id="4_6wp3l"]

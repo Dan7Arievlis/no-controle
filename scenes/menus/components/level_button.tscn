@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cxt62refq5emj"]
 
-[ext_resource type="Script" path="res://scripts/menus/components/LevelButton.gd" id="1_52fgb"]
+[ext_resource type="Script" uid="uid://b47d77yjoiaak" path="res://scripts/menus/components/LevelButton.gd" id="1_52fgb"]
 
 [node name="LevelButton" type="MarginContainer"]
 theme_override_constants/margin_left = 16

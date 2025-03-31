@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WallClimbResource" load_steps=2 format=3 uid="uid://bo8yyjv8cbldl"]
 
-[ext_resource type="Script" path="res://scripts/resources/player_settings/WallClimbResource.gd" id="1_ho1uk"]
+[ext_resource type="Script" uid="uid://dux8t0aiy6cmt" path="res://scripts/resources/player_settings/WallClimbResource.gd" id="1_ho1uk"]
 
 [resource]
 script = ExtResource("1_ho1uk")

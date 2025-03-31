@@ -11,6 +11,8 @@ const LEVEL_BUTTON = preload("res://scenes/menus/components/level_button.tscn")
 func _ready() -> void:
 	section_resource = SavedResources.current_section
 	title.text = section_resource.section_title
+	get_tree().call_group("Projectile", "queue_free")
+	get_tree().call_group("Animation Effect", "queue_free")
 	
 	for level in section_resource.levels:
 		_add_level(level)
@@ -18,7 +20,6 @@ func _ready() -> void:
 	for level_btn in level_list.get_children():
 		level_btn.connect("display_check", _on_display_check)
 		level_btn.connect("display_message", _on_description_change)
-
 
 func _add_level(level : LevelResource):
 	var level_btn = LEVEL_BUTTON.instantiate()
@@ -53,5 +54,5 @@ func _on_description_change(message : String):
 	description.clear()
 	description.visible_ratio = 0
 	description.text = message
-	var tween_time = message.length() * 0.03
+	var tween_time = message.length() * 0.015
 	create_tween().tween_property(description, "visible_ratio", 1, tween_time)

@@ -1,10 +1,10 @@
 [gd_scene load_steps=17 format=3 uid="uid://bfwogr4m135kn"]
 
 [ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="1_pojvv"]
-[ext_resource type="Script" path="res://scripts/menus/SectionSelectionMenu.gd" id="2_duodq"]
-[ext_resource type="Script" path="res://scripts/routines/SectionEnabler.gd" id="3_suxrm"]
+[ext_resource type="Script" uid="uid://cqfcwsvmai81b" path="res://scripts/menus/SectionSelectionMenu.gd" id="2_duodq"]
+[ext_resource type="Script" uid="uid://6lfmfg8w6guc" path="res://scripts/routines/SectionEnabler.gd" id="3_suxrm"]
 [ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="4_dst4n"]
-[ext_resource type="Script" path="res://scripts/resources/SectionResource.gd" id="4_n0x8i"]
+[ext_resource type="Script" uid="uid://cxykxa4fw424o" path="res://scripts/resources/SectionResource.gd" id="4_n0x8i"]
 [ext_resource type="Resource" uid="uid://cjj8d3o1a68j0" path="res://resources/sections/jump_section.tres" id="5_hxav7"]
 [ext_resource type="Resource" uid="uid://26ntx8ety3f7" path="res://resources/sections/walk_section.tres" id="6_61u2y"]
 [ext_resource type="Resource" uid="uid://bb1l7y33n0xkn" path="res://resources/sections/wall_section.tres" id="7_ut7pr"]
@@ -50,7 +50,7 @@ mouse_filter = 2
 theme = ExtResource("1_pojvv")
 script = ExtResource("2_duodq")
 section_enabler = SubResource("Resource_tw4w7")
-colors = Array[Color]([Color(0, 0.115, 0.69, 1), Color(0.336, 0, 0.63, 1), Color(0.0535872, 0.289066, 0.196954, 1), Color(0.65098, 0.498039, 0, 1), Color(0.477462, 0, 0.0376517, 1)])
+colors = Array[Color]([Color(0, 0.115, 0.69, 1), Color(0.336, 0, 0.63, 1), Color(0.0535872, 0.289066, 0.196954, 1), Color(0.6, 0.45, 0, 1), Color(0.477462, 0, 0.0376517, 1)])
 sections = Array[ExtResource("4_n0x8i")]([ExtResource("5_hxav7"), ExtResource("6_61u2y"), ExtResource("7_ut7pr"), ExtResource("8_36oi6"), ExtResource("9_k761c")])
 
 [node name="Panel" type="Panel" parent="."]
@@ -93,6 +93,7 @@ offset_bottom = 1010.0
 size_flags_horizontal = 0
 theme = ExtResource("1_pojvv")
 shortcut = SubResource("Shortcut_i6ahp")
+shortcut_in_tooltip = false
 text = "Voltar"
 
 [node name="Panel" type="Panel" parent="VBoxContainer/CanvasLayer/Back"]

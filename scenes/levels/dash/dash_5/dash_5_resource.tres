@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=12 format=3 uid="uid://dlqbludvxkkvd"]
 
 [ext_resource type="PackedScene" uid="uid://bn87wm20vshji" path="res://scenes/levels/dash/dash_5/level_dash_5.tscn" id="1_gx3ng"]
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_6yjtb"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_qune4"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="2_6yjtb"]
+[ext_resource type="Script" uid="uid://ccmd3juk6gf68" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_qune4"]
 [ext_resource type="Resource" uid="uid://d4h8kgoenpi25" path="res://scenes/levels/dash/dash_5/menu settings/dash_5_dash.tres" id="4_og4xn"]
 [ext_resource type="Resource" uid="uid://c6y275w1gaeyq" path="res://scenes/levels/dash/dash_5/menu settings/dash_5_jump.tres" id="5_2i5ap"]
 [ext_resource type="Resource" uid="uid://dp3hsd637yuqx" path="res://scenes/levels/dash/dash_5/menu settings/dash_5_movement.tres" id="6_mmwpn"]
 [ext_resource type="Resource" uid="uid://emax63o0vimk" path="res://scenes/levels/dash/dash_5/menu settings/dash_5_wall_jump.tres" id="7_rblro"]
 [ext_resource type="Resource" uid="uid://lb6tp02508no" path="res://scenes/levels/dash/dash_5/menu settings/dash_5_wall_slide.tres" id="8_u1b18"]
-[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="9_asy1l"]
+[ext_resource type="Script" uid="uid://bhpqxby0frwcl" path="res://scripts/resources/PlayerStats.gd" id="9_asy1l"]
 
 [sub_resource type="Resource" id="Resource_f76m7"]
 script = ExtResource("3_qune4")
@@ -32,7 +32,7 @@ WALL_SLIDE_STATS = ExtResource("8_u1b18")
 [resource]
 script = ExtResource("2_6yjtb")
 title = "Fase de desafio 4"
-description = ""
+description = "[rainbow set=1 val=0.8 freq=1.8][wave freq=8 amp=30]Parabéns[/wave][/rainbow]!! E bem vindo a sua quarta fase de desafio! Construa um personagem apto a superar os obstáculos e [color=b2b2b2][wave freq=4 amp=20]avançar[/wave][/color] para próxima etapa!!"
 level_scene = ExtResource("1_gx3ng")
 stats = SubResource("Resource_qbvip")
 done = false

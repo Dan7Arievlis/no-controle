@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cyk5knnwmfotp"]
+[gd_scene load_steps=12 format=3 uid="uid://cyk5knnwmfotp"]
 
 [ext_resource type="Texture2D" uid="uid://d0e2ijmb0p8vm" path="res://art/images/closed_door.png" id="1_57w3m"]
 [ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="1_g125q"]
-[ext_resource type="Script" path="res://scripts/levels/components/ClosedDoor.gd" id="1_km7co"]
+[ext_resource type="Script" uid="uid://b2wd2lgjct0mj" path="res://scripts/levels/components/ClosedDoor.gd" id="1_km7co"]
 [ext_resource type="FontFile" uid="uid://dfg2vyl5y2r6h" path="res://art/fonts/Minecraftia-Regular.ttf" id="2_ab85f"]
-[ext_resource type="Script" path="res://scenes/levels/components/WarningArea.gd" id="3_coa0t"]
+[ext_resource type="Script" uid="uid://b7k88w385gbyo" path="res://scenes/levels/components/WarningArea.gd" id="3_coa0t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewgt7"]
 size = Vector2(32, 64)
@@ -176,14 +176,17 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uqxrf"]
 _data = {
-"RESET": SubResource("Animation_ul4rl"),
-"open": SubResource("Animation_fiecy")
+&"RESET": SubResource("Animation_ul4rl"),
+&"open": SubResource("Animation_fiecy")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1y71"]
-size = Vector2(60, 66)
+size = Vector2(30, 66)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8fe3"]
+size = Vector2(30, 66)
+
+[node name="RigidBody2D" type="RigidBody2D" groups=["Terrain"]]
 material = ExtResource("1_g125q")
 collision_layer = 16
 collision_mask = 8255
@@ -206,19 +209,46 @@ libraries = {
 }
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(30, 1)
 collision_layer = 0
 monitorable = false
 script = ExtResource("3_coa0t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 1)
+position = Vector2(-15, 1)
 shape = SubResource("RectangleShape2D_c1y71")
 
 [node name="Label" type="Label" parent="Area2D"]
 visible = false
-offset_left = 25.0
+z_index = -2
+offset_left = -5.0
 offset_top = -57.0
-offset_right = 109.0
+offset_right = 79.0
+offset_bottom = -9.0
+theme_override_colors/font_color = Color(0, 0.0466666, 0.28, 1)
+theme_override_fonts/font = ExtResource("2_ab85f")
+theme_override_font_sizes/font_size = 8
+text = "Derrote todos os 
+inimigos da fase
+para avançar!"
+horizontal_alignment = 1
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(-30, 1)
+collision_layer = 0
+monitorable = false
+script = ExtResource("3_coa0t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(15, 1)
+shape = SubResource("RectangleShape2D_a8fe3")
+
+[node name="Label" type="Label" parent="Area2D2"]
+visible = false
+z_index = -2
+offset_left = -79.0
+offset_top = -57.0
+offset_right = 5.0
 offset_bottom = -9.0
 theme_override_colors/font_color = Color(0, 0.0466666, 0.28, 1)
 theme_override_fonts/font = ExtResource("2_ab85f")
@@ -230,3 +260,5 @@ horizontal_alignment = 1
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]

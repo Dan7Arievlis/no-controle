@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=12 format=3 uid="uid://6u2mbpgicnpd"]
 
 [ext_resource type="PackedScene" uid="uid://d6bq6qawl0r2" path="res://scenes/levels/dash/dash_3/level_dash_3.tscn" id="1_fbrbv"]
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_e8f74"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_q4e37"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="2_e8f74"]
+[ext_resource type="Script" uid="uid://ccmd3juk6gf68" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_q4e37"]
 [ext_resource type="Resource" uid="uid://cgdi0pevu5ru3" path="res://scenes/levels/dash/dash_3/menu settings/dash_3_dash.tres" id="4_2lxqy"]
 [ext_resource type="Resource" uid="uid://bhw8gh7h5ose1" path="res://scenes/levels/dash/dash_3/menu settings/dash_3_jump.tres" id="5_en4ir"]
 [ext_resource type="Resource" uid="uid://w3yl1qpwj8kk" path="res://scenes/levels/dash/dash_3/menu settings/dash_3_movement.tres" id="6_qxdfj"]
 [ext_resource type="Resource" uid="uid://b6okfabbq6oxf" path="res://scenes/levels/dash/dash_3/menu settings/dash_3_wall_jump.tres" id="7_mrisb"]
 [ext_resource type="Resource" uid="uid://nf7jnyyotdwa" path="res://scenes/levels/dash/dash_3/menu settings/dash_3_wall_slide.tres" id="8_43sbq"]
-[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="9_vppk4"]
+[ext_resource type="Script" uid="uid://bhpqxby0frwcl" path="res://scripts/resources/PlayerStats.gd" id="9_vppk4"]
 
 [sub_resource type="Resource" id="Resource_f76m7"]
 script = ExtResource("3_q4e37")
@@ -32,7 +32,7 @@ WALL_SLIDE_STATS = ExtResource("8_43sbq")
 [resource]
 script = ExtResource("2_e8f74")
 title = "Direções"
-description = ""
+description = "Um dash em uma direção é ótimo para personagens ágeis com foco em combate ou exploração mais linear, já que permite a construção de fases mais consistentes e previsíveis. Porém, possibilitar um dash em várias direções permite o jogador executar manobras mais elaboradas e explorar mapas mais verticais e complexos."
 level_scene = ExtResource("1_fbrbv")
 stats = SubResource("Resource_qbvip")
 done = false

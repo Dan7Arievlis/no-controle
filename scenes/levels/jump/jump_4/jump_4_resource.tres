@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=11 format=3 uid="uid://dh16yisfeb78a"]
 
 [ext_resource type="PackedScene" uid="uid://dmv72p5dkjg23" path="res://scenes/levels/jump/jump_4/level_jump_4.tscn" id="1_35mmp"]
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_b0m7u"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_im80u"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="2_b0m7u"]
+[ext_resource type="Script" uid="uid://ccmd3juk6gf68" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_im80u"]
 [ext_resource type="Resource" uid="uid://dnp56jt36rdso" path="res://scenes/levels/jump/jump_4/menu settings/jump_4_jump.tres" id="4_58u36"]
 [ext_resource type="Resource" uid="uid://e5rehrukasgs" path="res://scenes/levels/jump/jump_4/menu settings/jump_4_movement.tres" id="5_injei"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_s7cj8"]
-[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="7_gec0q"]
+[ext_resource type="Script" uid="uid://ckw8qcv0a4qrb" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_s7cj8"]
+[ext_resource type="Script" uid="uid://bhpqxby0frwcl" path="res://scripts/resources/PlayerStats.gd" id="7_gec0q"]
 
 [sub_resource type="Resource" id="Resource_ek2jy"]
 script = ExtResource("3_im80u")

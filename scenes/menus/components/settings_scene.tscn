@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://s8ay0tnlu1y4"]
 
-[ext_resource type="Script" path="res://scripts/menus/components/SettingsScene.gd" id="1_dl70k"]
+[ext_resource type="Script" uid="uid://bjhqthj83tghx" path="res://scripts/menus/components/SettingsScene.gd" id="1_dl70k"]
 
 [node name="Settings" type="CenterContainer"]
 custom_minimum_size = Vector2(0, 260)

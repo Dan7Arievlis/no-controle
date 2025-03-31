@@ -2,11 +2,11 @@
 
 [ext_resource type="Material" uid="uid://ihjnwe4fo1dg" path="res://materials/color_change_filter.tres" id="1_q4xai"]
 [ext_resource type="Theme" uid="uid://bufjoyb6rs4i1" path="res://themes/blue_pixel.tres" id="2_7ib22"]
-[ext_resource type="Script" path="res://scripts/menus/components/SectionSelectionButton.gd" id="3_ycqt1"]
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="4_pnyi7"]
+[ext_resource type="Script" uid="uid://cfdgcaee76rhc" path="res://scripts/menus/components/SectionSelectionButton.gd" id="3_ycqt1"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="4_pnyi7"]
 [ext_resource type="Texture2D" uid="uid://ckwvodsq1j3o3" path="res://art/images/level_selection_button_spikes.png" id="5_po7o0"]
 [ext_resource type="PackedScene" uid="uid://blmnd2rtmhjxs" path="res://scenes/levels/test/test_level.tscn" id="5_xcwv4"]
-[ext_resource type="Script" path="res://scripts/resources/SectionResource.gd" id="5_xpg2x"]
+[ext_resource type="Script" uid="uid://cxykxa4fw424o" path="res://scripts/resources/SectionResource.gd" id="5_xpg2x"]
 [ext_resource type="Texture2D" uid="uid://dln7hdc4ntrh4" path="res://art/images/locker.png" id="6_px83b"]
 [ext_resource type="Texture2D" uid="uid://bag0spuq5gmad" path="res://art/images/level_selection_button.png" id="7_tkbsp"]
 

@@ -1,23 +1,21 @@
-[gd_scene load_steps=64 format=3 uid="uid://dldwdaspvcq0w"]
+[gd_scene load_steps=62 format=3 uid="uid://dldwdaspvcq0w"]
 
 [ext_resource type="Texture2D" uid="uid://bejbnoq2k4ult" path="res://art/animations/player/idle_animation.png" id="1_3lpyo"]
 [ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="1_6tbbc"]
-[ext_resource type="Script" path="res://scripts/player/movements/Player.gd" id="1_kqgw8"]
-[ext_resource type="Script" path="res://scripts/player/movements/NudgePlayer.gd" id="2_cv856"]
-[ext_resource type="Script" path="res://scripts/player/movements/Corner.gd" id="3_dm50x"]
+[ext_resource type="Script" uid="uid://b3dklbs4xep8r" path="res://scripts/player/movements/Player.gd" id="1_kqgw8"]
+[ext_resource type="Script" uid="uid://dml0e8vbig42s" path="res://scripts/player/movements/NudgePlayer.gd" id="2_cv856"]
+[ext_resource type="Script" uid="uid://bi2t0k4wmjrye" path="res://scripts/player/movements/Corner.gd" id="3_dm50x"]
 [ext_resource type="AnimationLibrary" uid="uid://bxsyjarlfjcvy" path="res://art/animations/libraries/player_animation_library.res" id="5_y3ssc"]
 [ext_resource type="Texture2D" uid="uid://buyy0k4sel1jv" path="res://art/animations/player/side_melee_attack_animation.png" id="6_cml8r"]
 [ext_resource type="Texture2D" uid="uid://cqgjvxjshes5r" path="res://art/animations/player/off_air_tv_sprite.png" id="6_v03m2"]
 [ext_resource type="Texture2D" uid="uid://bcnb5lt32xrwk" path="res://art/animations/player/player_death_animation.png" id="7_pqnkb"]
 [ext_resource type="Texture2D" uid="uid://byw8go2hhdsqe" path="res://art/animations/player/down_melee_attack_animation.png" id="9_00lax"]
-[ext_resource type="Resource" uid="uid://btnfjksimbji" path="res://resources/stats/projectiles/player_projectile_stats.tres" id="9_pvtp8"]
 [ext_resource type="PackedScene" uid="uid://or15uj1uxljv" path="res://scenes/components/sword.tscn" id="11_36jp2"]
 [ext_resource type="PackedScene" uid="uid://ddfce5yjcoj4n" path="res://scenes/components/hurtbox.tscn" id="12_hg1qy"]
 [ext_resource type="Shape2D" uid="uid://c5gajafy30fdo" path="res://resources/stats/hurtboxes/shapes/player_hurtbox_collision_shape.tres" id="13_b2ynj"]
 [ext_resource type="PackedScene" uid="uid://crson4lj6vv0i" path="res://scenes/components/cannon.tscn" id="13_xqwl8"]
 [ext_resource type="Resource" uid="uid://dnrgjrpnxrho6" path="res://resources/stats/hurtboxes/player_hurtbox_stats.tres" id="13_xwnlp"]
-[ext_resource type="Script" path="res://scripts/player/actions/RangedAttack.gd" id="14_k2k16"]
-[ext_resource type="Resource" uid="uid://cf2onn3q8vj1x" path="res://resources/player settings/player_cannon_test.tres" id="24_76jc7"]
+[ext_resource type="Script" uid="uid://cs6vwrjrf2dlr" path="res://scripts/player/actions/RangedAttack.gd" id="14_k2k16"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr3oh"]
 size = Vector2(16, 26)
@@ -227,8 +225,8 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gylwi"]
 _data = {
-"RESET": SubResource("Animation_ss2p6"),
-"death": SubResource("Animation_st8pl")
+&"RESET": SubResource("Animation_ss2p6"),
+&"death": SubResource("Animation_st8pl")
 }
 
 [sub_resource type="Animation" id="Animation_r11ie"]
@@ -320,7 +318,7 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y50l5"]
 _data = {
-"RESET": SubResource("Animation_r11ie")
+&"RESET": SubResource("Animation_r11ie")
 }
 
 [sub_resource type="Animation" id="Animation_h7tbu"]
@@ -637,9 +635,9 @@ tracks/7/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dd7gr"]
 _data = {
-"down_attack_animation": SubResource("Animation_h7tbu"),
-"side_attack_animation": SubResource("Animation_b6v25"),
-"up_attack_animation": SubResource("Animation_ycx3v")
+&"down_attack_animation": SubResource("Animation_h7tbu"),
+&"side_attack_animation": SubResource("Animation_b6v25"),
+&"up_attack_animation": SubResource("Animation_ycx3v")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1pnby"]
@@ -831,6 +829,7 @@ animation = &"player/walk"
 animation = &"player/wall_slide"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_jc6p5"]
+graph_offset = Vector2(-687.281, -173.166)
 nodes/Break/node = SubResource("AnimationNodeStateMachine_dy1vt")
 nodes/Break/position = Vector2(-880, -180)
 nodes/Crash/node = SubResource("AnimationNodeAnimation_wphu4")
@@ -1001,14 +1000,14 @@ offset = Vector2(-4, 0)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite2D")
 libraries = {
-"": SubResource("AnimationLibrary_gylwi"),
-"player": ExtResource("5_y3ssc")
+&"": SubResource("AnimationLibrary_gylwi"),
+&"player": ExtResource("5_y3ssc")
 }
 
 [node name="AttackAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_y50l5"),
-"player_attacks": SubResource("AnimationLibrary_dd7gr")
+&"": SubResource("AnimationLibrary_y50l5"),
+&"player_attacks": SubResource("AnimationLibrary_dd7gr")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -1041,8 +1040,6 @@ script = ExtResource("14_k2k16")
 
 [node name="Cannon" parent="AttackPivot/RangedAttackInput" instance=ExtResource("13_xqwl8")]
 position = Vector2(9, -1)
-projectile_stats = ExtResource("9_pvtp8")
-cannon_stats = ExtResource("24_76jc7")
 metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="AttackPivot/RangedAttackInput/Cannon"]
@@ -1077,5 +1074,7 @@ hurtbox_stats = ExtResource("13_xwnlp")
 collision_shape = ExtResource("13_b2ynj")
 
 [connection signal="nudge_player" from="RayCasts" to="." method="_on_ray_casts_nudge_player"]
+[connection signal="on_can_shoot" from="AttackPivot/RangedAttackInput/Cannon" to="AttackPivot/RangedAttackInput" method="on_cannon_can_shoot"]
+[connection signal="on_cannon_shot" from="AttackPivot/RangedAttackInput/Cannon" to="AttackPivot/RangedAttackInput" method="on_cannon_shot"]
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="body_entered" from="Hurtbox" to="Hurtbox" method="_on_body_entered"]

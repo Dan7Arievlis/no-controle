@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=11 format=3 uid="uid://mxy6hubeyxvo"]
 
 [ext_resource type="PackedScene" uid="uid://bx4cb25uj6t1e" path="res://scenes/levels/wall/wall_3/level_wall_3.tscn" id="1_vhqi4"]
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_4nx5m"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_jkp8b"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="2_4nx5m"]
+[ext_resource type="Script" uid="uid://ccmd3juk6gf68" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_jkp8b"]
 [ext_resource type="Resource" uid="uid://cbokwy5y87tx" path="res://scenes/levels/wall/wall_3/menu settings/wall_3_jump.tres" id="4_wfkd6"]
 [ext_resource type="Resource" uid="uid://cwwd4kixuddp8" path="res://scenes/levels/wall/wall_3/menu settings/wall_3_movement.tres" id="5_q66fe"]
 [ext_resource type="Resource" uid="uid://q3p34pkirfhl" path="res://scenes/levels/wall/wall_3/menu settings/wall_3_wall_jump.tres" id="6_q7pvx"]
 [ext_resource type="Resource" uid="uid://44uolddqgp7j" path="res://scenes/levels/wall/wall_3/menu settings/wall_3_wall_slide.tres" id="7_n48vc"]
-[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="8_7grrh"]
+[ext_resource type="Script" uid="uid://bhpqxby0frwcl" path="res://scripts/resources/PlayerStats.gd" id="8_7grrh"]
 
 [sub_resource type="Resource" id="Resource_f76m7"]
 script = ExtResource("3_jkp8b")
@@ -30,7 +30,7 @@ WALL_SLIDE_STATS = ExtResource("7_n48vc")
 [resource]
 script = ExtResource("2_4nx5m")
 title = "Salto de fé"
-description = ""
+description = "Às vezes, é preciso ter diferentes formas de pulos na parede para alcançar [color=b2b2b2]diferentes objetivos[/color], mas como isso é feito? É possível identificar se precisamos [color=b2b2b2][wave freq=5 amp=20]escalar uma parede[/wave] ou [wave freq=5 amp=20]pular para longe[/wave][/color] e alcançar outros patamares pela direção na qual estamos pulando. [color=b2b2b2]Ejetando[/color] o personagem com mais velocidade se pular para longe da parede."
 level_scene = ExtResource("1_vhqi4")
 stats = SubResource("Resource_qbvip")
 done = false

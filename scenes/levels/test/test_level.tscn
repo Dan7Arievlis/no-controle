@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=4 uid="uid://blmnd2rtmhjxs"]
 
-[ext_resource type="Script" path="res://scripts/levels/TestLevel.gd" id="1_pww6c"]
+[ext_resource type="Script" uid="uid://bdvq3wi7j4rsy" path="res://scripts/levels/TestLevel.gd" id="1_pww6c"]
 [ext_resource type="PackedScene" uid="uid://dldwdaspvcq0w" path="res://scenes/entities/player.tscn" id="2_c42uy"]
 [ext_resource type="FontFile" uid="uid://dfg2vyl5y2r6h" path="res://art/fonts/Minecraftia-Regular.ttf" id="2_f7jsn"]
 [ext_resource type="TileSet" uid="uid://chlp3otlj0044" path="res://resources/tilesets/base_tile_set.tres" id="3_hvo0e"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c8kcmwwko2dpd" path="res://scenes/components/moving_platform.tscn" id="4_m6kmq"]
 [ext_resource type="TileSet" uid="uid://3ls8bo8my2y1" path="res://resources/tilesets/one_way_platforms_tile_set.tres" id="5_ihaa1"]
 [ext_resource type="PackedScene" uid="uid://bd1jkgc6dl7v8" path="res://scenes/levels/components/camera_follow.tscn" id="5_x7i1o"]
-[ext_resource type="Script" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="6_mj4o0"]
+[ext_resource type="Script" uid="uid://ckaxdjsjpay7d" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="6_mj4o0"]
 [ext_resource type="PackedScene" uid="uid://di32xxa2m60xl" path="res://scenes/menus/pause_menu.tscn" id="11_0j6c5"]
 
 [sub_resource type="Theme" id="Theme_xsaqv"]

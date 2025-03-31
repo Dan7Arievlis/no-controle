@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dnt6447xrlcdl"]
 
-[ext_resource type="Script" path="res://scripts/scenes/Projectile.gd" id="1_v4p2m"]
+[ext_resource type="Script" uid="uid://cdste0b2jq3lu" path="res://scripts/scenes/Projectile.gd" id="1_v4p2m"]
 [ext_resource type="Texture2D" uid="uid://ciisvvvxqmk75" path="res://art/animations/projectile/enemy_projectile.png" id="2_16pva"]
 [ext_resource type="PackedScene" uid="uid://jxxchqmb3p35" path="res://scenes/components/single_hitbox.tscn" id="2_si4br"]
 [ext_resource type="AnimationLibrary" uid="uid://bh33una3g21qb" path="res://art/animations/libraries/projectiles_animation_library.res" id="3_mdedg"]
@@ -61,7 +61,7 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xb3fw"]
 _data = {
-"RESET": SubResource("Animation_23lov")
+&"RESET": SubResource("Animation_23lov")
 }
 
 [node name="Projectile" type="RigidBody2D" groups=["Projectile"]]

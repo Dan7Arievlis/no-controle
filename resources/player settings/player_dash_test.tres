@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="DashResource" load_steps=2 format=3 uid="uid://fuafdacqywrj"]
 
-[ext_resource type="Script" path="res://scripts/resources/player_settings/DashResource.gd" id="1_my42q"]
+[ext_resource type="Script" uid="uid://clyksfavqc4db" path="res://scripts/resources/player_settings/DashResource.gd" id="1_my42q"]
 
 [resource]
 script = ExtResource("1_my42q")

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="RangedAttackResource" load_steps=4 format=3 uid="uid://dto5d0iioyh1w"]
 
 [ext_resource type="Resource" uid="uid://cf2onn3q8vj1x" path="res://resources/player settings/player_cannon_test.tres" id="1_8t5d7"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/RangedAttackResource.gd" id="1_l54ho"]
+[ext_resource type="Script" uid="uid://b010o4bnshp4r" path="res://scripts/resources/player_settings/RangedAttackResource.gd" id="1_l54ho"]
 [ext_resource type="Resource" uid="uid://btnfjksimbji" path="res://resources/stats/projectiles/player_projectile_stats.tres" id="2_xa8iy"]
 
 [resource]
@@ -9,5 +9,5 @@ script = ExtResource("1_l54ho")
 enable_ranged_attack = true
 projectile = ExtResource("2_xa8iy")
 cannon_stats = ExtResource("1_8t5d7")
-_4_directions = false
-_8_directions = false
+_4_directions = true
+_8_directions = true

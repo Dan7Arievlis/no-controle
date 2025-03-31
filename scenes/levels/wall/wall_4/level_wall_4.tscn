@@ -1,19 +1,19 @@
 [gd_scene load_steps=21 format=4 uid="uid://cbexr7a6aae86"]
 
-[ext_resource type="Script" path="res://scripts/levels/Level.gd" id="1_v027b"]
+[ext_resource type="Script" uid="uid://c8xxvfs7ullj8" path="res://scripts/levels/Level.gd" id="1_v027b"]
 [ext_resource type="PackedScene" uid="uid://d5cyy80deyjo" path="res://scenes/levels/components/respawn_system.tscn" id="2_c3b3m"]
 [ext_resource type="PackedScene" uid="uid://cu3ma15rbghyg" path="res://scenes/levels/components/respawn_trigger.tscn" id="3_jegqu"]
 [ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="4_rdgpu"]
 [ext_resource type="TileSet" uid="uid://chlp3otlj0044" path="res://resources/tilesets/base_tile_set.tres" id="5_3l48f"]
 [ext_resource type="TileSet" uid="uid://3ls8bo8my2y1" path="res://resources/tilesets/one_way_platforms_tile_set.tres" id="6_oaft8"]
-[ext_resource type="Script" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="7_88spk"]
+[ext_resource type="Script" uid="uid://ckaxdjsjpay7d" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="7_88spk"]
 [ext_resource type="TileSet" uid="uid://b3sxykajd0y5s" path="res://resources/tilesets/spikes_tile_set.tres" id="8_1lnyq"]
 [ext_resource type="PackedScene" uid="uid://dldwdaspvcq0w" path="res://scenes/entities/player.tscn" id="9_p1s5p"]
 [ext_resource type="PackedScene" uid="uid://bd1jkgc6dl7v8" path="res://scenes/levels/components/camera_follow.tscn" id="10_prp4m"]
 [ext_resource type="PackedScene" uid="uid://cfdmv3tit4bya" path="res://scenes/levels/components/doorway.tscn" id="11_evaqd"]
 [ext_resource type="PackedScene" uid="uid://di32xxa2m60xl" path="res://scenes/menus/pause_menu.tscn" id="12_tvlif"]
-[ext_resource type="Script" path="res://scenes/levels/wall/wall_4/Wall_4_menu.gd" id="13_2yafq"]
-[ext_resource type="Shader" path="res://materials/shaders/pause_menu.gdshader" id="13_rtqba"]
+[ext_resource type="Script" uid="uid://ddsslm48jd213" path="res://scenes/levels/wall/wall_4/Wall_4_menu.gd" id="13_2yafq"]
+[ext_resource type="Shader" uid="uid://dwh6b4iw50hbj" path="res://materials/shaders/pause_menu.gdshader" id="13_rtqba"]
 [ext_resource type="PackedScene" uid="uid://nxiywfl7pggr" path="res://scenes/menus/death_menu.tscn" id="15_86g4i"]
 [ext_resource type="PackedScene" uid="uid://go2uyf33ilo7" path="res://scenes/menus/win_menu.tscn" id="16_0fx1k"]
 [ext_resource type="PackedScene" uid="uid://cqdv1w1qdiu6k" path="res://scenes/components/hp_bar_ui.tscn" id="17_g68q1"]
@@ -94,7 +94,7 @@ build_mode = 1
 polygon = PackedVector2Array(406, 272, 575, 16, 1631, 18, 1633, -532, 1787, -531, 1790, -1232, 1281, -1234, 1281, -920, 731, -918, 513, -350, -161, -350, -163, 272)
 
 [node name="Player" parent="." instance=ExtResource("9_p1s5p")]
-max_hp = 10.0
+max_hp = 30.0
 
 [node name="CameraFollow" parent="Player" instance=ExtResource("10_prp4m")]
 

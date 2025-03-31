@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="JumpResource" load_steps=2 format=3 uid="uid://crdxr00ddhv4o"]
 
-[ext_resource type="Script" path="res://scripts/resources/player_settings/JumpResource.gd" id="1_8jiqw"]
+[ext_resource type="Script" uid="uid://d1vkurpqxnal4" path="res://scripts/resources/player_settings/JumpResource.gd" id="1_8jiqw"]
 
 [resource]
 script = ExtResource("1_8jiqw")

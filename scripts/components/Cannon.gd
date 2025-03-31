@@ -1,3 +1,4 @@
+class_name Cannon
 extends Node2D
 
 signal on_can_shoot()
@@ -6,11 +7,12 @@ signal on_cannon_shot()
 @onready var projectile_spawner: Node2D = $ProjectileSpawner
 @onready var reload_timer: Timer = $ReloadTimer
 
+var cannon_stats : CannonStats
 var can_shoot : bool
 var ammo : int
 
-
-func set_cannon(projectile_stats, cannon_stats) -> void:
+func set_cannon(projectile_stats, _cannon_stats) -> void:
+	cannon_stats = _cannon_stats
 	projectile_spawner.projectile_stats = projectile_stats
 	projectile_spawner.shot_effect = cannon_stats.shot_effect
 	reload_timer.wait_time = cannon_stats.reload_time

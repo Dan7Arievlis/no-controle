@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://b55rgodx6vcsa" path="res://resources/effects/player_projectile_destroy_effect_animation.tres" id="1_3a2nl"]
 [ext_resource type="Resource" uid="uid://dv2cegm1tok13" path="res://resources/effects/player_projectile_hit_effect_animation.tres" id="2_j7gt2"]
 [ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="2_wynwp"]
-[ext_resource type="Script" path="res://scripts/resources/ProjectileStats.gd" id="3_1ox2r"]
+[ext_resource type="Script" uid="uid://cj5u23i8uxjtd" path="res://scripts/resources/ProjectileStats.gd" id="3_1ox2r"]
 [ext_resource type="Resource" uid="uid://qwelf7rtqy8n" path="res://resources/effects/player_projectile_travel.tres" id="5_oww1a"]
 
 [resource]

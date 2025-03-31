@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=16 format=3 uid="uid://dvvdlmv4whur0"]
+
+[ext_resource type="PackedScene" uid="uid://cmyen8xjptn12" path="res://scenes/levels/attack/attack_3/level_attack_3.tscn" id="1_e1tk8"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="2_wgnm1"]
+[ext_resource type="Script" uid="uid://ccmd3juk6gf68" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_smrof"]
+[ext_resource type="Resource" uid="uid://cumg466xircud" path="res://scenes/levels/attack/attack_3/menu settings/attack_3_cannon.tres" id="4_4o5f8"]
+[ext_resource type="Resource" uid="uid://bebiycjybvkqs" path="res://scenes/levels/attack/attack_3/menu settings/attack_3_dash.tres" id="5_qlis6"]
+[ext_resource type="Resource" uid="uid://d36m437x7ajif" path="res://scenes/levels/attack/attack_3/menu settings/attack_3_jump.tres" id="6_4fcjw"]
+[ext_resource type="Resource" uid="uid://ccpsto2nafgi1" path="res://scenes/levels/attack/attack_3/menu settings/attack_3_melee.tres" id="7_rxmci"]
+[ext_resource type="Resource" uid="uid://sodlbxuey4r1" path="res://scenes/levels/attack/attack_3/menu settings/attack_3_movement.tres" id="8_xwryq"]
+[ext_resource type="Resource" uid="uid://dds744fqetwor" path="res://scenes/levels/attack/attack_3/menu settings/attack_3_projectile.tres" id="9_fmkrc"]
+[ext_resource type="Resource" uid="uid://bnshvng2jsfi" path="res://scenes/levels/attack/attack_3/menu settings/attack_3_ranged.tres" id="10_ff3pn"]
+[ext_resource type="Script" uid="uid://bhpqxby0frwcl" path="res://scripts/resources/PlayerStats.gd" id="10_kt2pg"]
+[ext_resource type="Resource" uid="uid://cp1t2ojue0n2h" path="res://scenes/levels/attack/attack_3/menu settings/attack_3_wall_jump.tres" id="11_gcn7s"]
+[ext_resource type="Resource" uid="uid://dlul7ija3gevs" path="res://scenes/levels/attack/attack_3/menu settings/attack_3_wall_slide.tres" id="12_ev7el"]
+
+[sub_resource type="Resource" id="Resource_f76m7"]
+script = ExtResource("3_smrof")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0
+
+[sub_resource type="Resource" id="Resource_qbvip"]
+script = ExtResource("10_kt2pg")
+CAMERA_STATS = SubResource("Resource_f76m7")
+CANNON_STATS = ExtResource("4_4o5f8")
+DASH_STATS = ExtResource("5_qlis6")
+JUMP_STATS = ExtResource("6_4fcjw")
+MELEE_ATTACK_STATS = ExtResource("7_rxmci")
+MOVEMENT_STATS = ExtResource("8_xwryq")
+PROJECTILE_STATS = ExtResource("9_fmkrc")
+RANGED_ATTACK_STATS = ExtResource("10_ff3pn")
+WALL_JUMP_STATS = ExtResource("11_gcn7s")
+WALL_SLIDE_STATS = ExtResource("12_ev7el")
+
+[resource]
+script = ExtResource("2_wgnm1")
+title = "Han atirou primeiro"
+description = "A personalização de uma arma a longa distância é bastante complexa, pois há nuitas [color=b2b2b2]variáveis[/color] disponíveis para modificar o comportamento de uma arma ou projétil e passar a experiência desejada. É possível fazer armas com [color=b2b2b2]curto alcance[/color], ou talvez com [color=b2b2b2]projéteis lentos[/color], que [color=b2b2b2]sofrem os efeitos da gravidade[/color], ou quem sabe um canhão muito potente pode [color=b2b2b2]lançar o personagem[/color] para trás toda vez q é usado! Há muitas formas de dar personalidade à sua arma e [color=b2b2b2][wave=b2b2b2]destruir os alvos[/wave][/color] dessejados!"
+level_scene = ExtResource("1_e1tk8")
+stats = SubResource("Resource_qbvip")
+done = false

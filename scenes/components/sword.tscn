@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://or15uj1uxljv"]
 
-[ext_resource type="Script" path="res://scripts/player/actions/MeleeAttack.gd" id="1_na0he"]
+[ext_resource type="Script" uid="uid://dmryoe6vg5t6e" path="res://scripts/player/actions/MeleeAttack.gd" id="1_na0he"]
 [ext_resource type="PackedScene" uid="uid://jxxchqmb3p35" path="res://scenes/components/single_hitbox.tscn" id="2_un5fq"]
 [ext_resource type="Shape2D" uid="uid://c75ym5pjg80ta" path="res://resources/stats/hitboxes/shapes/player_side_melee_hitbox_shape.tres" id="4_nrgc3"]
 [ext_resource type="Shape2D" uid="uid://dx8m0qgf3jh7u" path="res://resources/stats/hitboxes/shapes/player_down_melee_hitbox_shape.tres" id="5_wqekh"]

@@ -3,6 +3,7 @@ extends Control
 @onready var label: Label = $HBoxContainer/Label
 @onready var h_slider: HSlider = $HBoxContainer/HSlider
 @onready var value_label: Label = $HBoxContainer/ValueLabel
+@onready var question_button: Button = %QuestionButton
 
 
 var change_stats : Resource
@@ -34,7 +35,8 @@ func add_tooltip(tooltip):
 		if i >= max_length and ch == ' ':
 			result += '\n'
 			i = 0
-	label.tooltip_text = result
+	question_button.tooltip_text = result
+	question_button.visible = not result.is_empty()
 
 
 func _on_slider_value_changed(value: float) -> void:

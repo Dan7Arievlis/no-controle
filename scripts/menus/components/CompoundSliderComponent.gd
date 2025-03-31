@@ -5,6 +5,8 @@ extends Control
 @onready var value_label_x: Label = $VBoxContainer/HBoxContainer/ValueLabelX
 @onready var y_slider: HSlider = $VBoxContainer/HBoxContainer2/YSlider
 @onready var value_label_y: Label = $VBoxContainer/HBoxContainer2/ValueLabelY
+@onready var question_button: Button = %QuestionButton
+
 
 var change_stats : Resource
 var change_variable : String
@@ -43,7 +45,8 @@ func add_tooltip(tooltip):
 		if i >= max_length and ch == ' ':
 			result += '\n'
 			i = 0
-	label.tooltip_text = result
+	question_button.tooltip_text = result
+	question_button.visible = not result.is_empty()
 
 
 func _on_x_slider_value_changed(value: float) -> void:

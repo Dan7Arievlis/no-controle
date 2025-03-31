@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=16 format=3 uid="uid://dlon3dywyu223"]
+
+[ext_resource type="PackedScene" uid="uid://1xatmqsrk4nc" path="res://scenes/levels/attack/attack_4/level_attack_4.tscn" id="1_qeb5g"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="2_wlpaq"]
+[ext_resource type="Script" uid="uid://ccmd3juk6gf68" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_h5bju"]
+[ext_resource type="Resource" uid="uid://wiqa7m4s2dlx" path="res://scenes/levels/attack/attack_4/menu settings/attack_4_cannon.tres" id="4_wpx4h"]
+[ext_resource type="Resource" uid="uid://c03vhedvb3q38" path="res://scenes/levels/attack/attack_4/menu settings/attack_4_dash.tres" id="5_vgv57"]
+[ext_resource type="Resource" uid="uid://scq7tv4gs4vc" path="res://scenes/levels/attack/attack_4/menu settings/attack_4_jump.tres" id="6_dnad0"]
+[ext_resource type="Resource" uid="uid://bv2g0snn1dtkq" path="res://scenes/levels/attack/attack_4/menu settings/attack_4_melee.tres" id="7_xun6k"]
+[ext_resource type="Resource" uid="uid://d4iofjie0n24w" path="res://scenes/levels/attack/attack_4/menu settings/attack_4_movement.tres" id="8_eoyn0"]
+[ext_resource type="Resource" uid="uid://bmcvx0q1v8m0n" path="res://scenes/levels/attack/attack_4/menu settings/attack_4_projectile.tres" id="9_4em1o"]
+[ext_resource type="Resource" uid="uid://cso4obtygja5w" path="res://scenes/levels/attack/attack_4/menu settings/attack_4_ranged.tres" id="10_rudgr"]
+[ext_resource type="Resource" uid="uid://drjpekhuvon5i" path="res://scenes/levels/attack/attack_4/menu settings/attack_4_wall_jump.tres" id="11_tmdk3"]
+[ext_resource type="Resource" uid="uid://dlul7ija3gevs" path="res://scenes/levels/attack/attack_3/menu settings/attack_3_wall_slide.tres" id="12_8wo3t"]
+[ext_resource type="Script" uid="uid://bhpqxby0frwcl" path="res://scripts/resources/PlayerStats.gd" id="13_axaad"]
+
+[sub_resource type="Resource" id="Resource_f76m7"]
+script = ExtResource("3_h5bju")
+look_ahead = Vector2(48, 30)
+camera_follow_threshold = 110.0
+increase_with_speed = true
+damping = Vector2(2, 6)
+floor_level_offset = 64.0
+stable_floor = true
+look_around_amount = 128.0
+
+[sub_resource type="Resource" id="Resource_qbvip"]
+script = ExtResource("13_axaad")
+CAMERA_STATS = SubResource("Resource_f76m7")
+CANNON_STATS = ExtResource("4_wpx4h")
+DASH_STATS = ExtResource("5_vgv57")
+JUMP_STATS = ExtResource("6_dnad0")
+MELEE_ATTACK_STATS = ExtResource("7_xun6k")
+MOVEMENT_STATS = ExtResource("8_eoyn0")
+PROJECTILE_STATS = ExtResource("9_4em1o")
+RANGED_ATTACK_STATS = ExtResource("10_rudgr")
+WALL_JUMP_STATS = ExtResource("11_tmdk3")
+WALL_SLIDE_STATS = ExtResource("12_8wo3t")
+
+[resource]
+script = ExtResource("2_wlpaq")
+title = "Fase de desafio 5"
+description = "[rainbow set=1 val=0.8 freq=1.8][wave freq=8 amp=30]Parabéns[/wave][/rainbow]!! E bem-vindo à quinta e última fase de desafio preparada! Ela irá compilar [color=b2b2b2][wave freq=4 amp=20]todo conhecimento explorado[/wave][/color] por todo jogo! Construa um personagem apto para enfrentar os desafios a seguir e alcançar a [color=b2b2b2]linha de chagada[/color]!"
+level_scene = ExtResource("1_qeb5g")
+stats = SubResource("Resource_qbvip")
+done = false

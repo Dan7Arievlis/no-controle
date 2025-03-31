@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dsnw6xqnsevdm"]
 
-[ext_resource type="Script" path="res://scripts/menus/components/TabComponent.gd" id="1_a41se"]
+[ext_resource type="Script" uid="uid://bblb24t3uqq22" path="res://scripts/menus/components/TabComponent.gd" id="1_a41se"]
 
 [node name="TabComponent" type="MarginContainer"]
 anchors_preset = 15

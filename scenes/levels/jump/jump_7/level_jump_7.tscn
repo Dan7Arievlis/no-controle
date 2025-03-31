@@ -1,20 +1,20 @@
 [gd_scene load_steps=28 format=4 uid="uid://bolqe2bcdnuwv"]
 
-[ext_resource type="Script" path="res://scripts/levels/Level.gd" id="1_a0p7p"]
+[ext_resource type="Script" uid="uid://c8xxvfs7ullj8" path="res://scripts/levels/Level.gd" id="1_a0p7p"]
 [ext_resource type="PackedScene" uid="uid://d5cyy80deyjo" path="res://scenes/levels/components/respawn_system.tscn" id="2_wr1rt"]
 [ext_resource type="PackedScene" uid="uid://cu3ma15rbghyg" path="res://scenes/levels/components/respawn_trigger.tscn" id="3_gdbax"]
 [ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="4_lknvv"]
 [ext_resource type="TileSet" uid="uid://chlp3otlj0044" path="res://resources/tilesets/base_tile_set.tres" id="5_umo2x"]
 [ext_resource type="TileSet" uid="uid://3ls8bo8my2y1" path="res://resources/tilesets/one_way_platforms_tile_set.tres" id="6_gdkhf"]
-[ext_resource type="Script" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="7_meo3w"]
+[ext_resource type="Script" uid="uid://ckaxdjsjpay7d" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="7_meo3w"]
 [ext_resource type="TileSet" uid="uid://b3sxykajd0y5s" path="res://resources/tilesets/spikes_tile_set.tres" id="8_ewpuo"]
 [ext_resource type="PackedScene" uid="uid://c8kcmwwko2dpd" path="res://scenes/components/moving_platform.tscn" id="9_kt1m6"]
 [ext_resource type="PackedScene" uid="uid://dldwdaspvcq0w" path="res://scenes/entities/player.tscn" id="9_ue0m3"]
 [ext_resource type="PackedScene" uid="uid://bd1jkgc6dl7v8" path="res://scenes/levels/components/camera_follow.tscn" id="10_4pyfs"]
 [ext_resource type="PackedScene" uid="uid://cfdmv3tit4bya" path="res://scenes/levels/components/doorway.tscn" id="11_6ffhk"]
 [ext_resource type="PackedScene" uid="uid://di32xxa2m60xl" path="res://scenes/menus/pause_menu.tscn" id="12_7hpim"]
-[ext_resource type="Script" path="res://scenes/levels/jump/jump_7/jump_7_menu.gd" id="12_t4dbv"]
-[ext_resource type="Shader" path="res://materials/shaders/pause_menu.gdshader" id="14_7vwv7"]
+[ext_resource type="Script" uid="uid://befyqnghcsqd8" path="res://scenes/levels/jump/jump_7/jump_7_menu.gd" id="12_t4dbv"]
+[ext_resource type="Shader" uid="uid://dwh6b4iw50hbj" path="res://materials/shaders/pause_menu.gdshader" id="14_7vwv7"]
 [ext_resource type="PackedScene" uid="uid://nxiywfl7pggr" path="res://scenes/menus/death_menu.tscn" id="14_wjhwr"]
 [ext_resource type="PackedScene" uid="uid://go2uyf33ilo7" path="res://scenes/menus/win_menu.tscn" id="15_ctvcg"]
 [ext_resource type="Theme" uid="uid://ckhww1aw5ghp1" path="res://themes/font_theme_16px.tres" id="16_akpmd"]
@@ -231,9 +231,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -112.0
-offset_top = -108.0
-offset_right = -1237.0
-offset_bottom = -786.0
+offset_top = 305.0
+offset_right = -1287.0
+offset_bottom = -383.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(18.5862, 39.99)

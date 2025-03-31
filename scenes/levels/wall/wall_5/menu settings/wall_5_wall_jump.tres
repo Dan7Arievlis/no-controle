@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WallJumpResource" load_steps=2 format=3 uid="uid://c4g174yx65hbd"]
 
-[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="1_4mgqe"]
+[ext_resource type="Script" uid="uid://ckw8qcv0a4qrb" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="1_4mgqe"]
 
 [resource]
 script = ExtResource("1_4mgqe")

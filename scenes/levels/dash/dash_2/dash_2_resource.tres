@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=12 format=3 uid="uid://bjf38hkdbqca8"]
 
 [ext_resource type="PackedScene" uid="uid://duqmsxuuyo35y" path="res://scenes/levels/dash/dash_2/level_dash_2.tscn" id="1_gmj8v"]
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_6ytwr"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_agrnn"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="2_6ytwr"]
+[ext_resource type="Script" uid="uid://ccmd3juk6gf68" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_agrnn"]
 [ext_resource type="Resource" uid="uid://d3dqrcq0n3m5j" path="res://scenes/levels/dash/dash_2/menu settings/dash_2_dash.tres" id="4_2ji4p"]
 [ext_resource type="Resource" uid="uid://uxisgbia30y8" path="res://scenes/levels/dash/dash_2/menu settings/dash_2_jump.tres" id="5_8v2mh"]
 [ext_resource type="Resource" uid="uid://cown3b38pkg7i" path="res://scenes/levels/dash/dash_2/menu settings/dash_2_movement.tres" id="6_2pbyh"]
 [ext_resource type="Resource" uid="uid://yl31134lwpy" path="res://scenes/levels/dash/dash_2/menu settings/dash_2_wall_jump.tres" id="7_7jksy"]
 [ext_resource type="Resource" uid="uid://gn3gq5rbcov1" path="res://scenes/levels/dash/dash_2/menu settings/dash_2_wall_slide.tres" id="8_le8j5"]
-[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="9_5c6lo"]
+[ext_resource type="Script" uid="uid://bhpqxby0frwcl" path="res://scripts/resources/PlayerStats.gd" id="9_5c6lo"]
 
 [sub_resource type="Resource" id="Resource_f76m7"]
 script = ExtResource("3_agrnn")
@@ -32,7 +32,7 @@ WALL_SLIDE_STATS = ExtResource("8_le8j5")
 [resource]
 script = ExtResource("2_6ytwr")
 title = "Tempo de dash e cooldown"
-description = ""
+description = "A velocidade do dash está definida, porém, não é possível passar por certos obstáculos com dashes tão curtos. A [color=b2b2b2]velocidade[/color] e o [color=b2b2b2]tempo de dash[/color] devem trabalhar juntos para comunicar as características desejadas do movimento."
 level_scene = ExtResource("1_gmj8v")
 stats = SubResource("Resource_qbvip")
 done = false

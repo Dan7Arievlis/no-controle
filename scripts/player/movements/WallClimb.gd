@@ -2,6 +2,7 @@ class_name WallClimb
 extends Node
 
 var player: Player
+var wall_climb_stats : WallClimbResource
 
 var is_climbing: bool
 var climb_direction: Vector2
@@ -10,7 +11,6 @@ var climb_jump_impulse: Vector2
 var stamina: float
 var facing_direction: bool
 
-var wall_climb_stats : WallClimbResource
 
 func _init(_player: Player):
 	player = _player

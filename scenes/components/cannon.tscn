@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://crson4lj6vv0i"]
 
-[ext_resource type="Script" path="res://scripts/components/Cannon.gd" id="1_ddtd7"]
+[ext_resource type="Script" uid="uid://x215o277sjhq" path="res://scripts/components/Cannon.gd" id="1_ddtd7"]
 [ext_resource type="PackedScene" uid="uid://dhcgigwp7re3n" path="res://scenes/projectiles/projectile_spawner.tscn" id="2_5kdwq"]
 
 [node name="Cannon" type="Node2D"]

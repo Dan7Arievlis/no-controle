@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ProjectileStats" load_steps=6 format=3 uid="uid://bmcvx0q1v8m0n"]
+
+[ext_resource type="Resource" uid="uid://b55rgodx6vcsa" path="res://resources/effects/player_projectile_destroy_effect_animation.tres" id="1_1j2k5"]
+[ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="2_rrdwf"]
+[ext_resource type="Resource" uid="uid://dv2cegm1tok13" path="res://resources/effects/player_projectile_hit_effect_animation.tres" id="3_bybwt"]
+[ext_resource type="Script" uid="uid://cj5u23i8uxjtd" path="res://scripts/resources/ProjectileStats.gd" id="4_3js1w"]
+[ext_resource type="Resource" uid="uid://qwelf7rtqy8n" path="res://resources/effects/player_projectile_travel.tres" id="5_q4l36"]
+
+[resource]
+script = ExtResource("4_3js1w")
+life_time = 0.1
+life = 1
+damage = 1.0
+speed = 200.0
+gravity = 0.3
+knockback_force = 0.0
+travel_animation = ExtResource("5_q4l36")
+hit_effect = ExtResource("3_bybwt")
+destroy_effect = ExtResource("1_1j2k5")
+projectile_material = ExtResource("2_rrdwf")
+effects_material = ExtResource("2_rrdwf")
+body_collision_layer = 4
+body_collision_mask = 48
+hitbox_collision_layer = 4
+hitbox_collision_mask = 8240

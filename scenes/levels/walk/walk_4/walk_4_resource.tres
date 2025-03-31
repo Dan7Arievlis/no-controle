@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=11 format=3 uid="uid://dp2d4e0puwo8o"]
 
 [ext_resource type="PackedScene" uid="uid://b3pnxrh5hmgvm" path="res://scenes/levels/walk/walk_4/level_walk_4.tscn" id="1_7mpcg"]
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_1eucv"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_bcw7o"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="2_1eucv"]
+[ext_resource type="Script" uid="uid://ccmd3juk6gf68" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_bcw7o"]
 [ext_resource type="Resource" uid="uid://bafxgixcnpv2k" path="res://scenes/levels/walk/walk_4/menu settings/walk_4_jump.tres" id="4_woaif"]
 [ext_resource type="Resource" uid="uid://svpht81qt4eu" path="res://scenes/levels/walk/walk_4/menu settings/walk_4_movement.tres" id="5_gm3rw"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_ghthw"]
-[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="7_mi6c2"]
+[ext_resource type="Script" uid="uid://ckw8qcv0a4qrb" path="res://scripts/resources/player_settings/WallJumpResource.gd" id="6_ghthw"]
+[ext_resource type="Script" uid="uid://bhpqxby0frwcl" path="res://scripts/resources/PlayerStats.gd" id="7_mi6c2"]
 
 [sub_resource type="Resource" id="Resource_f76m7"]
 script = ExtResource("3_bcw7o")
@@ -35,7 +35,7 @@ WALL_JUMP_STATS = SubResource("Resource_70k16")
 [resource]
 script = ExtResource("2_1eucv")
 title = "Gotta go fast!"
-description = ""
+description = "Está se sentindo lento? Podemos mudar isso!! Basta pôr uns tênis de corrida e [color=b2b2b2][wave freq=6 amp=24]CORRER[/wave][/color]! A corrida permite cobrir [color=b2b2b2]maiores distâncias[/color] em pulos e alcançar pontos de interesse mais rapidamente."
 level_scene = ExtResource("1_7mpcg")
 stats = SubResource("Resource_qbvip")
 done = false

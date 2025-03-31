@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cu3ma15rbghyg"]
 
-[ext_resource type="Script" path="res://scripts/levels/components/RespawnTrigger.gd" id="1_wg1iu"]
+[ext_resource type="Script" uid="uid://b8ag4rmm2p0b6" path="res://scripts/levels/components/RespawnTrigger.gd" id="1_wg1iu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fc6uw"]
 size = Vector2(20, 100)

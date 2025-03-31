@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MeleeAttackResource" load_steps=2 format=3 uid="uid://c2yxp5jjm133h"]
 
-[ext_resource type="Script" path="res://scripts/resources/player_settings/MeleeAttackResource.gd" id="1_l8l2p"]
+[ext_resource type="Script" uid="uid://cg01wxvfi0q3c" path="res://scripts/resources/player_settings/MeleeAttackResource.gd" id="1_l8l2p"]
 
 [resource]
 script = ExtResource("1_l8l2p")

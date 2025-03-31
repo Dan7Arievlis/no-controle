@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=13 format=3 uid="uid://bakwl75v5pmbk"]
 
 [ext_resource type="PackedScene" uid="uid://e4q2h48a2mqf" path="res://scenes/levels/attack/attack_1/level_attack_1.tscn" id="1_sofc4"]
-[ext_resource type="Script" path="res://scripts/resources/LevelResource.gd" id="2_fie7m"]
-[ext_resource type="Script" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_xnw8y"]
+[ext_resource type="Script" uid="uid://bmeolitm4eef5" path="res://scripts/resources/LevelResource.gd" id="2_fie7m"]
+[ext_resource type="Script" uid="uid://ccmd3juk6gf68" path="res://scripts/resources/player_settings/CameraResource.gd" id="3_xnw8y"]
 [ext_resource type="Resource" uid="uid://dpfw4utk1xn67" path="res://scenes/levels/attack/attack_1/menu settings/attack_1_dash.tres" id="4_g6cab"]
 [ext_resource type="Resource" uid="uid://csmn8b2t36vrw" path="res://scenes/levels/attack/attack_1/menu settings/attack_1_jump.tres" id="5_j8lel"]
 [ext_resource type="Resource" uid="uid://c7u5xv0hhh3ha" path="res://scenes/levels/attack/attack_1/menu settings/attack_1_melee.tres" id="6_jbvai"]
 [ext_resource type="Resource" uid="uid://cv5spi6w1tdtt" path="res://scenes/levels/attack/attack_1/menu settings/attack_1_movement.tres" id="7_4ked7"]
 [ext_resource type="Resource" uid="uid://fmonqw8blyfl" path="res://scenes/levels/attack/attack_1/menu settings/attack_1_wall_jump.tres" id="8_bqhkb"]
-[ext_resource type="Script" path="res://scripts/resources/PlayerStats.gd" id="9_fqa1o"]
+[ext_resource type="Script" uid="uid://bhpqxby0frwcl" path="res://scripts/resources/PlayerStats.gd" id="9_fqa1o"]
 [ext_resource type="Resource" uid="uid://chcqgoqbvirv7" path="res://scenes/levels/attack/attack_1/menu settings/attack_1_wall_slide.tres" id="9_nlebu"]
 
 [sub_resource type="Resource" id="Resource_f76m7"]
@@ -33,8 +33,8 @@ WALL_SLIDE_STATS = ExtResource("9_nlebu")
 
 [resource]
 script = ExtResource("2_fie7m")
-title = "Fase de desafio 4"
-description = ""
+title = "O peso de sua arma!"
+description = "É importante que o balanço de uma arma passe o peso do movimento. Claro que existem diferentes tipos de arma, cada um comunicando o peso e impacto que precisa. Para isso, é importante informar quanto [color=b2b2b2]knockback[/color] (empurrão) a arma passa aos inimigos e ao jogador. Armas pesadas empurram para mais longe, mas podemter um recuo maior, enquanto armas mais leves podem empurrar menos, mas serem mais rápidas!"
 level_scene = ExtResource("1_sofc4")
 stats = SubResource("Resource_qbvip")
 done = false

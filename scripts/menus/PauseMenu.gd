@@ -1,3 +1,4 @@
+# PauseMenu.gd
 extends CanvasLayer
 
 @onready var component_creator : MenuComponentCreator = %ComponentCreator

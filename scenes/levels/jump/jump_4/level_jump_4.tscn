@@ -1,19 +1,19 @@
 [gd_scene load_steps=21 format=4 uid="uid://dmv72p5dkjg23"]
 
-[ext_resource type="Script" path="res://scripts/levels/Level.gd" id="1_d6ipq"]
+[ext_resource type="Script" uid="uid://c8xxvfs7ullj8" path="res://scripts/levels/Level.gd" id="1_d6ipq"]
 [ext_resource type="PackedScene" uid="uid://d5cyy80deyjo" path="res://scenes/levels/components/respawn_system.tscn" id="2_kmcsi"]
 [ext_resource type="Material" uid="uid://nr1aonkdhljc" path="res://materials/color_change_material.tres" id="3_87kf0"]
 [ext_resource type="PackedScene" uid="uid://cu3ma15rbghyg" path="res://scenes/levels/components/respawn_trigger.tscn" id="3_mtwp7"]
 [ext_resource type="TileSet" uid="uid://chlp3otlj0044" path="res://resources/tilesets/base_tile_set.tres" id="4_163q6"]
 [ext_resource type="TileSet" uid="uid://3ls8bo8my2y1" path="res://resources/tilesets/one_way_platforms_tile_set.tres" id="5_r2xp6"]
-[ext_resource type="Script" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="6_sa2vs"]
+[ext_resource type="Script" uid="uid://ckaxdjsjpay7d" path="res://scripts/levels/components/OneWayPlatformsSpawner.gd" id="6_sa2vs"]
 [ext_resource type="TileSet" uid="uid://b3sxykajd0y5s" path="res://resources/tilesets/spikes_tile_set.tres" id="7_byqr6"]
 [ext_resource type="PackedScene" uid="uid://dldwdaspvcq0w" path="res://scenes/entities/player.tscn" id="8_e10o5"]
 [ext_resource type="PackedScene" uid="uid://bd1jkgc6dl7v8" path="res://scenes/levels/components/camera_follow.tscn" id="9_tgnlc"]
 [ext_resource type="PackedScene" uid="uid://cfdmv3tit4bya" path="res://scenes/levels/components/doorway.tscn" id="10_myxre"]
 [ext_resource type="PackedScene" uid="uid://di32xxa2m60xl" path="res://scenes/menus/pause_menu.tscn" id="11_4ov1u"]
-[ext_resource type="Script" path="res://scenes/levels/jump/jump_4/jump_4_menu.gd" id="12_ev75f"]
-[ext_resource type="Shader" path="res://materials/shaders/pause_menu.gdshader" id="13_ceafn"]
+[ext_resource type="Script" uid="uid://bw1i0g2w2f6i1" path="res://scenes/levels/jump/jump_4/jump_4_menu.gd" id="12_ev75f"]
+[ext_resource type="Shader" uid="uid://dwh6b4iw50hbj" path="res://materials/shaders/pause_menu.gdshader" id="13_ceafn"]
 [ext_resource type="PackedScene" uid="uid://nxiywfl7pggr" path="res://scenes/menus/death_menu.tscn" id="13_lgjvj"]
 [ext_resource type="PackedScene" uid="uid://go2uyf33ilo7" path="res://scenes/menus/win_menu.tscn" id="14_ysk0q"]
 [ext_resource type="Theme" uid="uid://ckhww1aw5ghp1" path="res://themes/font_theme_16px.tres" id="15_v0ebv"]
@@ -56,15 +56,18 @@ position = Vector2(178, 241)
 [node name="RespawnTrigger3" parent="RespawnSystem" instance=ExtResource("3_mtwp7")]
 position = Vector2(582, 246)
 
+[node name="RespawnTrigger8" parent="RespawnSystem" instance=ExtResource("3_mtwp7")]
+position = Vector2(394, 246)
+
 [node name="RespawnTrigger7" parent="RespawnSystem" instance=ExtResource("3_mtwp7")]
-position = Vector2(711, 226)
+position = Vector2(737, 226)
 scale = Vector2(1, 1.6)
 
 [node name="RespawnTrigger4" parent="RespawnSystem" instance=ExtResource("3_mtwp7")]
 position = Vector2(1020, 244)
 
 [node name="RespawnTrigger5" parent="RespawnSystem" instance=ExtResource("3_mtwp7")]
-position = Vector2(1243, 246)
+position = Vector2(1286, 246)
 
 [node name="RespawnTrigger6" parent="RespawnSystem" instance=ExtResource("3_mtwp7")]
 position = Vector2(1622, 251)
